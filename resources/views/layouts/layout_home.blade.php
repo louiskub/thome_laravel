@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{__('header.document_title')}}</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon1.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon1.png">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
