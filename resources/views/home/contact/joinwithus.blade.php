@@ -1,15 +1,5 @@
 @extends('layouts.layout_home')
 @section('content')
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-=======
->>>>>>> 0a47fd713d3e7de58f5fc343202ce85344193cca
-    <title>{{ __('joinus.page_title') }}</title>
-    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         /* Join Us Section */
@@ -381,15 +371,62 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .join-us-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
-                gap: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 80px 20px;
+                min-height: 70vh;
+                gap: 60px;
             }
-<<<<<<< HEAD
-=======
 
->>>>>>> 0a47fd713d3e7de58f5fc343202ce85344193cca
+            .join-us-content {
+                flex: 1;
+                max-width: 500px;
+            }
+
+            .join-us-content h1 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .join-us-content p {
+                font-size: 1.2rem;
+                color: #666;
+                margin-bottom: 40px;
+                line-height: 1.8;
+            }
+
+            .btn {
+                display: inline-block;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 15px 35px;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                font-size: 1.1rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                border: none;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            }
+
+            .join-us-image {
+                flex: 1;
+                text-align: center;
+            }
+
             .join-us-content h1 {
                 font-size: 2.5rem;
             }
@@ -419,20 +456,40 @@
             .join-us-content h1 {
                 font-size: 2rem;
             }
-<<<<<<< HEAD
-=======
 
->>>>>>> 0a47fd713d3e7de58f5fc343202ce85344193cca
             .apply-job h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            .apply-job>p {
+                font-size: 1.2rem;
+                color: #666;
+                margin-bottom: 60px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .job-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+                max-width: 1000px;
+                margin: 0 auto;
             }
 
             .job-listing {
-                padding: 30px 20px;
+                background: white;
+                padding: 40px 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                border: 1px solid #e9ecef;
             }
         }
     </style>
-
 
 
     <!-- Join Us Section -->
@@ -452,34 +509,30 @@
         <h1>{{ __('joinus.hiring_title') }}</h1>
         <p>{{ __('joinus.hiring_subtitle') }}</p>
         <div class="job-container">
-            {{-- <div class="job-listing">
-                <h2>{{ __('joinus.admin_title') }}</h2>
-                <p><strong>{{ __('joinus.admin_location') }}</strong></p>
-                <p><strong>{{ __('joinus.admin_requirements') }}</strong></p>
-                <button class="apply-btn" onclick="openJobModal('admin')">{{ __('joinus.apply_now') }}</button>
-            </div>
-            <div class="job-listing">
-                <h2>{{ __('joinus.civil_engineer_title') }}</h2>
-                <p><strong>{{ __('joinus.civil_engineer_location') }}</strong></p>
-                <p><strong>{{ __('joinus.civil_engineer_requirements') }}</strong></p>
-                <button class="apply-btn" onclick="openJobModal('civil-engineer')">{{ __('joinus.apply_now') }}</button>
-<<<<<<< HEAD
-            </div>
-        </div>
-=======
-            </div> --}}
             @foreach ($jobs as $job)
                 <div class="job-listing">
                     <h2>{{ $job->translation->position }}</h2>
 
                     <p><strong>Location:</strong> {{ $job->location }}</p>
                     <p><strong>Requirements:</strong>{{ $job->translation->requirements }} </p>
-                    <button class="apply-btn" onclick="openJobModal('admin')">Apply Now</button>
+                    <button class="apply-btn" onclick="openJobModal('{{ $job->translation->position }}')">Apply Now</button>
                 </div>
             @endforeach
+
+            {{-- <div class="job-listing">
+                <h2>{{ __('joinus.admin_title') }}</h2>
+                <p><strong>{{ __('joinus.admin_location') }}</strong></p>
+                <p><strong>{{ __('joinus.admin_requirements') }}</strong></p>
+                <button class="apply-btn" onclick="openJobModal('admin')">{{ __('joinus.apply_now') }}</button>
+            </div> --}}
+            {{-- <div class="job-listing">
+                <h2>{{ __('joinus.civil_engineer_title') }}</h2>
+                <p><strong>{{ __('joinus.civil_engineer_location') }}</strong></p>
+                <p><strong>{{ __('joinus.civil_engineer_requirements') }}</strong></p>
+                <button class="apply-btn" onclick="openJobModal('civil-engineer')">{{ __('joinus.apply_now') }}</button>
+            </div> --}}
         </div>
     </div>
->>>>>>> 0a47fd713d3e7de58f5fc343202ce85344193cca
 
     <!-- Job Application Modal -->
     <div id="jobModal" class="modal">
@@ -594,16 +647,14 @@
         };
 
         // Job positions data
-        const jobPositions = {
-            admin: {
-                title: localizedText.modalTitleAdmin,
-                position: '{{ __('joinus.admin_title') }}',
-            },
-            "civil-engineer": {
-                title: localizedText.modalTitleCivilEngineer,
-                position: '{{ __('joinus.civil_engineer_title') }}',
-            },
-        }
+        const jj = @json($jobs);
+        const jobPositions = {};
+        jj.forEach(job => {
+            jobPositions[job.translation.position] = {
+                title: job.translation.position,
+                position: job.translation.position
+            }
+        })
 
         // Open job application modal
         function openJobModal(jobType) {
@@ -710,20 +761,23 @@
             }
 
             // Show loading state
-            showLoading()
+            function showLoading() {
+                const submitBtn = document.getElementById("submitBtn")
+                const loadingSpinner = document.getElementById("loadingSpinner")
+                const submitText = document.getElementById("submitText")
 
-            // Prepare email template parameters
-            const templateParams = {
-                to_email: 'ananthaxb@gmail.com',
-                from_name: data.fullName,
-                from_email: data.email,
-                phone: data.phone,
-                position: data.position,
-                experience: data.experience || localizedText.notSpecified,
-                education: data.education || localizedText.notSpecified,
-                cover_letter: data.coverLetter || localizedText.noCoverLetter,
-                subject: `${localizedText.emailSubject} ${data.position} - ${data.fullName}`,
-                message: `${localizedText.applicantDetails}:
+                // Prepare email template parameters
+                const templateParams = {
+                    to_email: 'ananthaxb@gmail.com',
+                    from_name: data.fullName,
+                    from_email: data.email,
+                    phone: data.phone,
+                    position: data.position,
+                    experience: data.experience || localizedText.notSpecified,
+                    education: data.education || localizedText.notSpecified,
+                    cover_letter: data.coverLetter || localizedText.noCoverLetter,
+                    subject: `${localizedText.emailSubject} ${data.position} - ${data.fullName}`,
+                    message: `${localizedText.applicantDetails}:
 - ${localizedText.fullNameLabel}: ${data.fullName}
 - ${localizedText.emailLabel}: ${data.email}
 - ${localizedText.phoneLabel}: ${data.phone}
@@ -735,22 +789,24 @@ ${localizedText.coverLetterSection}:
 ${data.coverLetter || localizedText.noCoverLetter}
 
 ${localizedText.contactApplicant} ${data.email} or ${data.phone} ${localizedText.forFurtherCommunication}`.trim()
+                }
+
+                // Send email using EmailJS
+                emailjs.send('Thome', 'template_shjqlbp', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        resetSubmitButton()
+                        closeJobModal()
+                        document.getElementById("successMessage").style.display = "block"
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        resetSubmitButton()
+                        showError(
+                            `${localizedText.errorEmailSending} ${error.text || error.message || 'Unknown error'}`
+                        )
+                    });
             }
 
-            // Send email using EmailJS
-            emailjs.send('Thome', 'template_shjqlbp', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    resetSubmitButton()
-                    closeJobModal()
-                    document.getElementById("successMessage").style.display = "block"
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    resetSubmitButton()
-                    showError(
-                        `${localizedText.errorEmailSending} ${error.text || error.message || 'Unknown error'}`
-                    )
-                });
         })
 
         // Close modal when clicking outside
@@ -787,7 +843,7 @@ ${localizedText.contactApplicant} ${data.email} or ${data.phone} ${localizedText
                     closeErrorMessage()
                 }
             }
-        })
+        });
 
         // Form validation on input
         document.addEventListener("DOMContentLoaded", () => {
@@ -805,34 +861,27 @@ ${localizedText.contactApplicant} ${data.email} or ${data.phone} ${localizedText
                     if (this.value.trim() !== "") {
                         this.style.borderColor = "#e9ecef"
                     }
-<<<<<<< HEAD
 
                     if (errorMessage.style.display === "block") {
                         closeErrorMessage()
                     }
-                }
+                })
             })
 
             // Form validation on input
-            document.addEventListener("DOMContentLoaded", () => {
-                const inputs = document.querySelectorAll("input[required], select[required]")
+            inputs.forEach((input) => {
+                input.addEventListener("blur", function() {
+                    if (this.value.trim() === "") {
+                        this.style.borderColor = "#dc3545"
+                    } else {
+                        this.style.borderColor = "#e9ecef"
+                    }
+                })
 
-                inputs.forEach((input) => {
-                    input.addEventListener("blur", function() {
-                        if (this.value.trim() === "") {
-                            this.style.borderColor = "#dc3545"
-                        } else {
-                            this.style.borderColor = "#e9ecef"
-                        }
-                    })
-
-                    input.addEventListener("input", function() {
-                        if (this.value.trim() !== "") {
-                            this.style.borderColor = "#e9ecef"
-                        }
-                    })
-=======
->>>>>>> 0a47fd713d3e7de58f5fc343202ce85344193cca
+                input.addEventListener("input", function() {
+                    if (this.value.trim() !== "") {
+                        this.style.borderColor = "#e9ecef"
+                    }
                 })
             })
         })
