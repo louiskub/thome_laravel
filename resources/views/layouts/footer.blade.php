@@ -20,26 +20,34 @@
 
         <!-- Center Section: Company -->
         <div class="footer-center">
-            <h2>เกี่ยวกับเรา <span class="toggle-icon">+</span></h2>
+            <h2>{{ __('header.about') }} <span class="toggle-icon">+</span></h2>
             <ul>
-                <li><a href="/ourstory">ประวัติของเรา</a></li>
-                <li><a href="/ourteam">ทีมงานของเรา</a></li>
+                <li><a href="/ourstory">{{ __('header.ourstory') }}</a></li>
+                <li><a href="/ourteam">{{ __('header.ourteam') }}</a></li>
             </ul>
         </div>
 
         <!-- Right Section: Our Services -->
         <div class="footer-right">
-            <h2>บริการของเรา <span class="toggle-icon">+</span></h2>
+            <h2>{{ __('header.services') }} <span class="toggle-icon">+</span></h2>
             <ul>
                 <li><a href="/Hinspector">{{ __('header.hinspector') }}</a></li>
                 <li><a href="/Hinterior">{{ __('header.hinterior') }}</a></li>
                 <li><a href="/Hconstruction">{{ __('header.hconstruction') }}</a></li>
                 <li><a href="/Hbulter">{{ __('header.hbutler') }}</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <h2>{{ __('header.addon_services') }} <span class="toggle-icon">+</span></h2>
+            <ul>
                 <li><a href="/cal_electric">{{ __('header.cal_electric') }}</a></li>
                 <li><a href="/app_inspector">{{ __('header.app_inspector') }}</a></li>
                 <li><a href="/checklist">{{ __('header.checklist') }}</a></li>
             </ul>
         </div>
+
 
         <!-- Extra Section: Customer Help -->
         <div class="footer-help">

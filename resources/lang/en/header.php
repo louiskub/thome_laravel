@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "document_title" => "T. Homeinspector",
+
     "home" => "Home",
 
     "services" => "Services",

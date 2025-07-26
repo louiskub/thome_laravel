@@ -330,7 +330,7 @@
         </div>
     </section>
 
-    <script>
+    {{-- <script>
         const slides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
 
@@ -339,7 +339,7 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }, 5000);
-    </script>
+    </script> --}}
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

@@ -2,7 +2,7 @@
 
 return [
     "hero-title" => "T.HOME CONSTRUCTION ",
-    "hero-description" => "Construction and renovation services for homes.Kitchen, Roofing, Laundry areas, or multi-purpose roomsOne-stop service, taking care of every detail from start to finish.",
+    "hero-description" => "Construction and renovation services for homes.<br>Kitchen, Roofing, Laundry areas, or multi-purpose rooms<br>One-stop service, taking care of every detail from start to finish.",
     "contact-btn" => "Contact us now 066-168-8181",
     "services-title" => "Our Services",
     "services-description" => "Comprehensive home extension services, decoration, renovate old houses to look like new, roofing, lightweight walls, electrical and plumbing systems, and more.",

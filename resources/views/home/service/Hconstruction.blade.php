@@ -24,7 +24,7 @@
                                 alt="T. HOME CONSTRUCTION Logo" class="hero-logo">
                         </div>
                         <h1 class="hero-title">{{ __('hconstruction.hero-title') }}</h1>
-                        <div class="hero-description">{{ __('hconstruction.hero-description') }}</div>
+                        <div class="hero-description">{!! __('hconstruction.hero-description') !!}</div>
                         <a href="Homepage/Contactus.php" class="hero-btn">{{ __('hconstruction.contact-btn') }}</a>
                     </div>
                 </div>

@@ -25,7 +25,6 @@
             '/img/hero-bg1.jpg',
             '/img/hero-bg3.jpg'
         ];
-        let textIndex = 0;
         let bgIndex = 0;
 
         // เริ่มเปลี่ยนข้อความ + รูป
@@ -33,7 +32,6 @@
             updateHeroContent();
 
             setInterval(() => {
-                textIndex = (textIndex + 1) % texts.length;
                 bgIndex = (bgIndex + 1) % bgImages.length;
                 updateHeroContent();
             }, 8000); // เปลี่ยนทุก 8 วินาที
