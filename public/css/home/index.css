@@ -889,6 +889,7 @@ header {
     text-align: center;
     width: 100vw;
     height: min(fit-content, 45vh);
+    padding: 3rem 0 !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
