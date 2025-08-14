@@ -219,52 +219,6 @@
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Simple animation on scroll
-            const animateElements = document.querySelectorAll('[data-aos]');
-
-            // Check if element is in viewport
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
-                    rect.bottom >= 0
-                );
-            }
-
-            // Add animation class when element is in viewport
-            function checkAnimations() {
-                animateElements.forEach(element => {
-                    if (isInViewport(element)) {
-                        element.classList.add('aos-animate');
-                    }
-                });
-            }
-
-            // Run on load
-            checkAnimations();
-
-            // Run on scroll
-            window.addEventListener('scroll', checkAnimations);
-
-            // Card hover effects
-            const cards = document.querySelectorAll('.inspection-card');
-
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('.inspection-icon');
-                    icon.style.transform = 'scale(1.1)';
-                });
-
-                card.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('.inspection-icon');
-                    icon.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
-
     <section class="process" id="process">
         <div class="container-process">
             <div class="section-header light">
@@ -329,58 +283,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const counters = document.querySelectorAll('.counter');
-
-            const updateCounter = (counter) => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const speed = 200;
-                const increment = target / speed;
-
-                const update = () => {
-                    count += increment;
-                    if (count >= target) {
-                        count = target;
-                    }
-                    counter.textContent = Math.floor(count);
-                    if (count < target) {
-                        requestAnimationFrame(update);
-                    }
-                };
-                update();
-            };
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        updateCounter(counter);
-                        observer.unobserve(counter);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            counters.forEach(counter => {
-                observer.observe(counter);
-            });
-        });
-    </script>
 
     <div class="pricing-body" id="pricing">
         <div class="pricing-container">
@@ -580,26 +482,72 @@
                     </tbody>
                 </table>
 
-            <div class="notes-section">
-                <h3 class="notes-title-vertical">{{ __('hinspector.notes') }}</h3>
+                <div class="notes-section">
+                    <h3 class="notes-title-vertical">{{ __('hinspector.notes') }}</h3>
 
-                <div class="notes-layout">
-                    <div class="notes-grid">
-                        <div class="note-item">
-                            <span class="note-number">1</span>
-                            <span class="note-text">{!! __('hinspector.note_1') !!}</span>
+                    <div class="notes-layout">
+                        <div class="notes-grid">
+                            <div class="note-item">
+                                <span class="note-number">1</span>
+                                <span class="note-text">{!! __('hinspector.note_1') !!}</span>
+                            </div>
+                            <div class="note-item">
+                                <span class="note-number">2</span>
+                                <span class="note-text">{!! __('hinspector.note_2') !!}</span>
+                            </div>
+                            <div class="note-item">
+                                <span class="note-number">3</span>
+                                <span class="note-text">{{ __('hinspector.note_3') }}</span>
+                            </div>
+                            <div class="note-item">
+                                <span class="note-number">4</span>
+                                <span class="note-text">{{ __('hinspector.note_4') }}</span>
+                            </div>
                         </div>
-                        <div class="note-item">
-                            <span class="note-number">2</span>
-                            <span class="note-text">{!! __('hinspector.note_2') !!}</span>
+                    </div>
+                </div>
+
+                <!-- Promotional Banner - เฉพาะในแท็บ House -->
+                <div class="promo-banner">
+                    <div class="promo-content">
+                        <div class="promo-icons">
+                            <div class="promo-item">
+                                <div class="icon-box">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H3V4h18v10z"/>
+                                    </svg>
+                                </div>
+                                <span>{{ __('hinspector.promo_web_app') }}</span>
+                            </div>
+
+                            <div class="plus-sign">+</div>
+
+                            <div class="promo-item">
+                                <div class="icon-box">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <span>{{ __('hinspector.promo_drone_infrared') }}</span>
+                            </div>
+
+                            <div class="plus-sign">+</div>
+
+                            <div class="promo-item">
+                                <div class="icon-box">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                                    </svg>
+                                </div>
+                                <span>{{ __('hinspector.promo_thermal_imaging') }}</span>
+                            </div>
                         </div>
-                        <div class="note-item">
-                            <span class="note-number">3</span>
-                            <span class="note-text">{{ __('hinspector.note_3') }}</span>
-                        </div>
-                        <div class="note-item">
-                            <span class="note-number">4</span>
-                            <span class="note-text">{{ __('hinspector.note_4') }}</span>
+
+                        <div class="promo-text">
+                            <div class="text-line">{{ __('hinspector.promo_text_1') }}</div>
+                            <div class="text-line">{{ __('hinspector.promo_text_2') }}</div>
+                            <div class="text-line">{{ __('hinspector.promo_text_3') }}</div>
+                            <div class="highlight-text">{{ __('hinspector.promo_highlight') }}</div>
                         </div>
                     </div>
                 </div>
@@ -791,51 +739,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Promotional Banner -->
-            <div class="promo-banner">
-                <div class="promo-content">
-                    <div class="promo-icons">
-                        <div class="promo-item">
-                            <div class="icon-box">
-                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H3V4h18v10z"/>
-                                </svg>
-                            </div>
-                            <span>{{ __('hinspector.promo_web_app') }}</span>
-                        </div>
-
-                        <div class="plus-sign">+</div>
-
-                        <div class="promo-item">
-                            <div class="icon-box">
-                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                            <span>{{ __('hinspector.promo_drone_infrared') }}</span>
-                        </div>
-
-                        <div class="plus-sign">+</div>
-
-                        <div class="promo-item">
-                            <div class="icon-box">
-                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-                                </svg>
-                            </div>
-                            <span>{{ __('hinspector.promo_thermal_imaging') }}</span>
-                        </div>
-                    </div>
-
-                    <div class="promo-text">
-                        <div class="text-line">{{ __('hinspector.promo_text_1') }}</div>
-                        <div class="text-line">{{ __('hinspector.promo_text_2') }}</div>
-                        <div class="text-line">{{ __('hinspector.promo_text_3') }}</div>
-                        <div class="highlight-text">{{ __('hinspector.promo_highlight') }}</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -872,6 +775,7 @@
                 <div class="sample-item">
                     <div class="sample-icon pdf-icon" style="background-color: #33A8FF;"></div>
                     <p>{{ __('hinspector.condo_report') }}</p>
+                    <a href="https://www.dropbox.com/scl/fi/o8ogutlr4wrq1loahq1zq/2025.  }}</p>
                     <a href="https://www.dropbox.com/scl/fi/o8ogutlr4wrq1loahq1zq/2025.pdf?rlkey=7z6nht3yv9bt6vborrryuloax&st=ksvc191d&dl=1" download target="_blank" class="download-link">{{ __('hinspector.download_pdf') }}</a>
                 </div>
             </div>
@@ -897,107 +801,216 @@
         </div>
     </div>
 
+    <section class="app-showcase">
+        <div class="container-homebutler">
+            <div class="app-content">
+                <div class="app-text" data-aos="fade-right">
+                    <span class="section-subtitle">{{ __('hinspector.app_subtitle') }}</span>
+                    <h2 class="section-title">{{ __('hinspector.app_title') }}</h2>
+                    <p class="section-title-sub">{{ __('hinspector.app_description') }}</p>
+
+                    <div class="app-download">
+                        <a href="https://line.me/download" class="app-btn">
+                            <i class="fab fa-apple"></i>
+                            <span>
+                                <small>{{ __('hinspector.download_on') }}</small>
+                                {{ __('hinspector.app_store') }}
+                            </span>
+                        </a>
+                        <a href="https://line.me/download" class="app-btn">
+                            <i class="fab fa-google-play"></i>
+                            <span>
+                                <small>{{ __('hinspector.download_on') }}</small>
+                                {{ __('hinspector.google_play') }}
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="app-image" data-aos="fade-left">
+                    <img src="/img/lineb3.png" alt="{{ __('hinspector.home_butler_app') }}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed JavaScript - Single event listener for tab switching -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Get all tab buttons and content
-            const tabButtons = document.querySelectorAll(".tab-btn")
-            const tabContents = document.querySelectorAll(".tab-content")
+        // Animation scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple animation on scroll
+            const animateElements = document.querySelectorAll('[data-aos]');
 
-            // Add click event listeners to tab buttons
-            tabButtons.forEach((button) => {
-                button.addEventListener("click", function () {
-                    const targetTab = this.getAttribute("data-tab")
-
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach((btn) => btn.classList.remove("active"))
-                    tabContents.forEach((content) => content.classList.remove("active"))
-
-                    // Add active class to clicked button
-                    this.classList.add("active")
-
-                    // Show corresponding content
-                    const targetContent = document.getElementById(targetTab + "-content")
-                    if (targetContent) {
-                        targetContent.classList.add("active")
-                    }
-                })
-            })
-
-            // Add hover effects to table rows
-            const tableRows = document.querySelectorAll(".table-row")
-            tableRows.forEach((row) => {
-                row.addEventListener("mouseenter", function () {
-                    this.style.transform = "scale(1.01)"
-                    this.style.transition = "transform 0.2s ease"
-                })
-
-                row.addEventListener("mouseleave", function () {
-                    this.style.transform = "scale(1)"
-                })
-            })
-
-            // Add smooth scrolling for better UX
-            function smoothScrollToElement(element) {
-                element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                })
+            // Check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                    rect.bottom >= 0
+                );
             }
 
-            // Add animation to notes when they come into view
+            // Add animation class when element is in viewport
+            function checkAnimations() {
+                animateElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        element.classList.add('aos-animate');
+                    }
+                });
+            }
+
+            // Run on load
+            checkAnimations();
+
+            // Run on scroll
+            window.addEventListener('scroll', checkAnimations);
+
+            // Card hover effects
+            const cards = document.querySelectorAll('.inspection-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.inspection-icon');
+                    icon.style.transform = 'scale(1.1)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.inspection-icon');
+                    icon.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        // Hero slides
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+
+        // Counter animation
+        document.addEventListener("DOMContentLoaded", function() {
+            const counters = document.querySelectorAll('.counter');
+
+            const updateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = 200;
+                const increment = target / speed;
+
+                const update = () => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                    }
+                    counter.textContent = Math.floor(count);
+                    if (count < target) {
+                        requestAnimationFrame(update);
+                    }
+                };
+                update();
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        updateCounter(counter);
+                        observer.unobserve(counter);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+
+        // FIXED TAB SWITCHING - Single event listener
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            // Single event listener for tab switching
+            tabButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const targetTab = this.getAttribute("data-tab");
+                    
+                    console.log('Tab clicked:', targetTab); // Debug log
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove("active"));
+                    tabContents.forEach(content => content.classList.remove("active"));
+
+                    // Add active class to clicked button
+                    this.classList.add("active");
+
+                    // Show corresponding content
+                    const targetContent = document.getElementById(targetTab + "-content");
+                    if (targetContent) {
+                        targetContent.classList.add("active");
+                        console.log('Content shown:', targetTab + "-content"); // Debug log
+                    } else {
+                        console.error('Content not found:', targetTab + "-content"); // Debug log
+                    }
+                });
+            });
+
+            // Add hover effects to table rows
+            const tableRows = document.querySelectorAll(".table-row");
+            tableRows.forEach(row => {
+                row.addEventListener("mouseenter", function() {
+                    this.style.transform = "translateY(-2px)";
+                    this.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
+                    this.style.transition = "all 0.3s ease";
+                });
+
+                row.addEventListener("mouseleave", function() {
+                    this.style.transform = "translateY(0)";
+                    this.style.boxShadow = "none";
+                });
+            });
+
+            // Animation for elements coming into view
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: "0px 0px -50px 0px",
-            }
+            };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1"
-                        entry.target.style.transform = "translateY(0)"
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
                     }
-                })
-            }, observerOptions)
+                });
+            }, observerOptions);
 
             // Observe notes and promo banner
-            const animatedElements = document.querySelectorAll(".notes-section, .promo-banner")
+            const animatedElements = document.querySelectorAll(".notes-section, .promo-banner");
             animatedElements.forEach((element) => {
-                element.style.opacity = "0"
-                element.style.transform = "translateY(20px)"
-                element.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-                observer.observe(element)
-            })
+                element.style.opacity = "0";
+                element.style.transform = "translateY(20px)";
+                element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+                observer.observe(element);
+            });
 
-            // Add click animation to buttons
-            tabButtons.forEach((button) => {
-                button.addEventListener("click", function () {
-                    this.style.transform = "scale(0.95)"
-                    setTimeout(() => {
-                        this.style.transform = "scale(1)"
-                    }, 150)
-                })
-            })
-
-            // Initialize with house tab active
-            const houseTab = document.querySelector('[data-tab="house"]')
-            const houseContent = document.getElementById("house-content")
+            // Initialize with house tab active (ensure proper initialization)
+            const houseTab = document.querySelector('[data-tab="house"]');
+            const houseContent = document.getElementById("house-content");
 
             if (houseTab && houseContent) {
-                houseTab.classList.add("active")
-                houseContent.classList.add("active")
+                houseTab.classList.add("active");
+                houseContent.classList.add("active");
             }
-        })
+        });
 
-        // Add loading animation
-        window.addEventListener("load", () => {
-            document.body.style.opacity = "0"
-            document.body.style.transition = "opacity 0.5s ease"
-
-            setTimeout(() => {
-                document.body.style.opacity = "1"
-            }, 100)
-        })
-
+        // Modal functions
         function showPdfSamples() {
             document.getElementById('pdf-modal').style.display = 'block';
             animateModal('pdf-modal');
@@ -1030,6 +1043,7 @@
             }
         }
 
+        // Add CSS animations
         const style = document.createElement('style');
         style.innerHTML = `
         @keyframes fadeIn {
@@ -1042,9 +1056,10 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-    `;
+        `;
         document.head.appendChild(style);
 
+        // Additional functionality for download links and device image fallback
         document.addEventListener('DOMContentLoaded', function() {
             const devicesImage = document.querySelector('.devices-image');
 
@@ -1090,12 +1105,13 @@
                 });
             }, 5000);
 
+            // Download link handlers
             const downloadLinks = document.querySelectorAll('.download-link');
             downloadLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
 
-                    // แสดงข้อความกำลังโหลดแบบนุ่มนวล (เช่น Toast หรือข้อความใน DOM)
+                    // Show loading message
                     const msg = document.createElement('div');
                     msg.textContent = '{{ __("hinspector.downloading_pdf") }}';
                     msg.style.position = 'fixed';
@@ -1109,12 +1125,12 @@
                     msg.style.zIndex = '1000';
                     document.body.appendChild(msg);
 
-                    // ลบข้อความหลัง 2 วินาที
+                    // Remove message after 2 seconds
                     setTimeout(() => {
                         msg.remove();
                     }, 2000);
 
-                    // สั่งดาวน์โหลดทันที
+                    // Trigger download
                     const a = document.createElement('a');
                     a.href = this.href;
                     a.setAttribute('download', '');
@@ -1124,6 +1140,7 @@
                 });
             });
 
+            // View link handlers
             const viewLinks = document.querySelectorAll('.view-link');
             viewLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1133,98 +1150,14 @@
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
+        // Loading animation
+        window.addEventListener("load", () => {
+            document.body.style.opacity = "0";
+            document.body.style.transition = "opacity 0.5s ease";
 
-            // Add click event to tab buttons
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-
-                    // Add active class to clicked button
-                    button.classList.add('active');
-
-                    // Show corresponding content
-                    const tabId = button.getAttribute('data-tab');
-                    document.getElementById(`${tabId}-content`).classList.add('active');
-                });
-            });
-
-            const tableRows = document.querySelectorAll('.table-row');
-            tableRows.forEach(row => {
-                row.addEventListener('mouseenter', () => {
-                    row.style.transform = 'translateY(-2px)';
-                    row.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
-                    row.style.transition = 'all 0.3s ease';
-                });
-
-                row.addEventListener('mouseleave', () => {
-                    row.style.transform = 'translateY(0)';
-                    row.style.boxShadow = 'none';
-                });
-            });
-
-            const infoItems = document.querySelectorAll('.info-item');
-            infoItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'all 0.5s ease';
-
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 300 + (index * 150));
-            });
-        });
-
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const targetTab = button.getAttribute('data-tab');
-
-                // Remove active class from all buttons and content
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-                // Add active class to clicked button and corresponding content
-                button.classList.add('active');
-                document.getElementById(targetTab + '-content').classList.add('active');
-            });
+            setTimeout(() => {
+                document.body.style.opacity = "1";
+            }, 100);
         });
     </script>
-
-    <section class="app-showcase">
-        <div class="container-homebutler">
-            <div class="app-content">
-                <div class="app-text" data-aos="fade-right">
-                    <span class="section-subtitle">{{ __('hinspector.app_subtitle') }}</span>
-                    <h2 class="section-title">{{ __('hinspector.app_title') }}</h2>
-                    <p class="section-title-sub">{{ __('hinspector.app_description') }}</p>
-
-                    <div class="app-download">
-                        <a href="https://line.me/download" class="app-btn">
-                            <i class="fab fa-apple"></i>
-                            <span>
-                                <small>{{ __('hinspector.download_on') }}</small>
-                                {{ __('hinspector.app_store') }}
-                            </span>
-                        </a>
-                        <a href="https://line.me/download" class="app-btn">
-                            <i class="fab fa-google-play"></i>
-                            <span>
-                                <small>{{ __('hinspector.download_on') }}</small>
-                                {{ __('hinspector.google_play') }}
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="app-image" data-aos="fade-left">
-                    <img src="/img/lineb3.png" alt="{{ __('hinspector.home_butler_app') }}">
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection
