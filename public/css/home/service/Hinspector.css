@@ -1269,12 +1269,18 @@ img {
 
 .hero {
   position: relative;
-  height: 70vh;
+  height: calc(100vh - 188.8px);;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .hero {
+        height: calc(100vh - 100px);
+    }
 }
 
 .hero .bg {
@@ -1345,7 +1351,7 @@ img {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   color: #fff;
   margin-bottom: 20px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -2687,7 +2693,7 @@ p {
 
 @media (max-width: 1200px) {
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .about .container,
@@ -3110,7 +3116,7 @@ p {
 }
 
 .notes-title-vertical {
-  text-align: left; 
+  text-align: left;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -3708,8 +3714,8 @@ p {
     color: #0099cc;
 }
 
-#house-content .web-app h3, 
-#house-content .thermal h3, 
+#house-content .web-app h3,
+#house-content .thermal h3,
 #house-content .drone h3 {
     color: #e91e63;
 }
@@ -3753,36 +3759,36 @@ p {
         padding: 15px;
         border-radius: 10px;
     }
-    
+
     .tab-btn {
         padding: 10px 20px;
         font-size: 16px;
     }
-    
+
     .price-header h2 {
         font-size: 22px;
     }
-    
+
     .table-header, .table-subheader, .table-row {
         font-size: 14px;
     }
-    
+
     .col-size {
         flex: 0.3;
     }
-    
+
     .col-sqm {
         flex: 1;
     }
-    
+
     .info-text {
         font-size: 14px;
     }
-    
+
     .service-features {
         flex-direction: column;
     }
-    
+
     .plus {
         margin: 10px 0;
     }
@@ -3792,30 +3798,30 @@ p {
     .container {
         padding: 10px;
     }
-    
+
     .tab-btn {
         padding: 8px 15px;
         font-size: 14px;
     }
-    
+
     .price-header h2 {
         font-size: 18px;
     }
-    
+
     .table-header, .table-subheader, .table-row {
         font-size: 12px;
     }
-    
+
     .table-header > div, .table-subheader > div, .table-row > div {
         padding: 8px 5px;
     }
-    
+
     .info-number {
         width: 25px;
         height: 25px;
         font-size: 12px;
     }
-    
+
     .info-text {
         font-size: 12px;
     }

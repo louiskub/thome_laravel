@@ -284,6 +284,58 @@
         </div>
     </section>
 
+    {{-- <script>
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+    </script> --}}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const counters = document.querySelectorAll('.counter');
+
+            const updateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = 200;
+                const increment = target / speed;
+
+                const update = () => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                    }
+                    counter.textContent = Math.floor(count);
+                    if (count < target) {
+                        requestAnimationFrame(update);
+                    }
+                };
+                update();
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        updateCounter(counter);
+                        observer.unobserve(counter);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+
     <div class="pricing-body" id="pricing">
         <div class="pricing-container">
             <h1 class="main-title">{{ __('hinspector.pricing_title') }}</h1>

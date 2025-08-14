@@ -721,7 +721,7 @@ header {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 188.8px) !important;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -729,6 +729,13 @@ header {
     text-align: center;
     color: white;
 }
+
+@media screen and (max-width: 1024px) {
+    .hero {
+        height: calc(100vh - 100px) !important;
+    }
+}
+
 
 /* Background Image with Animation */
 .hero-bg {
@@ -882,11 +889,12 @@ header {
     text-align: center;
     width: 100vw;
     height: min(fit-content, 45vh);
+    padding: 3rem 0 !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding: 3rem 20px 5rem;
     border-radius: 0;
     z-index: 1;
     margin-bottom: 30px;

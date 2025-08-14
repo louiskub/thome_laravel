@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: 'MyFont';
-  src: url('/HOMESPECTOR/fonts/FCSound.ttf') format('truetype');
+  src: url('/fonts/FCSound.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -363,7 +363,7 @@ header {
         background-color: white;
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        display: none; 
+        display: none;
     }
 
     .nav-links.active {
@@ -1126,7 +1126,7 @@ header {
     .footer-center,
     .footer-right,
     .footer-help {
-        flex: 1 1 calc(33.33% - 20px); 
+        flex: 1 1 calc(33.33% - 20px);
         max-width: 33.33%;
         text-align: left;
     }
@@ -1582,7 +1582,7 @@ nav {
     display: block;
     animation: floatMove 4s ease-in-out infinite;  /* การเคลื่อนไหวแบบลอยๆ */
   }
-  
+
   /* แอนิเมชันการลอยและขยับเบาๆ */
   @keyframes floatMove {
     0% {
@@ -1598,12 +1598,12 @@ nav {
       opacity: 1; /* โปร่งใสเต็มที่ */
     }
   }
-  
+
   .hero-text {
     text-align: center;
   }
-  
-  
+
+
 .hero-text {
   text-align: center; /* เพื่อให้เนื้อหาตรงกลางทั้งหมด */
 }
@@ -1622,9 +1622,9 @@ nav {
 }
 
 @keyframes bgSlideshow {
-    0%   { background-image: url('/HOMESPECTOR/img/homeb.jpg'); }
-    50%  { background-image: url('/HOMESPECTOR/img/homeb3.jpg'); }
-    100% { background-image: url('/HOMESPECTOR/img/homeb.jpg'); }
+    0%   { background-image: url('/img/homeb.jpg'); }
+    50%  { background-image: url('/img/homeb3.jpg'); }
+    100% { background-image: url('/img/homeb.jpg'); }
 }
 
 .shape {
@@ -1707,7 +1707,7 @@ nav {
     gap: 1.5rem; /* ระยะห่างระหว่างปุ่ม */
     margin-top: 2rem; /* เพิ่มระยะห่างจากเนื้อหาอื่น ๆ */
   }
-  
+
   .hero-buttons .btn {
     display: flex;
     align-items: center; /* จัดให้อักขระกับไอคอนอยู่กลางแนวตั้ง */
@@ -1918,13 +1918,13 @@ nav {
     justify-content: center;
     margin-top: 40px;
   }
-  
+
   .services-cta .btn {
     float: none;
     margin: 0 auto;
     display: inline-block;
   }
-  
+
 
 .service-card {
     background-color: white;

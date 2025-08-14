@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "document_title" => "T. Homeinspector",
+
     "home" => "Home",
 
     "services" => "Services",
@@ -19,10 +21,13 @@ return [
     "projects" => "Projects",
     "privilege" => "Privileges",
 
+    "help" => "Help",
+    "faq" => "FAQs",
     "about" => "About Us",
     "ourstory" => "Our Story",
     "ourteam" => "Our Team",
     "ourteam_professor" => "Experts",
+    "payment_methods" => "Payment Methods",
 
     "joinus" => "Join Us",
     "contact" => "Contact Us",

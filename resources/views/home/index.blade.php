@@ -25,7 +25,6 @@
             '/img/hero-bg1.jpg',
             '/img/hero-bg3.jpg'
         ];
-        let textIndex = 0;
         let bgIndex = 0;
 
         // เริ่มเปลี่ยนข้อความ + รูป
@@ -33,7 +32,6 @@
             updateHeroContent();
 
             setInterval(() => {
-                textIndex = (textIndex + 1) % texts.length;
                 bgIndex = (bgIndex + 1) % bgImages.length;
                 updateHeroContent();
             }, 8000); // เปลี่ยนทุก 8 วินาที
@@ -141,7 +139,7 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <a href="/HOMESPECTOR/Homepage/service1.php">
+                    <a href="/hinspector">
                         <img src="/img/s1.png" alt="T. Home Inspector">
                     </a>
                 </div>
@@ -150,7 +148,7 @@
 
             <div class="service-card">
                 <div class="service-icon">
-                    <a href="/HOMESPECTOR/Homepage/review_interior.php">
+                    <a href="/hinterior">
                         <img src="/img/s2.png" alt="T. Home Interior">
                     </a>
                 </div>
@@ -159,7 +157,7 @@
 
             <div class="service-card">
                 <div class="service-icon">
-                    <a href="/HOMESPECTOR/Homepage/Hconstruction.php">
+                    <a href="/hconstruction">
                         <img src="/img/s3.png" alt="T. Home Construction">
                     </a>
                 </div>
@@ -168,7 +166,7 @@
 
             <div class="service-card">
                 <div class="service-icon">
-                    <a href="/HOMESPECTOR/Homepage/Hbulter.php">
+                    <a href="/hbutler">
                         <img src="/img/s4-bg.png" alt="Home Butler">
                     </a>
                 </div>
@@ -182,10 +180,10 @@
             const servicesSection = document.querySelector(".services");
 
             const bgImages = [
-                "/HOMESPECTOR/img/hero-bg3.jpg",
-                "/HOMESPECTOR/img/inspector-bg.jpg",
-                "/HOMESPECTOR/img/interior-bg.jpg",
-                "/HOMESPECTOR/img/construction-bg.jpg",
+                "/img/hero-bg3.jpg",
+                "/img/inspector-bg.jpg",
+                "/img/interior-bg.jpg",
+                "/img/construction-bg.jpg",
             ];
 
             let index = 0;

@@ -22,7 +22,7 @@
                             <img src="/img/s2.png" alt="T. HOME CONSTRUCTION Logo" class="hero-logo">
                         </div>
                         <h1 class="hero-title">{{ __('hinterior.hero-title') }}</h1>
-                        <div class="hero-description">{{ __('hinterior.hero-description') }}</div>
+                        <div class="hero-description">{!! __('hinterior.hero-description') !!}</div>
                         <a href="/contactus" class="hero-btn">{{ __('hinterior.contact-btn') }}</a>
                     </div>
                 </div>

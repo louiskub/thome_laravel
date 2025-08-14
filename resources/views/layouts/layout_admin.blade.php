@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Test</title>
+    <title>ต. ตรวจบ้าน Admin</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon1.png">
 
     @hasSection('import')
