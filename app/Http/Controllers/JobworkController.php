@@ -11,11 +11,12 @@ class JobworkController extends Controller
 
     public function view_jobwork()
     {
-        $jobs = Jobwork::all();
-        foreach ($jobs as $item) {
-            $item->translation = $item->translation();
-        }
-        return view('home.contact.joinwithus', compact('jobs'));
+        // $jobs = Jobwork::all();
+        // foreach ($jobs as $item) {
+        //     $item->translation = $item->translation();
+        // }
+        // return view('home.contact.joinwithus', compact('jobs'));
+        return view('home.contact.joinwithus');
     }
 
 
