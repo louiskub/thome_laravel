@@ -501,7 +501,7 @@
             </div>
             <div class="trustindex data-widget-id=5ed29ff45a93626df0964d775e4" data-elfsight-app-lazy></div>
 
-            <div class="insight-metrics animate-text delay-3">
+            <div class="insight-metrics animate-text delay-3" style="position: relative;">
                 <div class="metric-box">
                     <span class="metric-number" data-target="{{ $var['dev'] }}"></span><span class="metric-unit">developer</span>
                     <p class="metric-label">ตรวจบ้านมาแล้วกว่า</p>
@@ -518,8 +518,10 @@
                     <span class="metric-number" data-target="{{ $var['satisfaction'] }}"></span><span class="metric-unit">%</span>
                     <p class="metric-label">ความพึงพอใจ</p>
                 </div>
-
-                <div class="metrics-extra" id="stats-container"></div>
+                <div style="position:absolute; right: 0; bottom: 0; color: rgb(50, 50, 50);">
+                    …and still counting
+                </div>
+                {{-- <div class="metrics-extra" id="stats-container"></div> --}}
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
