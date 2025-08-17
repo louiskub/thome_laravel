@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('jobworks', function (Blueprint $table) {
             $table->id();
             $table->enum('location', ['Office', 'Onsite', 'Hybrid', 'Remote', 'Other']);
+            $table->enum('employment_type', ['Full-time', 'Part-time', 'Contract', 'Internship', 'Co-op']);
             $table->timestamps();
         });
     }

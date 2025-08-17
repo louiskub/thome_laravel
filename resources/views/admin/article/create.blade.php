@@ -233,7 +233,7 @@
 
                 reader.onload = async function(e) {
 
-                    await resizeImage.resizeBase64(e.target.result, "small").then((res) => {
+                    await resizeImage.resizeBase64(e.target.result, "med").then((res) => {
                         console.log("resss : ", res);
                         const img = $('<img>').attr('src', res.base64).css('width', '100%');
                         $('#summernote1').summernote('insertNode', img[0]);

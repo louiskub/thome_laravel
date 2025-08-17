@@ -242,12 +242,14 @@
 
         if (scrollTop > lastScrollTop) {
             // เลื่อนลง
-            topBar.classList.add('hidden');
-            navLink.classList.add('sticky');
+            navbarContainer.classList.add('hidden');
+            // topBar.classList.add('hidden');
+            // navLink.classList.add('sticky');
         } else {
             // เลื่อนขึ้น
-            topBar.classList.remove('hidden');
-            navLink.classList.remove('sticky');
+            navbarContainer.classList.remove('hidden');
+            // topBar.classList.remove('hidden');
+            // navLink.classList.remove('sticky');
         }
 
         lastScrollTop = scrollTop;

@@ -57,6 +57,13 @@ class DatabaseSeeder extends Seeder
                 'satisfaction' => '99'
             ]
         ]);
+
+        PageVariable::create([
+            'page' => 'joinwithus',
+            'var' => [
+                'is_intern_open' => true,
+            ]
+        ]);
     }
 
     public function create_user_variable()
@@ -65,6 +72,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'superadmin',
             'username' => 'superadmin',
             'password' => Hash::make('superadmin'),
+        ]);
+
+        User::create([
+            'name' => 'sudoadmin',
+            'username' => 'sudoadmin',
+            'password' => Hash::make('sudoadmin'),
         ]);
     }
 

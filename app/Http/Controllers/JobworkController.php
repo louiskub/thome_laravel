@@ -11,12 +11,12 @@ class JobworkController extends Controller
 
     public function view_jobwork()
     {
-        // $jobs = Jobwork::all();
-        // foreach ($jobs as $item) {
-        //     $item->translation = $item->translation();
-        // }
-        // return view('home.contact.joinwithus', compact('jobs'));
-        return view('home.contact.joinwithus');
+        $jobs = Jobwork::all();
+        foreach ($jobs as $item) {
+            $item->translation = $item->translation();
+        }
+        return view('home.contact.joinwithus', compact('jobs'));
+        // return view('home.contact.joinwithus');
     }
 
 
@@ -41,10 +41,12 @@ class JobworkController extends Controller
             'req-th' => 'required|string',
             'req-en' => 'required|string',
             'loc' => 'required|in:Office,Onsite,Hybrid,Remote,Other',
+            'emp_type' => 'required|in:Full-time,Part-time,Contract,Internship,Co-op',
         ]);
 
         $job = Jobwork::create([
             'location' => $request['loc'],
+            'employment_type' => $request['emp_type'],
         ]);
         $job->translations()->create([
             'locale' => 'th',
@@ -69,10 +71,12 @@ class JobworkController extends Controller
             'req-th' => 'required|string',
             'req-en' => 'required|string',
             'loc' => 'required|in:Office,Onsite,Hybrid,Remote,Other',
+            'emp_type' => 'required|in:Full-time,Part-time,Contract,Internship,Co-op',
         ]);
 
         $job = Jobwork::findOrFail($id);
         $job->location = $request['loc'];
+        $job->employment_type = $request['emp_type'];
         $job->save();
 
         $job->translations()->updateOrCreate(

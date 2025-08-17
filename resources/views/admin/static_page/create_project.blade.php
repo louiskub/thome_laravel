@@ -152,7 +152,7 @@
         import ResizeImage from '/js/component/resize_image.js';
 
         const resizeImage = new ResizeImage();
-        resizeImage.addListener(document.querySelector('input[name="coverPageImg"]'))
+        resizeImage.addListener(document.querySelector('input[name="coverPageImg"]'), "large")
 
         document.querySelectorAll("textarea").forEach((textarea) => {
             textarea.addEventListener("input", () => {
