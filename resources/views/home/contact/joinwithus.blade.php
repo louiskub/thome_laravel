@@ -368,63 +368,234 @@
             line-height: 1.6;
         }
 
+        /* Benefits Section */
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            margin: 0;
+        }
+
+        .benefits-header {
+            background: #3b4cb8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 0 auto 50px;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .benefits-header::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: #3b4cb8;
+            transform: skewX(-15deg);
+        }
+
+        .benefits-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 120px;
+            height: 120px;
+            background: #3b4cb8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 8px 8px 0px #dc3545;
+        }
+
+        .benefit-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
+            stroke: white;
+            stroke-width: 1;
+        }
+
+        .benefit-text {
+            color: #3b4cb8;
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .benefit-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefit-text li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+
+        .benefit-text li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3b4cb8;
+            font-weight: bold;
+        }
+
+        /* Application Process Steps Section */
+        .application-process {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            margin: 0;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .process-title {
+            background: #3b4cb8;
+            color: white;
+            display: inline-block;
+            padding: 20px 60px;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .process-title::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background: #3b4cb8;
+            transform: skewX(-15deg);
+        }
+
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step-item {
+            background: #e8f2ff;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: #3b4cb8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(59, 76, 184, 0.3);
+            border: 4px solid white;
+        }
+
+        .step-content {
+            margin-left: 60px;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .step-date {
+            font-size: 1.1rem;
+            color: #3b4cb8;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .step-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Timeline connector */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 80px;
+            bottom: 80px;
+            width: 3px;
+            background: linear-gradient(to bottom, #3b4cb8, #667eea);
+            border-radius: 2px;
+        }
+
+        .steps-container {
+            position: relative;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .join-us-container {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 80px 20px;
-                min-height: 70vh;
-                gap: 60px;
-            }
-
-            .join-us-content {
-                flex: 1;
-                max-width: 500px;
-            }
-
-            .join-us-content h1 {
-                font-size: 3.5rem;
-                font-weight: bold;
-                color: #2c3e50;
-                margin-bottom: 30px;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-            }
-
-            .join-us-content p {
-                font-size: 1.2rem;
-                color: #666;
-                margin-bottom: 40px;
-                line-height: 1.8;
-            }
-
-            .btn {
-                display: inline-block;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 15px 35px;
-                text-decoration: none;
-                border-radius: 50px;
-                font-weight: bold;
-                font-size: 1.1rem;
-                transition: all 0.3s ease;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-                border: none;
-                cursor: pointer;
-            }
-
-            .btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            }
-
-            .join-us-image {
-                flex: 1;
+                flex-direction: column;
                 text-align: center;
+                gap: 40px;
+                padding: 60px 20px;
             }
 
             .join-us-content h1 {
@@ -450,6 +621,36 @@
             .btn-submit {
                 width: 100%;
             }
+
+            .benefits-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .process-title {
+                font-size: 1.5rem;
+                padding: 15px 40px;
+                letter-spacing: 2px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                left: -10px;
+            }
+
+            .step-content {
+                margin-left: 50px;
+            }
+
+            .step-title {
+                font-size: 1.3rem;
+            }
+
+            .steps-container::before {
+                left: 15px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -458,39 +659,43 @@
             }
 
             .apply-job h1 {
-                font-size: 2.5rem;
-                color: #2c3e50;
-                margin-bottom: 20px;
+                font-size: 2rem;
             }
 
-            .apply-job>p {
+            .process-title {
+                font-size: 1.3rem;
+                padding: 12px 30px;
+                letter-spacing: 1px;
+            }
+
+            .step-item {
+                padding: 25px 20px;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+                left: -8px;
+            }
+
+            .step-content {
+                margin-left: 45px;
+            }
+
+            .step-title {
                 font-size: 1.2rem;
-                color: #666;
-                margin-bottom: 60px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
             }
 
-            .job-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 30px;
-                max-width: 1000px;
-                margin: 0 auto;
+            .step-date {
+                font-size: 1rem;
             }
 
-            .job-listing {
-                background: white;
-                padding: 40px 30px;
-                border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-                border: 1px solid #e9ecef;
+            .step-description {
+                font-size: 0.95rem;
             }
         }
     </style>
-
 
     <!-- Join Us Section -->
     <div class="join-us-container">
@@ -501,6 +706,159 @@
         </div>
         <div class="join-us-image">
             <img src="/img/joinwithus2.png" alt="Join Us Illustration">
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits-section">
+        <div class="benefits-header">
+            BENEFITS
+        </div>
+        <div class="benefits-container">
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V7Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 7L22 7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M7 15H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M7 11H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 11H18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 15H18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="benefit-text">
+                    <ul>
+                        <li>เบี้ยเลี้ยงฝึกงาน</li>
+                        <li>ประกันอุบัติเหตุ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6H20L18.42 16.22C18.2 17.2 17.26 18 16.28 18H7.72C6.74 18 5.8 17.2 5.58 16.22L4 6Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M4 6L2 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M20 6L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 2V6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 10L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 14L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="benefit-text">
+                    <ul>
+                        <li>ประกาศนียบัตร/</li>
+                        <li>หนังสือรับรองการ</li>
+                        <li>ฝึกงาน</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M3 21V19C3 16.7909 4.79086 15 7 15H11C13.2091 15 15 16.7909 15 19V21" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 21V19C21 17.3431 19.6569 16 18 16H17" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="benefit-text">
+                    <ul>
+                        <li>ได้แลกเปลี่ยน</li>
+                        <li>ประสบการณ์กับ</li>
+                        <li>เพื่อนจากต่าง</li>
+                        <li>สถาบันทั่วประเทศ</li>
+                        <li>กว่า 60 คน</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1V5" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 19V23" stroke="currentColor" stroke-width="2"/>
+                        <path d="M4.22 4.22L7.05 7.05" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16.95 16.95L19.78 19.78" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="benefit-text">
+                    <ul>
+                        <li>โอกาสร่วมงานกับเอ</li>
+                        <li>พีบริษัทพัฒนา</li>
+                        <li>อสังหาริมทรัพย์ชั้น</li>
+                        <li>นำเพื่อเรียนรู้</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Process Steps Section -->
+    <div class="application-process">
+        <div class="process-header">
+            <div class="process-title">STEP</div>
+        </div>
+        
+        <div class="steps-container">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">Register</h3>
+                    <div class="step-date">(2 กันยายน – 20 ธันวาคม 2567)</div>
+                    <p class="step-description">
+                        ลงทะเบียนสมัครเข้าร่วมโครงการเพื่อสัมผัสกับประสบการณ์ฝึกงานที่ไม่เหมือนใคร
+                    </p>
+                    <div class="step-highlight">
+                        📝 เปิดรับสมัครแล้ว! สมัครเลยวันนี้
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">คัดเลือกรอบแรก Online Test</h3>
+                    <div class="step-date">(20 ธันวาคม 2567)(09.00-20.00 น.)</div>
+                    <p class="step-description">
+                        ทดสอบความรู้ด้านวิศวกรรมโยธาและความเข้าใจในธุรกิจอสังหาริมทรัพย์เพื่อเฟ้นหาบุคลากรที่มีศักยภาพ
+                    </p>
+                    <div class="step-highlight">
+                        💻 การทดสอบออนไลน์ 11 ชั่วโมง
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">สัมภาษณ์</h3>
+                    <div class="step-date">(มกราคม 2568)</div>
+                    <p class="step-description">
+                        สัมภาษณ์เพื่อประเมินบุคลิกภาพ ทักษะการสื่อสาร และความพร้อมในการเข้าร่วมโครงการฝึกงาน
+                    </p>
+                    <div class="step-highlight">
+                        🎯 รอบสุดท้ายก่อนเข้าโครงการ
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">เริ่มฝึกงาน</h3>
+                    <div class="step-date">(กุมภาพันธ์ - เมษายน 2568)</div>
+                    <p class="step-description">
+                        เริ่มต้นการฝึกงานจริงกับทีมงานมืออาชีพ ได้รับประสบการณ์ตรงจากโครงการจริง และพัฒนาทักษะในสายงานที่สนใจ
+                    </p>
+                    <div class="step-highlight">
+                        🚀 เริ่มต้นการเรียนรู้และพัฒนาตนเอง
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -647,20 +1005,9 @@
         };
 
         // Job positions data
-
-        // <div class="job-listing">
-        //     <h2>{{ __('joinus.civil_engineer_title') }}</h2>
-        //     <p><strong>{{ __('joinus.civil_engineer_location') }}</strong></p>
-        //     <p><strong>{{ __('joinus.civil_engineer_requirements') }}</strong></p>
-        //     <button class="apply-btn" onclick="openJobModal('civil-engineer')">{{ __('joinus.apply_now') }}</button>
-        // </div>
         const jobPositions = {};
         const jj = document.querySelectorAll('.job-listing');
         jj.forEach(job => {
-            // jobPositions[job.translation.position] = {
-            //     title: job.translation.position,
-            //     position: job.translation.position
-            // }
             let localPosition = job.querySelector('h2').textContent.trim();
             jobPositions[localPosition] = {
                 title: localPosition,
@@ -773,23 +1120,20 @@
             }
 
             // Show loading state
-            function showLoading() {
-                const submitBtn = document.getElementById("submitBtn")
-                const loadingSpinner = document.getElementById("loadingSpinner")
-                const submitText = document.getElementById("submitText")
+            showLoading()
 
-                // Prepare email template parameters
-                const templateParams = {
-                    to_email: 'ananthaxb@gmail.com',
-                    from_name: data.fullName,
-                    from_email: data.email,
-                    phone: data.phone,
-                    position: data.position,
-                    experience: data.experience || localizedText.notSpecified,
-                    education: data.education || localizedText.notSpecified,
-                    cover_letter: data.coverLetter || localizedText.noCoverLetter,
-                    subject: `${localizedText.emailSubject} ${data.position} - ${data.fullName}`,
-                    message: `${localizedText.applicantDetails}:
+            // Prepare email template parameters
+            const templateParams = {
+                to_email: 'ananthaxb@gmail.com',
+                from_name: data.fullName,
+                from_email: data.email,
+                phone: data.phone,
+                position: data.position,
+                experience: data.experience || localizedText.notSpecified,
+                education: data.education || localizedText.notSpecified,
+                cover_letter: data.coverLetter || localizedText.noCoverLetter,
+                subject: `${localizedText.emailSubject} ${data.position} - ${data.fullName}`,
+                message: `${localizedText.applicantDetails}:
 - ${localizedText.fullNameLabel}: ${data.fullName}
 - ${localizedText.emailLabel}: ${data.email}
 - ${localizedText.phoneLabel}: ${data.phone}
@@ -801,24 +1145,22 @@ ${localizedText.coverLetterSection}:
 ${data.coverLetter || localizedText.noCoverLetter}
 
 ${localizedText.contactApplicant} ${data.email} or ${data.phone} ${localizedText.forFurtherCommunication}`.trim()
-                }
-
-                // Send email using EmailJS
-                emailjs.send('Thome', 'template_shjqlbp', templateParams)
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        resetSubmitButton()
-                        closeJobModal()
-                        document.getElementById("successMessage").style.display = "block"
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        resetSubmitButton()
-                        showError(
-                            `${localizedText.errorEmailSending} ${error.text || error.message || 'Unknown error'}`
-                        )
-                    });
             }
 
+            // Send email using EmailJS
+            emailjs.send('Thome', 'template_shjqlbp', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    resetSubmitButton()
+                    closeJobModal()
+                    document.getElementById("successMessage").style.display = "block"
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    resetSubmitButton()
+                    showError(
+                        `${localizedText.errorEmailSending} ${error.text || error.message || 'Unknown error'}`
+                    )
+                });
         })
 
         // Close modal when clicking outside
@@ -873,29 +1215,33 @@ ${localizedText.contactApplicant} ${data.email} or ${data.phone} ${localizedText
                     if (this.value.trim() !== "") {
                         this.style.borderColor = "#e9ecef"
                     }
-
-                    if (errorMessage.style.display === "block") {
-                        closeErrorMessage()
-                    }
                 })
             })
 
-            // Form validation on input
-            inputs.forEach((input) => {
-                input.addEventListener("blur", function() {
-                    if (this.value.trim() === "") {
-                        this.style.borderColor = "#dc3545"
-                    } else {
-                        this.style.borderColor = "#e9ecef"
-                    }
-                })
+            // Add scroll animation for steps
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-                input.addEventListener("input", function() {
-                    if (this.value.trim() !== "") {
-                        this.style.borderColor = "#e9ecef"
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 200);
                     }
-                })
-            })
+                });
+            }, observerOptions);
+
+            // Observe step items
+            document.querySelectorAll('.step-item').forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px)';
+                step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(step);
+            });
         })
     </script>
 @endsection
