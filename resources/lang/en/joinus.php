@@ -79,4 +79,111 @@ return [
     "not_specified" => "Not specified",
     "contact_applicant" => "Please contact the applicant at",
     "for_further_communication" => "for further communication.",
+
+    'hero_title' => 'Join Us',
+    'hero_subtitle' => 'Be part of our dedicated team committed to creating a better future',
+    'hero_button' => 'Contact Us',
+
+    // Benefits Section
+    'benefits_title' => 'BENEFITS',
+    'benefit_1' => [
+        'Internship Allowance',
+        'Accident Insurance'
+    ],
+    'benefit_2' => [
+        'Certificate/',
+        'Internship',
+        'Completion Letter'
+    ],
+    'benefit_3' => [
+        'Exchange experiences',
+        'with friends from',
+        'different institutions',
+        'nationwide',
+        'over 60 people'
+    ],
+    'benefit_4' => [
+        'Opportunity to work with',
+        'leading real estate',
+        'development companies',
+        'for learning'
+    ],
+
+    // Application Process Steps
+    'steps_title' => 'STEP',
+    
+    'step_1_title' => 'Register',
+    'step_1_date' => '(September 2 – December 20, 2024)',
+    'step_1_description' => 'Register to join the program and experience a unique internship opportunity',
+    'step_1_highlight' => '📝 Now Open for Applications! Apply Today',
+
+    'step_2_title' => 'First Round Selection Online Test',
+    'step_2_date' => '(December 20, 2024)(09:00-20:00)',
+    'step_2_description' => 'Test knowledge in civil engineering and understanding of real estate business to find potential candidates',
+    'step_2_highlight' => '💻 11-hour Online Testing',
+
+    'step_3_title' => 'Interview',
+    'step_3_date' => '(January 2025)',
+    'step_3_description' => 'Interview to assess personality, communication skills, and readiness to participate in the internship program',
+    'step_3_highlight' => '🎯 Final Round Before Joining the Program',
+
+    'step_4_title' => 'Start Internship',
+    'step_4_date' => '(February - April 2025)',
+    'step_4_description' => 'Begin real internship with professional teams, gain direct experience from actual projects, and develop skills in your field of interest',
+    'step_4_highlight' => '🚀 Start Learning and Self-Development',
+
+    // Job Listings
+    'hiring_title' => 'We\'re Hiring',
+    'hiring_subtitle' => 'Join our team and grow together',
+    'apply_now' => 'Apply Now',
+
+    // Modal
+    'apply_for_position' => 'Apply for Position',
+    'full_name_label' => 'Full Name',
+    'email_label' => 'Email',
+    'phone_label' => 'Phone Number',
+    'position_label' => 'Position',
+    'experience_label' => 'Work Experience',
+    'education_label' => 'Education',
+    'cover_letter_label' => 'Cover Letter',
+    'cover_letter_placeholder' => 'Tell us why you\'re interested in this position...',
+    
+    'select_experience' => 'Select Experience',
+    'experience_0_1' => '0-1 years',
+    'experience_1_3' => '1-3 years',
+    'experience_3_5' => '3-5 years',
+    'experience_5_10' => '5-10 years',
+    'experience_10_plus' => '10+ years',
+
+    'select_education' => 'Select Education Level',
+    'education_high_school' => 'High School',
+    'education_diploma' => 'Diploma',
+    'education_bachelor' => 'Bachelor\'s Degree',
+    'education_master' => 'Master\'s Degree',
+    'education_phd' => 'PhD',
+
+    'cancel_button' => 'Cancel',
+    'submit_button' => 'Submit Application',
+    'submitting' => 'Submitting...',
+
+    // Messages
+    'success_title' => 'Application Submitted Successfully!',
+    'success_message' => 'We have received your application. We will contact you within 3-5 business days.',
+    'error_title' => 'Error Occurred',
+    'error_message' => 'Unable to submit application. Please try again.',
+    'close_button' => 'Close',
+
+    'error_required_fields' => 'Please fill in all required fields',
+    'error_invalid_email' => 'Please enter a valid email address',
+    'error_email_sending' => 'Error sending email:',
+
+    // Email
+    'email_subject' => 'Job Application for Position',
+    'applicant_details' => 'Applicant Details',
+    'cover_letter_section' => 'Cover Letter',
+    'no_cover_letter' => 'Not specified',
+    'not_specified' => 'Not specified',
+    'contact_applicant' => 'Contact applicant at',
+    'for_further_communication' => 'for further communication',
+    
 ];

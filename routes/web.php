@@ -116,6 +116,16 @@ Route::get('/ourstory', function () {
     return view('home.aboutus.ourstory');
 });
 
+Route::get('/projects', function () {
+    return view('home.aboutus.projects');
+});
+
+Route::get('/privacy', function () {
+    return view('home.aboutus.privacy');
+});
+
+
+
 
 Route::get('/admin/compare', [HouseController::class, 'adminView']);
 

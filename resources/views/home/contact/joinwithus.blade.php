@@ -712,7 +712,7 @@
     <!-- Benefits Section -->
     <div class="benefits-section">
         <div class="benefits-header">
-            BENEFITS
+            {{ __('joinus.benefits_title') }}
         </div>
         <div class="benefits-container">
             <div class="benefit-item">
@@ -728,8 +728,9 @@
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        <li>เบี้ยเลี้ยงฝึกงาน</li>
-                        <li>ประกันอุบัติเหตุ</li>
+                        @foreach(__('joinus.benefit_1') as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -747,9 +748,9 @@
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        <li>ประกาศนียบัตร/</li>
-                        <li>หนังสือรับรองการ</li>
-                        <li>ฝึกงาน</li>
+                        @foreach(__('joinus.benefit_2') as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -765,11 +766,9 @@
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        <li>ได้แลกเปลี่ยน</li>
-                        <li>ประสบการณ์กับ</li>
-                        <li>เพื่อนจากต่าง</li>
-                        <li>สถาบันทั่วประเทศ</li>
-                        <li>กว่า 60 คน</li>
+                        @foreach(__('joinus.benefit_3') as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -787,10 +786,9 @@
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        <li>โอกาสร่วมงานกับเอ</li>
-                        <li>พีบริษัทพัฒนา</li>
-                        <li>อสังหาริมทรัพย์ชั้น</li>
-                        <li>นำเพื่อเรียนรู้</li>
+                        @foreach(__('joinus.benefit_4') as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -800,20 +798,20 @@
     <!-- Application Process Steps Section -->
     <div class="application-process">
         <div class="process-header">
-            <div class="process-title">STEP</div>
+            <div class="process-title">{{ __('joinus.steps_title') }}</div>
         </div>
         
         <div class="steps-container">
             <div class="step-item">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h3 class="step-title">Register</h3>
-                    <div class="step-date">(2 กันยายน – 20 ธันวาคม 2567)</div>
+                    <h3 class="step-title">{{ __('joinus.step_1_title') }}</h3>
+                    <div class="step-date">{{ __('joinus.step_1_date') }}</div>
                     <p class="step-description">
-                        ลงทะเบียนสมัครเข้าร่วมโครงการเพื่อสัมผัสกับประสบการณ์ฝึกงานที่ไม่เหมือนใคร
+                        {{ __('joinus.step_1_description') }}
                     </p>
                     <div class="step-highlight">
-                        📝 เปิดรับสมัครแล้ว! สมัครเลยวันนี้
+                        {{ __('joinus.step_1_highlight') }}
                     </div>
                 </div>
             </div>
@@ -821,13 +819,13 @@
             <div class="step-item">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h3 class="step-title">คัดเลือกรอบแรก Online Test</h3>
-                    <div class="step-date">(20 ธันวาคม 2567)(09.00-20.00 น.)</div>
+                    <h3 class="step-title">{{ __('joinus.step_2_title') }}</h3>
+                    <div class="step-date">{{ __('joinus.step_2_date') }}</div>
                     <p class="step-description">
-                        ทดสอบความรู้ด้านวิศวกรรมโยธาและความเข้าใจในธุรกิจอสังหาริมทรัพย์เพื่อเฟ้นหาบุคลากรที่มีศักยภาพ
+                        {{ __('joinus.step_2_description') }}
                     </p>
                     <div class="step-highlight">
-                        💻 การทดสอบออนไลน์ 11 ชั่วโมง
+                        {{ __('joinus.step_2_highlight') }}
                     </div>
                 </div>
             </div>
@@ -835,13 +833,13 @@
             <div class="step-item">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3 class="step-title">สัมภาษณ์</h3>
-                    <div class="step-date">(มกราคม 2568)</div>
+                    <h3 class="step-title">{{ __('joinus.step_3_title') }}</h3>
+                    <div class="step-date">{{ __('joinus.step_3_date') }}</div>
                     <p class="step-description">
-                        สัมภาษณ์เพื่อประเมินบุคลิกภาพ ทักษะการสื่อสาร และความพร้อมในการเข้าร่วมโครงการฝึกงาน
+                        {{ __('joinus.step_3_description') }}
                     </p>
                     <div class="step-highlight">
-                        🎯 รอบสุดท้ายก่อนเข้าโครงการ
+                        {{ __('joinus.step_3_highlight') }}
                     </div>
                 </div>
             </div>
@@ -849,13 +847,13 @@
             <div class="step-item">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <h3 class="step-title">เริ่มฝึกงาน</h3>
-                    <div class="step-date">(กุมภาพันธ์ - เมษายน 2568)</div>
+                    <h3 class="step-title">{{ __('joinus.step_4_title') }}</h3>
+                    <div class="step-date">{{ __('joinus.step_4_date') }}</div>
                     <p class="step-description">
-                        เริ่มต้นการฝึกงานจริงกับทีมงานมืออาชีพ ได้รับประสบการณ์ตรงจากโครงการจริง และพัฒนาทักษะในสายงานที่สนใจ
+                        {{ __('joinus.step_4_description') }}
                     </p>
                     <div class="step-highlight">
-                        🚀 เริ่มต้นการเรียนรู้และพัฒนาตนเอง
+                        {{ __('joinus.step_4_highlight') }}
                     </div>
                 </div>
             </div>

@@ -290,7 +290,7 @@
         <h2 class="projects-title">
             {{__('index.projects-title')}}
         </h2>
-        <a href="/projects_media.html" class="btn btn-firstall">{{__('index.projects-see-all')}}</a>
+        <a href="/projects" class="btn btn-firstall">{{__('index.projects-see-all')}}</a>
         <div class="projects-grid" id="project-cards">
             </div>
     </section>

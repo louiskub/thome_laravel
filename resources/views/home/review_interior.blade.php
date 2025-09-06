@@ -71,7 +71,7 @@
                         <li><a href="/Homepage/service.php" data-translate="nav.services">บริการ</a></li>
                         <li><a href="/Homepage/promotion.php" data-translate="nav.promotion">สิทธิพิเศษ</a>
                         </li>
-                        <li><a href="/Homepage/projects_media.html" data-translate="nav.projects">ผลงาน</a>
+                        <li><a href="/Homepage/projects.php" data-translate="nav.projects">ผลงาน</a>
                         </li>
 
                         <!-- Dropdown Menu -->
@@ -163,7 +163,7 @@
                                 <li><a href="/Homepage/service.php" data-translate="nav.services">บริการ</a></li>
                                 <li><a href="/Homepage/promotion.php" data-translate="nav.promotion">สิทธิพิเศษ</a>
                                 </li>
-                                <li><a href="/Homepage/projects_media.html" data-translate="nav.projects">ผลงาน</a>
+                                <li><a href="/Homepage/projects.php" data-translate="nav.projects">ผลงาน</a>
                                 </li>
 
                                 <!-- Dropdown Menu -->
@@ -225,7 +225,7 @@
                         <!-- Other Sections -->
                         <div class="menu-section">
                             <h3><a href="/Homepage/Contactus.php" class="menu-link">Contact</a></h3>
-                            <h3><a href="/Homepage/projects_media.html" class="menu-link">Projects</a></h3>
+                            <h3><a href="/Homepage/projects.php" class="menu-link">Projects</a></h3>
                             <h3><a href="/Homepage/joinwithus.php" class="menu-link">joinwithus</a></h3>
                         </div>
                     </div>
