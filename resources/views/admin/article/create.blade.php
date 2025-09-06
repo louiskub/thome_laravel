@@ -28,7 +28,7 @@
                         placeholder="กรอกชื่อบทความภาษาไทย" required>
                 </div>
                 <div class="cover-image-input">
-                    <label for="cover">รูปภาพหน้าปก</label>
+                    <label for="cover">รูปภาพหน้าปก 16:9</label>
                     <div>
                         <input type="file" id="cover" accept="image/*" class="articleCoverImage thai form-control"
                             required>
@@ -233,7 +233,7 @@
 
                 reader.onload = async function(e) {
 
-                    await resizeImage.resizeBase64(e.target.result, "small").then((res) => {
+                    await resizeImage.resizeBase64(e.target.result, "med").then((res) => {
                         console.log("resss : ", res);
                         const img = $('<img>').attr('src', res.base64).css('width', '100%');
                         $('#summernote1').summernote('insertNode', img[0]);

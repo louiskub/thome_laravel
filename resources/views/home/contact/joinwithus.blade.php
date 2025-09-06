@@ -800,7 +800,7 @@
         <div class="process-header">
             <div class="process-title">{{ __('joinus.steps_title') }}</div>
         </div>
-        
+
         <div class="steps-container">
             <div class="step-item">
                 <div class="step-number">1</div>
@@ -865,15 +865,15 @@
         <h1>{{ __('joinus.hiring_title') }}</h1>
         <p>{{ __('joinus.hiring_subtitle') }}</p>
         <div class="job-container">
-            {{-- @foreach ($jobs as $job)
+            @foreach ($jobs as $job)
                 <div class="job-listing">
                     <h2>{{ $job->translation->position }}</h2>
-
+                    <p><strong>Employment Type:</strong> {{ $job->employment_type }}</p>
                     <p><strong>Location:</strong> {{ $job->location }}</p>
                     <p><strong>Requirements:</strong>{{ $job->translation->requirements }} </p>
                     <button class="apply-btn" onclick="openJobModal('{{ $job->translation->position }}')">Apply Now</button>
                 </div>
-            @endforeach --}}
+            @endforeach
 
             {{-- <div class="job-listing">
                 <h2>{{ __('joinus.admin_title') }}</h2>
@@ -1004,9 +1004,11 @@
 
         // Job positions data
         const jobPositions = {};
-        const jj = document.querySelectorAll('.job-listing');
+        // const jj = document.querySelectorAll('.job-listing');
+        const jj = @json($jobs);
         jj.forEach(job => {
-            let localPosition = job.querySelector('h2').textContent.trim();
+            // let localPosition = job.querySelector('h2').textContent.trim();
+            let localPosition = job.translation.position;
             jobPositions[localPosition] = {
                 title: localPosition,
                 position: localPosition,

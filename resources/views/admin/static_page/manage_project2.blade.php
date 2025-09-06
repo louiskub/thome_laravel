@@ -78,7 +78,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group mb-3">
-                                <label>รูปภาพหน้าปก</label>
+                                <label>รูปภาพหน้าปก 16:9</label>
                                 <input type="file" accept="image/*" name="coverPageImg" class="form-control mb-2"
                                     placeholder="" required>
                             </div>
@@ -107,7 +107,8 @@
                                     <label class="btn btn-outline-secondary" for="inputFile">
                                         <span class="fa fa-plus"></span>
                                         <span>เพิ่มรูปภาพ</span>
-                                        <input id="inputFile" class="file-upload multiple-upload" type="file" accept="image/*" style="display: none;"/>
+                                        <input id="inputFile" class="file-upload multiple-upload" type="file"
+                                            accept="image/*" style="display: none;" />
                                     </label>
                                 </div>
                             </div>
@@ -123,7 +124,5 @@
     </div>
 
     <script></script>
-    <script src="/js/admin/project/manage.js">
-
-    </script>
+    <script src="/js/admin/project/manage.js"></script>
 @endsection

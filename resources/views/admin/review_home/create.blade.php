@@ -28,7 +28,7 @@
                         placeholder="กรอกชื่อรีวิวบ้านภาษาไทย" required>
                 </div>
                 <div class="cover-image-input">
-                    <label for="cover">รูปภาพหน้าปก</label>
+                    <label for="cover">รูปภาพหน้าปก 16:9</label>
                     <div>
                         <input type="file" id="cover" accept="image/*" class="articleCoverImage thai form-control"
                             required>

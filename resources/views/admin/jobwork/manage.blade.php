@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/css/admin/faq/manage.css">
     <style>
         .modal-content {
-            top: 10%;
+            top: 5%;
         }
     </style>
     <div class="container">
@@ -40,15 +40,17 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th class="col-2">ประเภท</th>
                                 <th class="col-2">ตำแหน่ง</th>
-                                <th class="col-5">requirement</th>
-                                <th class="col-3">ที่ทำงาน</th>
+                                <th class="col-4">requirement</th>
+                                <th class="col-2">ที่ทำงาน</th>
                                 <th class="col-2">การจัดการ</th>
                             </tr>
                         </thead>
                         <tbody id="articles-list">
                             @foreach ($jobs as $job)
                                 <tr de-id="{{ $job->id }}">
+                                    <td>{{ $job->translation->employment_type }}</td>
                                     <td>{{ $job->translation->position }}</td>
                                     <td>{{ $job->translation->requirements }}</td>
                                     <td>{{ $job->translation->location }}</td>
@@ -81,6 +83,16 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <div class="form-group mb-3">
+                                <label for="">ประเภทการจ้างงาน</label>
+                                <select name="emp_type" id="" class="form-select">
+                                    <option value="Full-time">Full-time</option>
+                                    <option value="Part-time">Part-time</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Internship">นักศึกษาฝึกงาน</option>
+                                    <option value="Co-op">นักศึกษาฝึกงาน สหกิจศึกษา</option>
+                                </select>
+                            </div>
                             <div class="form-group mb-3">
                                 <label for="">ที่ทำงาน</label>
                                 <select name="loc" id="" class="form-select">
@@ -133,6 +145,16 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <div class="form-group mb-3">
+                                <label for="">ประเภทการจ้างงาน</label>
+                                <select name="emp_type" id="" class="form-select">
+                                    <option value="Full-time">Full-time</option>
+                                    <option value="Part-time">Part-time</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Internship">นักศึกษาฝึกงาน</option>
+                                    <option value="Co-op">นักศึกษาฝึกงาน สหกิจศึกษา</option>
+                                </select>
+                            </div>
                             <div class="form-group mb-3">
                                 <label for="">ที่ทำงาน</label>
                                 <select name="loc" id="" class="form-select">
@@ -193,7 +215,8 @@
                     editBackdrop.querySelector('form input[name="pos-en"]').value = job.en.position;
                     editBackdrop.querySelector('form input[name="req-th"]').value = job.th.requirements;
                     editBackdrop.querySelector('form input[name="req-en"]').value = job.en.requirements;
-                    editBackdrop.querySelector('form select').value = job.location;
+                    editBackdrop.querySelectorAll('form select')[1].value = job.location;
+                    editBackdrop.querySelectorAll('form select')[0].value = job.employment_type;
 
                     editBackdrop.querySelector('form').action = `/admin/work/${parent.getAttribute('de-id')}`;
                     // console.log(editBackdrop.querySelector('form input[name="id"]').value)

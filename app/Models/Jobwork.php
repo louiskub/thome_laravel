@@ -25,6 +25,7 @@ class Jobwork extends Model
             $result = $this->translations->first();
         }
         $result->location = $this->location;
+        $result->employment_type = $this->employment_type;
         return $result;
     }
 }

@@ -222,7 +222,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 2rem 1rem;
+    padding: 2rem 120px;
 }
 
 
@@ -2138,8 +2138,9 @@ button.next-btn:hover {
 }
 
 .main-btn button {
-    background-color: #ffe600;
-    color: rgb(1, 35, 107);
+    /* background-color: #ffe600; */
+    /* color: rgb(1, 35, 107); */
+    background-color: #1c4587 !important;
     border: none;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -2148,6 +2149,10 @@ button.next-btn:hover {
     font-weight: bold;
     transition: background-color 0.3s;
     text-decoration: none;
+}
+
+.main-btn button a {
+    color: #ffff00 !important;
 }
 
 .main-btn button:hover {

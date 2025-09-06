@@ -12,7 +12,8 @@
                 @else
                     สร้าง
                 @endif
-                project หน้า <span>{{ $pageName }}</span></h1>
+                project หน้า <span>{{ $pageName }}</span>
+            </h1>
         </header>
 
         <div class="body">
@@ -47,7 +48,7 @@
 
                     </div>
                     <div class="form-group mb-3 cover-image-input" style="flex: 1;">
-                        <label>รูปภาพหน้าปก</label>
+                        <label>รูปภาพหน้าปก 16:9</label>
                         <div class="d-flex gap-3">
                             <input type="file" accept="image/*" name="coverPageImg" class="form-control mb-2"
                                 placeholder="" required style="flex: 1;">
@@ -151,7 +152,7 @@
         import ResizeImage from '/js/component/resize_image.js';
 
         const resizeImage = new ResizeImage();
-        resizeImage.addListener(document.querySelector('input[name="coverPageImg"]'))
+        resizeImage.addListener(document.querySelector('input[name="coverPageImg"]'), "large")
 
         document.querySelectorAll("textarea").forEach((textarea) => {
             textarea.addEventListener("input", () => {
