@@ -284,58 +284,6 @@
         </div>
     </section>
 
-    {{-- <script>
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
-    </script> --}}
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const counters = document.querySelectorAll('.counter');
-
-            const updateCounter = (counter) => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const speed = 200;
-                const increment = target / speed;
-
-                const update = () => {
-                    count += increment;
-                    if (count >= target) {
-                        count = target;
-                    }
-                    counter.textContent = Math.floor(count);
-                    if (count < target) {
-                        requestAnimationFrame(update);
-                    }
-                };
-                update();
-            };
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        updateCounter(counter);
-                        observer.unobserve(counter);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            counters.forEach(counter => {
-                observer.observe(counter);
-            });
-        });
-    </script>
-
     <div class="pricing-body" id="pricing">
         <div class="pricing-container">
             <h1 class="main-title">{{ __('hinspector.pricing_title') }}</h1>
@@ -558,51 +506,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Promotional Banner - เฉพาะในแท็บ House -->
-                <div class="promo-banner">
-                    <div class="promo-content">
-                        <div class="promo-icons">
-                            <div class="promo-item">
-                                <div class="icon-box">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H3V4h18v10z"/>
-                                    </svg>
-                                </div>
-                                <span>{{ __('hinspector.promo_web_app') }}</span>
-                            </div>
-
-                            <div class="plus-sign">+</div>
-
-                            <div class="promo-item">
-                                <div class="icon-box">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <span>{{ __('hinspector.promo_drone_infrared') }}</span>
-                            </div>
-
-                            <div class="plus-sign">+</div>
-
-                            <div class="promo-item">
-                                <div class="icon-box">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-                                    </svg>
-                                </div>
-                                <span>{{ __('hinspector.promo_thermal_imaging') }}</span>
-                            </div>
-                        </div>
-
-                        <div class="promo-text">
-                            <div class="text-line">{{ __('hinspector.promo_text_1') }}</div>
-                            <div class="text-line">{{ __('hinspector.promo_text_2') }}</div>
-                            <div class="text-line">{{ __('hinspector.promo_text_3') }}</div>
-                            <div class="highlight-text">{{ __('hinspector.promo_highlight') }}</div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Condo Content -->
@@ -791,6 +694,51 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Promotional Banner - แสดงในทั้งสองแท็บ -->
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <div class="promo-icons">
+                        <div class="promo-item">
+                            <div class="icon-box">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H3V4h18v10z"/>
+                                </svg>
+                            </div>
+                            <span>{{ __('hinspector.promo_web_app') }}</span>
+                        </div>
+
+                        <div class="plus-sign">+</div>
+
+                        <div class="promo-item">
+                            <div class="icon-box">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span>{{ __('hinspector.promo_drone_infrared') }}</span>
+                        </div>
+
+                        <div class="plus-sign">+</div>
+
+                        <div class="promo-item">
+                            <div class="icon-box">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                                </svg>
+                            </div>
+                            <span>{{ __('hinspector.promo_thermal_imaging') }}</span>
+                        </div>
+                    </div>
+
+                    <div class="promo-text">
+                        <div class="text-line">{{ __('hinspector.promo_text_1') }}</div>
+                        <div class="text-line">{{ __('hinspector.promo_text_2') }}</div>
+                        <div class="text-line">{{ __('hinspector.promo_text_3') }}</div>
+                        <div class="highlight-text">{{ __('hinspector.promo_highlight') }}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -827,7 +775,6 @@
                 <div class="sample-item">
                     <div class="sample-icon pdf-icon" style="background-color: #33A8FF;"></div>
                     <p>{{ __('hinspector.condo_report') }}</p>
-                    <a href="https://www.dropbox.com/scl/fi/o8ogutlr4wrq1loahq1zq/2025.  }}</p>
                     <a href="https://www.dropbox.com/scl/fi/o8ogutlr4wrq1loahq1zq/2025.pdf?rlkey=7z6nht3yv9bt6vborrryuloax&st=ksvc191d&dl=1" download target="_blank" class="download-link">{{ __('hinspector.download_pdf') }}</a>
                 </div>
             </div>
@@ -1107,6 +1054,18 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
+        }
+
+        /* Condo tab hover effect - เปลี่ยนเป็นสีฟ้า */
+        .tab-btn[data-tab="condo"]:hover {
+            background-color: #3b82f6 !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .tab-btn[data-tab="condo"]:hover::before {
+            background-color: #3b82f6;
         }
         `;
         document.head.appendChild(style);
