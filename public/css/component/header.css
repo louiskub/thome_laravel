@@ -302,7 +302,7 @@ header {
 
 
 @media (max-width: 1024px) {
-    .top-bar.hidden {
+    .navbar-container.hidden {
         transform: none !important;
         /* เลื่อน Top-bar ขึ้นไปซ่อนเมื่อเลื่อนลง */
     }

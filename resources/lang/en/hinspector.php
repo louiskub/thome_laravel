@@ -26,7 +26,6 @@ Work exclusively for the buyer—not the developer or contractor—giving you a 
     "service_feature_1" => "Inspection by professional engineers",
     "service_feature_2" => "Use of modern inspection tools",
     "service_feature_3" => "Detailed reports with illustrations",
-    "service_feature_4" => "Recommendations for problem solving",
 
     // Inspection Scope
     "inspection_scope_title" => "Our Scope Of Inspection ",
@@ -88,8 +87,8 @@ Work exclusively for the buyer—not the developer or contractor—giving you a 
 
     // Promo Banner
     "promo_web_app" => "T.HOME WEB APPLICATION",
-    "promo_drone_infrared" => "Drone + Infrared Camera",
-    "promo_thermal_imaging" => "Thermal Imaging",
+    "promo_drone_infrared" => "Drone Inspection",
+    "promo_thermal_imaging" => "Thermal Camera",
     "promo_text_1" => "All drone flight technology for construction inspection",
     "promo_text_2" => "and Thermal Imaging Camera",
     "promo_text_3" => "for detecting leaks in construction work where positions cannot be found",

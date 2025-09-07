@@ -1,702 +1,7 @@
 @extends('layouts.layout_home')
 @section('content')
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <style>
-        /* Join Us Section */
-        .join-us-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            min-height: 70vh;
-            gap: 60px;
-        }
-
-        .join-us-content {
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .join-us-content h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .join-us-content p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .join-us-image {
-            flex: 1;
-            text-align: center;
-        }
-
-        .join-us-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Job Listings Section */
-        .apply-job {
-            background: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .apply-job h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        .apply-job>p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .job-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .job-listing {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .job-listing:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .job-listing h2 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        .job-listing p {
-            margin-bottom: 15px;
-            color: #666;
-            text-align: left;
-        }
-
-        .job-listing strong {
-            color: #333;
-        }
-
-        .apply-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            font-size: 1rem;
-        }
-
-        .apply-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 2% auto;
-            padding: 40px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .close {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #999;
-            transition: color 0.3s ease;
-        }
-
-        .close:hover {
-            color: #333;
-        }
-
-        #modalTitle {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-group small {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: block;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: flex-end;
-            margin-top: 30px;
-        }
-
-        .btn-cancel {
-            background: #6c757d;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-cancel:hover {
-            background: #5a6268;
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Loading Spinner */
-        .loading-spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 10px;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .success-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 40px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .success-content h3 {
-            color: #28a745;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .success-content p {
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Error Message */
-        .error-message {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .error-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 40px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .error-content h3 {
-            color: #dc3545;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .error-content p {
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            background: #f8f9fa;
-            padding: 60px 20px;
-            margin: 0;
-        }
-
-        .benefits-header {
-            background: #3b4cb8;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin: 0 auto 50px;
-            max-width: 400px;
-            position: relative;
-        }
-
-        .benefits-header::after {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: 0;
-            bottom: 0;
-            width: 20px;
-            background: #3b4cb8;
-            transform: skewX(-15deg);
-        }
-
-        .benefits-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            padding: 0 20px;
-        }
-
-        .benefit-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .benefit-icon {
-            width: 120px;
-            height: 120px;
-            background: #3b4cb8;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            position: relative;
-            box-shadow: 8px 8px 0px #dc3545;
-        }
-
-        .benefit-icon svg {
-            width: 60px;
-            height: 60px;
-            fill: white;
-            stroke: white;
-            stroke-width: 1;
-        }
-
-        .benefit-text {
-            color: #3b4cb8;
-            font-weight: bold;
-            font-size: 1.1rem;
-            line-height: 1.4;
-        }
-
-        .benefit-text ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .benefit-text li {
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 5px;
-        }
-
-        .benefit-text li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #3b4cb8;
-            font-weight: bold;
-        }
-
-        /* Application Process Steps Section */
-        .application-process {
-            background: #f8f9fa;
-            padding: 80px 20px;
-            margin: 0;
-        }
-
-        .process-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .process-title {
-            background: #3b4cb8;
-            color: white;
-            display: inline-block;
-            padding: 20px 60px;
-            font-size: 2rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .process-title::after {
-            content: '';
-            position: absolute;
-            right: -15px;
-            top: 0;
-            bottom: 0;
-            width: 30px;
-            background: #3b4cb8;
-            transform: skewX(-15deg);
-        }
-
-        .steps-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .step-item {
-            background: #e8f2ff;
-            border-radius: 15px;
-            padding: 30px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .step-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .step-number {
-            position: absolute;
-            left: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 60px;
-            height: 60px;
-            background: #3b4cb8;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(59, 76, 184, 0.3);
-            border: 4px solid white;
-        }
-
-        .step-content {
-            margin-left: 60px;
-        }
-
-        .step-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .step-date {
-            font-size: 1.1rem;
-            color: #3b4cb8;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .step-description {
-            color: #666;
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        .step-highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin-top: 15px;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        /* Timeline connector */
-        .steps-container::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 80px;
-            bottom: 80px;
-            width: 3px;
-            background: linear-gradient(to bottom, #3b4cb8, #667eea);
-            border-radius: 2px;
-        }
-
-        .steps-container {
-            position: relative;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .join-us-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-                padding: 60px 20px;
-            }
-
-            .join-us-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .job-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .modal-content {
-                margin: 5% auto;
-                padding: 30px 20px;
-                width: 95%;
-            }
-
-            .form-actions {
-                flex-direction: column;
-            }
-
-            .btn-cancel,
-            .btn-submit {
-                width: 100%;
-            }
-
-            .benefits-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .process-title {
-                font-size: 1.5rem;
-                padding: 15px 40px;
-                letter-spacing: 2px;
-            }
-
-            .step-number {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                left: -10px;
-            }
-
-            .step-content {
-                margin-left: 50px;
-            }
-
-            .step-title {
-                font-size: 1.3rem;
-            }
-
-            .steps-container::before {
-                left: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .join-us-content h1 {
-                font-size: 2rem;
-            }
-
-            .apply-job h1 {
-                font-size: 2rem;
-            }
-
-            .process-title {
-                font-size: 1.3rem;
-                padding: 12px 30px;
-                letter-spacing: 1px;
-            }
-
-            .step-item {
-                padding: 25px 20px;
-            }
-
-            .step-number {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-                left: -8px;
-            }
-
-            .step-content {
-                margin-left: 45px;
-            }
-
-            .step-title {
-                font-size: 1.2rem;
-            }
-
-            .step-date {
-                font-size: 1rem;
-            }
-
-            .step-description {
-                font-size: 0.95rem;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="/css/home/contact/joinwithus.css">
     <!-- Join Us Section -->
     <div class="join-us-container">
         <div class="join-us-content">
@@ -709,6 +14,26 @@
         </div>
     </div>
 
+    <!-- Job Listings Section -->
+    <div class="apply-job">
+        <h1>{{ __('joinus.hiring_title') }}</h1>
+        <p>{{ __('joinus.hiring_subtitle') }}</p>
+        <div class="job-container">
+            @foreach ($jobs as $job)
+                @if (in_array($job->employment_type, ['Full-time', 'Part-time', 'Contract']))
+                    <div class="job-listing">
+                        <h2>{{ $job->translation->position }}</h2>
+                        <p><strong>Employment Type:</strong> {{ $job->employment_type }}</p>
+                        <p><strong>Location:</strong> {{ $job->location }}</p>
+                        <p><strong>Requirements:</strong>{{ $job->translation->requirements }} </p>
+                        <button class="apply-btn" onclick="openJobModal('{{ $job->translation->position }}')">Apply
+                            Now</button>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+    </div>
+
     <!-- Benefits Section -->
     <div class="benefits-section">
         <div class="benefits-header">
@@ -718,18 +43,20 @@
             <div class="benefit-item">
                 <div class="benefit-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V7Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M2 7L22 7" stroke="currentColor" stroke-width="2"/>
-                        <path d="M7 15H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M7 11H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M18 11H18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M18 15H18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path
+                            d="M2 7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V7Z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path d="M2 7L22 7" stroke="currentColor" stroke-width="2" />
+                        <path d="M7 15H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M7 11H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M18 11H18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M18 15H18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        @foreach(__('joinus.benefit_1') as $item)
-                            <li>{{ $item }}</li>
+                        @foreach (__('joinus.benefit_1') as $item)
+                            <div>{{ $item }}</div>
                         @endforeach
                     </ul>
                 </div>
@@ -738,18 +65,19 @@
             <div class="benefit-item">
                 <div class="benefit-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 6H20L18.42 16.22C18.2 17.2 17.26 18 16.28 18H7.72C6.74 18 5.8 17.2 5.58 16.22L4 6Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M4 6L2 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M20 6L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M12 2V6" stroke="currentColor" stroke-width="2"/>
-                        <path d="M8 10L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M10 14L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M4 6H20L18.42 16.22C18.2 17.2 17.26 18 16.28 18H7.72C6.74 18 5.8 17.2 5.58 16.22L4 6Z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path d="M4 6L2 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M20 6L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 2V6" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 10L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M10 14L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        @foreach(__('joinus.benefit_2') as $item)
-                            <li>{{ $item }}</li>
+                        @foreach (__('joinus.benefit_2') as $item)
+                            <div>{{ $item }}</div>
                         @endforeach
                     </ul>
                 </div>
@@ -758,16 +86,17 @@
             <div class="benefit-item">
                 <div class="benefit-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                        <path d="M3 21V19C3 16.7909 4.79086 15 7 15H11C13.2091 15 15 16.7909 15 19V21" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
-                        <path d="M21 21V19C21 17.3431 19.6569 16 18 16H17" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                        <path d="M3 21V19C3 16.7909 4.79086 15 7 15H11C13.2091 15 15 16.7909 15 19V21" stroke="currentColor"
+                            stroke-width="2" />
+                        <circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="2" />
+                        <path d="M21 21V19C21 17.3431 19.6569 16 18 16H17" stroke="currentColor" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        @foreach(__('joinus.benefit_3') as $item)
-                            <li>{{ $item }}</li>
+                        @foreach (__('joinus.benefit_3') as $item)
+                            <div>{{ $item }}</div>
                         @endforeach
                     </ul>
                 </div>
@@ -776,18 +105,20 @@
             <div class="benefit-item">
                 <div class="benefit-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 1V5" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 19V23" stroke="currentColor" stroke-width="2"/>
-                        <path d="M4.22 4.22L7.05 7.05" stroke="currentColor" stroke-width="2"/>
-                        <path d="M16.95 16.95L19.78 19.78" stroke="currentColor" stroke-width="2"/>
+                        <polygon
+                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                            stroke="currentColor" stroke-width="2" />
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 1V5" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 19V23" stroke="currentColor" stroke-width="2" />
+                        <path d="M4.22 4.22L7.05 7.05" stroke="currentColor" stroke-width="2" />
+                        <path d="M16.95 16.95L19.78 19.78" stroke="currentColor" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="benefit-text">
                     <ul>
-                        @foreach(__('joinus.benefit_4') as $item)
-                            <li>{{ $item }}</li>
+                        @foreach (__('joinus.benefit_4') as $item)
+                            <div>{{ $item }}</div>
                         @endforeach
                     </ul>
                 </div>
@@ -863,32 +194,162 @@
     <!-- Job Listings Section -->
     <div class="apply-job">
         <h1>{{ __('joinus.hiring_title') }}</h1>
-        <p>{{ __('joinus.hiring_subtitle') }}</p>
+        <p>{{ __('joinus.hiring_internship_subtitle') }}</p>
         <div class="job-container">
             @foreach ($jobs as $job)
-                <div class="job-listing">
-                    <h2>{{ $job->translation->position }}</h2>
-                    <p><strong>Employment Type:</strong> {{ $job->employment_type }}</p>
-                    <p><strong>Location:</strong> {{ $job->location }}</p>
-                    <p><strong>Requirements:</strong>{{ $job->translation->requirements }} </p>
-                    <button class="apply-btn" onclick="openJobModal('{{ $job->translation->position }}')">Apply Now</button>
-                </div>
+                @if (!in_array($job->employment_type, ['Full-time', 'Part-time', 'Contract']))
+                    <div class="job-listing">
+                        <h2>{{ $job->translation->position }}</h2>
+                        <p><strong>Employment Type:</strong> {{ $job->employment_type }}</p>
+                        <p><strong>Location:</strong> {{ $job->location }}</p>
+                        <p><strong>Requirements:</strong>{{ $job->translation->requirements }} </p>
+                        <button class="apply-btn" onclick="openJobModal('{{ $job->translation->position }}')">Apply
+                            Now</button>
+                    </div>
+                @endif
             @endforeach
-
-            {{-- <div class="job-listing">
-                <h2>{{ __('joinus.admin_title') }}</h2>
-                <p><strong>{{ __('joinus.admin_location') }}</strong></p>
-                <p><strong>{{ __('joinus.admin_requirements') }}</strong></p>
-                <button class="apply-btn" onclick="openJobModal('admin')">{{ __('joinus.apply_now') }}</button>
-            </div> --}}
-            {{-- <div class="job-listing">
-                <h2>{{ __('joinus.civil_engineer_title') }}</h2>
-                <p><strong>{{ __('joinus.civil_engineer_location') }}</strong></p>
-                <p><strong>{{ __('joinus.civil_engineer_requirements') }}</strong></p>
-                <button class="apply-btn" onclick="openJobModal('civil-engineer')">{{ __('joinus.apply_now') }}</button>
-            </div> --}}
         </div>
     </div>
+
+    <!-- image slide Section -->
+    <div class="apply-job d-flex justify-content-center flex-row"></div>
+        <h1>บรรยากาศในที่ทำงาน</h1>
+        <div class="image-slide m-5" style="padding:30px 40px;">
+            <div class="slider mb-4">
+                <img src="/img/joinus/0.jpg" alt="">
+                <img src="/img/joinus/1.jpg" alt="">
+                <img src="/img/joinus/2.jpg" alt="">
+                <img src="/img/joinus/3.jpg" alt="">
+                <img src="/img/joinus/4.jpg" alt="">
+                <img src="/img/joinus/5.jpg" alt="">
+                <img src="/img/joinus/6.jpg" alt="">
+            </div>
+            <div class="d-flex justify-content-between mb-4" style="">
+                <div class="d-flex gap-2 dot-container">
+                    <button>
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="#2dbffd" />
+                        </svg>
+                    </button>
+                    <button>
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="#ccc" />
+                        </svg>
+                    </button>
+                    <button>
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="#ccc" />
+                        </svg>
+                    </button>
+                    <button>
+                        <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="45" cx="50" cy="50" fill="#ccc" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="d-flex gap-3">
+                    <button class="chev chev-left">
+                        <span class="material-symbols-outlined">
+                            chevron_left
+                        </span>
+                    </button>
+                    <button class="chev chev-right blue">
+                        <span class="material-symbols-outlined">
+                            chevron_right
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <video width="300px"  controls>
+                <source src="/img/joinus/vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <span class="close" id="closeBtn">&times;</span>
+        <img id="overlayImg" src="" alt="Big View">
+    </div>
+
+    <script>
+        const imageSlide = document.querySelector('.image-slide');
+        const slider = imageSlide.querySelector('.slider');
+        const left = imageSlide.querySelector('.chev-left');
+        const right = imageSlide.querySelector('.chev-right');
+        const dotContainer = imageSlide.querySelectorAll('.dot-container button');
+
+        let count = 0;
+
+        function updateColor() {
+            if (count == 0) {
+                left.classList.remove('blue');
+            } else {
+                left.classList.add('blue');
+            }
+            if (count == 3) {
+                right.classList.remove('blue');
+            } else {
+                right.classList.add('blue');
+            }
+
+            dotContainer.forEach((btn, idx) => {
+                if (idx === count) {
+                    btn.querySelector('circle').style.fill = '#2dbffd';
+                } else {
+                    btn.querySelector('circle').style.fill = "#cccccc";
+                }
+            })
+        }
+
+        left.addEventListener('click', () => {
+
+            slider.scrollLeft -= 500;
+            if (count > 0) {
+                count--;
+                updateColor();
+            }
+            console.log(`left count=${count}`);
+        });
+
+        right.addEventListener('click', () => {
+            slider.scrollLeft += 500;
+            if (count < 3) {
+                count++;
+                updateColor();
+            }
+            console.log(`right count=${count}`);
+        });
+
+        const images = document.querySelectorAll(".slider img");
+        const overlay = document.getElementById("overlay");
+        const overlayImg = document.getElementById("overlayImg");
+        const closeBtn = document.getElementById("closeBtn");
+
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                overlay.style.display = "flex";
+                overlayImg.src = img.src;
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            overlay.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                overlay.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    </script>
 
     <!-- Job Application Modal -->
     <div id="jobModal" class="modal">
@@ -936,7 +397,8 @@
                 </div>
                 <div class="form-group">
                     <label for="coverLetter">{{ __('joinus.cover_letter_label') }}</label>
-                    <textarea id="coverLetter" name="coverLetter" rows="5" placeholder="{{ __('joinus.cover_letter_placeholder') }}"></textarea>
+                    <textarea id="coverLetter" name="coverLetter" rows="5"
+                        placeholder="{{ __('joinus.cover_letter_placeholder') }}"></textarea>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn-cancel"
