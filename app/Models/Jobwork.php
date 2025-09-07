@@ -10,7 +10,7 @@ class Jobwork extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['location'];
+    protected $fillable = ['location', 'employment_type'];
 
     public function translations()
     {

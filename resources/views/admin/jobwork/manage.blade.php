@@ -57,11 +57,12 @@
                                     <td>
                                         <a href="#a" class="btn btn-primary" btn-type="edit" data-bs-toggle="modal"
                                             data-bs-target="#editBackdrop">แก้ไข</a>
-                                        <form action="/admin/work/{{ $job->id }}"
-                                        style="display:inline;" method="post">
+                                        <form action="/admin/work/{{ $job->id }}" style="display:inline;"
+                                            method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('ต้องการลบใช่ไหม');">ลบ</button>
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('ต้องการลบใช่ไหม');">ลบ</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -83,15 +84,22 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-group mb-3">
-                                <label for="">ประเภทการจ้างงาน</label>
-                                <select name="emp_type" id="" class="form-select">
-                                    <option value="Full-time">Full-time</option>
-                                    <option value="Part-time">Part-time</option>
-                                    <option value="Contract">Contract</option>
-                                    <option value="Internship">นักศึกษาฝึกงาน</option>
-                                    <option value="Co-op">นักศึกษาฝึกงาน สหกิจศึกษา</option>
-                                </select>
+                            <div class="form-group mb-3 d-flex justify-content-between">
+                                <div class="flex-grow-1 me-4">
+                                    <label for="">ประเภทการจ้างงาน</label>
+                                    <select name="sel_emp_type" id="" class="form-select">
+                                        <option value="emp">พนักงาน</option>
+                                        <option value="intern">ฝึกงาน</option>
+                                    </select>
+                                </div>
+                                <div class="flex-grow-1 ms-4">
+                                    <label for="">ประเภทการจ้างงาน</label>
+                                    <select name="emp_type" id="" class="form-select">
+                                        <option value="Full-time">Full-time</option>
+                                        <option value="Part-time">Part-time</option>
+                                        <option value="Contract">Contract</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">ที่ทำงาน</label>
@@ -142,18 +150,29 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="editBackdropLabel">แก้ไขรับสมัครงาน</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-group mb-3">
-                                <label for="">ประเภทการจ้างงาน</label>
-                                <select name="emp_type" id="" class="form-select">
-                                    <option value="Full-time">Full-time</option>
-                                    <option value="Part-time">Part-time</option>
-                                    <option value="Contract">Contract</option>
-                                    <option value="Internship">นักศึกษาฝึกงาน</option>
-                                    <option value="Co-op">นักศึกษาฝึกงาน สหกิจศึกษา</option>
-                                </select>
+                            <div class="form-group mb-3 d-flex justify-content-between">
+                                <div class="flex-grow-1 me-4">
+                                    <label for="">ประเภทการจ้างงาน</label>
+                                    <select name="sel_emp_type" id="" class="form-select">
+                                        <option value="emp">พนักงาน</option>
+                                        <option value="intern">ฝึกงาน</option>
+                                    </select>
+                                </div>
+                                <div class="flex-grow-1 ms-4">
+                                    <label for="">ประเภทการจ้างงาน</label>
+                                    <select name="emp_type" id="" class="form-select">
+                                        <option value="Full-time">Full-time</option>
+                                        <option value="Part-time">Part-time</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Internship">นักศึกษาฝึกงาน</option>
+                                        <option value="Co-op">นักศึกษาฝึกงาน สหกิจศึกษา</option>
+                                    </select>
+                                </div>
+
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">ที่ทำงาน</label>
@@ -197,12 +216,36 @@
     </div>
 
     <script>
+        function createNewOption(select, typ) {
+            if (typ == "emp") {
+                select.innerHTML = `
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                `
+            }
+            else {
+                select.innerHTML = `
+                    <option value="Internship">นักศึกษาฝึกงาน</option>
+                    <option value="Co-op">นักศึกษาฝึกงาน สหกิจศึกษา</option>
+                `
+            }
+        }
         document.addEventListener('DOMContentLoaded', function() {
             const editButtons = document.querySelectorAll('a[btn-type="edit"]');
             const editBackdrop = document.getElementById('editBackdrop');
             console.log(editBackdrop)
             const jobworks = @json($jobs);
             console.log(jobworks)
+
+            const modalBody = document.querySelectorAll(".modal-body");
+            modalBody.forEach((body) => {
+                let selEmpType = body.querySelector('select[name="sel_emp_type"]');
+                let empType = body.querySelector('select[name="emp_type"]');
+                selEmpType.addEventListener('change', function() {
+                    createNewOption(empType, selEmpType.value);
+                })
+            });
 
             editButtons.forEach((button) => {
                 let parent = button.parentElement.parentElement;
@@ -213,12 +256,26 @@
                     // editBackdrop.querySelector('form input[name="id"]').value = parent.getAttribute('de-id');
                     editBackdrop.querySelector('form input[name="pos-th"]').value = job.th.position;
                     editBackdrop.querySelector('form input[name="pos-en"]').value = job.en.position;
-                    editBackdrop.querySelector('form input[name="req-th"]').value = job.th.requirements;
-                    editBackdrop.querySelector('form input[name="req-en"]').value = job.en.requirements;
-                    editBackdrop.querySelectorAll('form select')[1].value = job.location;
-                    editBackdrop.querySelectorAll('form select')[0].value = job.employment_type;
+                    editBackdrop.querySelector('form input[name="req-th"]').value = job.th
+                        .requirements;
+                    editBackdrop.querySelector('form input[name="req-en"]').value = job.en
+                        .requirements;
+                    editBackdrop.querySelectorAll('form select')[2].value = job.location;
 
-                    editBackdrop.querySelector('form').action = `/admin/work/${parent.getAttribute('de-id')}`;
+                    let typ = "emp";
+                    if (["Internship", "Co-op"].includes(job.employment_type)){
+                        typ = "intern";
+                        editBackdrop.querySelectorAll('form select')[0].value = "intern";
+                    }
+                    else {
+                        editBackdrop.querySelectorAll('form select')[0].value = "emp";
+                    }
+                    createNewOption(editBackdrop.querySelectorAll('form select')[1], typ);
+
+                    editBackdrop.querySelectorAll('form select')[1].value = job.employment_type;
+
+                    editBackdrop.querySelector('form').action =
+                        `/admin/work/${parent.getAttribute('de-id')}`;
                     // console.log(editBackdrop.querySelector('form input[name="id"]').value)
                 })
             })

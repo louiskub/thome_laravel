@@ -35,6 +35,7 @@ class JobworkController extends Controller
 
     public function create(Request $request)
     {
+        // return response()->json($request->all());
         $request->validate([
             'pos-th' => 'required|string|max:255',
             'pos-en' => 'required|string|max:255',
@@ -59,6 +60,9 @@ class JobworkController extends Controller
             'position' => $request['pos-en'],
             'requirements' => $request['req-en'],
         ]);
+
+        return response()->json(['input' => $request->all(), 'job' => $job]);
+
 
         return redirect()->back()->with('success', 'Jobwork created successfully.');
     }

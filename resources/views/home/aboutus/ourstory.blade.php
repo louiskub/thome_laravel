@@ -82,11 +82,17 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: calc(100vh - 188.8px);
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 50%, var(--blue-100) 100%);
             overflow: hidden;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                min-height: calc(100vh - 100px);
+            }
         }
 
         .hero-background {
