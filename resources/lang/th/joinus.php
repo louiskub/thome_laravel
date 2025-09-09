@@ -120,4 +120,52 @@ return [
     'step_4_date' => '(ระยะเวลา 3 - 6 เดือน ตามหลักสูตร)',
     'step_4_description' => 'หากผ่านขั้นตอนการสัมภาษณ์ ก็เตรียมตัวเข้ามาเป็นส่วนหนึ่งกับเราได้เลย',
     'step_4_highlight' => '🚀 ฝึกประสบการณ์จริงกับองค์กร',
+
+    'internship.hero_title' => 'T.HOME INTERNSHIP',
+    'internship.hero_subtitle' => 'โอกาสฝึกงานที่ไม่เหมือนใคร',
+    'internship.hero_description' => 'เข้าร่วมโครงการฝึกงานที่ไม่เหมือนใครกับเรา เพื่อพัฒนาทักษะและเตรียมความพร้อมสำหรับอนาคตในสายอาชีพของน้องๆ',
+
+    'internship.benefits_title' => 'สิทธิประโยชน์',
+    'internship.benefits_subtitle' => 'สิทธิประโยชน์ที่น้องๆ จะได้รับจากการเข้าร่วมโครงการฝึกงานกับเรา',
+
+    'internship.benefit_1_title' => 'เบี้ยเลี้ยงสนับสนุนตลอดระยะเวลาฝึกงาน',
+    'internship.benefit_1_description' => 'เพื่อให้น้องๆ ได้มีโอกาสฝึกงานและเรียนรู้โดยไม่ต้องกังวลเรื่องค่าใช้จ่าย',
+
+    'internship.benefit_2_title' => 'ประกันอุบัติเหตุ',
+    'internship.benefit_2_description' => 'เพื่อความปลอดภัยและความอุ่นใจของน้องๆ ตลอดระยะเวลาการฝึกงาน',
+
+    'internship.benefit_3_title' => 'ประกาศนียบัตร/หนังสือรับรองการฝึกงาน',
+    'internship.benefit_3_description' => 'เพื่อเป็นหลักฐานยืนยันประสบการณ์และทักษะที่น้องๆ ได้รับจากการฝึกงานกับเรา',
+
+    'internship.benefit_4_title' => 'โอกาสจ้างงานหลังสำเร็จการฝึกงาน',
+    'internship.benefit_4_description' => 'สำหรับน้องๆ ที่มีผลงานโดดเด่นและผ่านการประเมิน',
+
+    'internship.benefit_5_title' => 'ฝึกประสบการณ์จริงกับองค์กร',
+    'internship.benefit_5_description' => 'เพื่อให้น้องๆ ได้เรียนรู้และพัฒนาทักษะในสภาพแวดล้อมการทำงานจริง',
+
+    'internship.steps_title' => 'ขั้นตอนการรับสมัคร',
+    'internship.step_1_title' => 'รับสมัคร',
+    'internship.step_1_date' => '(เปิดรับสมัครตลอดปี ไม่จำกัดช่วงเวลา)',
+    'internship.step_1_description' => 'เปิดรับสมัครนักศึกษาฝึกงานหลากหลายสาขาตลอดทั้งปี! แผนกวิศวกรโยธา วิศวกรไฟฟ้า วิศวกรคอมพิวเตอร์ และอื่นๆ',
+
+    'internship.step_2_title' => 'ส่ง Resume (ฝ่าย HR คัดเลือก)',
+    'internship.step_2_date' => '(เปิดรับสมัครตลอดปี ไม่จำกัดช่วงเวลา)',
+    'internship.step_2_description' => 'ส่ง Resume ที่อีเมล Info@thomeinspector.com, admin@thomeinspector.com',
+
+    'internship.step_3_title' => 'สัมภาษณ์ (สัมภาษณ์เตรียมความพร้อมในการฝึกงาน)',
+    'internship.step_3_date' => '(เปิดรับสมัครตลอดปี ไม่จำกัดช่วงเวลา)',
+    'internship.step_3_description' => 'นักศึกษาจะได้รับการติดต่อจากฝ่าย HR  เพื่อนัดสัมภาษณ์ออนไลน์',
+
+    'internship.step_4_title' => 'ฝึกงาน (ระยะเวลา 3 - 6 เดือน ตามหลักสูตร)',
+    'internship.step_4_date' => '(เปิดรับสมัครตลอดปี ไม่จำกัดช่วงเวลา)',
+    'internship.step_4_description' => 'หากผ่านขั้นตอนการสัมภาษณ์ ก็เตรียมตัวเข้ามาเป็นส่วนหนึ่งกับเราได้เลย',
+
+    'internship.positions_title' => 'ตำแหน่งที่เปิดรับสมัคร',
+    'internship.positions_subtitle' => 'เข้าร่วมทีมของเราและเติบโตไปกับเรา ดูตำแหน่งงานว่างล่าสุดของเราด้านล่าง',
+
+    'internship.atmosphere_title' => 'บรรยากาศการทำงาน',
+    'internship.atmosphere_subtitle' => 'บรรยากาศการทำงานที่เปิดกว้างและส่งเสริมการเรียนรู้',
+
+    'internship.video_title' => 'วิดีโอแนะนำโครงการฝึกงาน',
+
 ];
