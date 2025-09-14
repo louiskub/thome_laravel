@@ -79,14 +79,17 @@
             50% { transform: translateY(-20px) rotate(5deg); }
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
-            min-height: calc(100vh - 188.8px);
+            width: 100%;
+            height: 100vh; /* เต็มจอ */
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 50%, var(--blue-100) 100%);
-            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background: url('/img/Bulter.jpg') no-repeat center center/cover;
+
         }
 
         @media (max-width: 1024px) {
@@ -182,7 +185,7 @@
 
         .title-line {
             display: block;
-            color: var(--gray-700);
+            color: var(--blue-100);
         }
 
         .title-highlight {
@@ -894,7 +897,100 @@
             opacity: 1;
             transform: scale(1);
         }
+        .hero-bg {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        background: url('/img/ourstoryimage.jpg') no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        }
+
+        /* เลเยอร์มืด */
+        .hero-bg::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.55);
+        }
+
+        /* คอนเทนต์ */
+        .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 20px;
+        animation: fadeInUp 1s ease;
+        }
+
+        /* หัวข้อหลัก */
+        .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        /* เส้นคั่น */
+        .hero-divider {
+        width: 80px;
+        height: 4px;
+        background: #d9d9d9; /* สีทองตัด */
+        margin: 20px auto;
+        border-radius: 2px;
+        }
+        .hero-subtitle1{
+            margin-top: 20px;
+        }
+        /* ข้อความรอง */
+        .hero-subtitle {
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.6;
+        color: white;
+        text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.6);
+        margin-top: 15px;
+        max-width: 1500px;
+        }
+
+        /* เอฟเฟกต์ fade-in */
+        @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+        }
+
     </style>
+
+    <section class="hero-bg" id="story">
+        <div class="container">
+            <div class="hero-content">
+            <h1 class="hero-title">Our Story</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">ต.ตรวจบ้านริเริ่มขึ้นในปี 2015 โดยเริ่มต้นจาก คุณสุเมธ และ คุณเทพ ที่ได้นำความรู้ความเชี่ยวชาญทางด้านวิศวกรรมไปช่วยตรวจบ้านและคอนโดให้กับกลุ่มเพื่อนและคนรู้จัก โดยตรวจกับน้องชาย…2 คน จากการทำงานด้วยความใส่ใจในทุกรายละเอียดและความจริงใจ ทำให้ได้รับการยอมรับอย่างรวดเร็วผ่านการแนะนำแบบปากต่อปาก ซึ่งเป็นเครื่องยืนยันถึงความไว้วางใจที่ลูกค้ามีให้กับเราตั้งแต่วันแรก นั่นคือจุดกำเนิดของ ต.ตรวจบ้าน ที่เติบโตมาจากความเชื่อมั่นของลูกค้าอย่างแท้จริง</p>
+            </div>
+        </div>
+        </section>
 
     <!-- Floating Elements -->
     <div class="floating-elements">
@@ -905,9 +1001,11 @@
         <div class="floating-element" data-speed="0.6">🔧</div>
     </div>
 
+    
+
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background">
+        <div class="hero-background2">
             <div class="hero-shapes">
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
@@ -917,269 +1015,21 @@
         <div class="container">
             <div class="hero-content fade-in">
                 <div class="hero-badge">
-                    <span class="badge-icon">🏆</span>
-                    <span class="badge-text">ผู้นำอันดับ 1</span>
+                    <span class="badge-icon"></span>
+                    <span class="badge-text">วิสัยทัศน์และพันธกิจของเรา</span>
                 </div>
                 <h1 class="hero-title">
                     <span class="title-line">ผู้นำด้าน</span>
                     <span class="title-highlight">การตรวจบ้าน</span>
                 </h1>
-                <p class="hero-subtitle">บริการตรวจสอบบ้านที่ลูกค้าเชื่อถือมากที่สุดในประเทศไทย</p>
+                <p class="hero-subtitle1">ผู้นำด้านการตรวจบ้าน ให้บริการตรวจบ้านและคอนโดก่อนโอนกรรมสิทธิ์ดีที่สุด อันดับ 1 ที่ลูกค้าบอกต่อมากที่สุด</p>
+                <p class="hero-subtitle2">บริษัทดำเนินธุรกิจบนหลักธรรมาภิบาล ซื่อสัตย์โปร่งใส และรักษาคุณภาพการบริการไว้อย่างต่อเนื่องให้เป็นที่ไว้วางใจของลูกค้า ให้ความสำคัญในการเพิ่มประสิทธิภาพและปรับปรุงกระบวนการในการบริการอย่างต่อเนื่องเพื่อยกระดับการให้บริการ
+มุ่งมั่นในการทำงานเป็นระบบ มีมาตรฐาน มีประสบการณ์และเชี่ยวชาญในการตรวจซึ่งดำรงไว้ซึ่งจริยธรรม คุณธรรมและจรรยาบรรณในวิชาชีพที่เกี่ยวข้อง “เราตรวจบ้านเป็นอาชีพหลัก ไม่ใช่งานเสริม” </p>
             </div>
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="story-section" id="story">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-badge">
-                    <span class="badge-icon">📖</span>
-                    <span class="badge-text">เรื่องราวของเรา</span>
-                </div>
-                <h2 class="section-title">OUR STORY</h2>
-                <p class="section-subtitle">การเดินทางสู่ความเป็นผู้นำด้านการตรวจบ้าน</p>
-            </div>
-            <div class="story-content">
-                <div class="story-timeline slide-in-left">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2015</div>
-                        <div class="timeline-content">
-                            <h3>จุดเริ่มต้น</h3>
-                            <p>เริ่มต้นจากการตรวจบ้านให้กับเพื่อนและครอบครัว</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-content">
-                            <h3>การเติบโต</h3>
-                            <p>ขยายบริการและได้รับการบอกต่อจากลูกค้า</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-content">
-                            <h3>ผู้นำตลาด</h3>
-                            <p>กลายเป็นผู้นำด้านการตรวจบ้านในประเทศไทย</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="story-visual slide-in-right">
-                    <div class="story-card">
-                        <div class="card-image">
-                            <img src="/img/s1.png" alt="Company Story">
-                        </div>
-                        <div class="card-content">
-                            <h3>ความมุ่งมั่นในคุณภาพ</h3>
-                            <p>ต.ตรวจบ้าน เริ่มต้นเมื่อปี 2015 โดยเจ้าของ คุณสุเมธ เจตธำรงชัย และคุณสุเทพ เจตธำรงชัย
-                                เริ่มจากการที่รับตรวจบ้าน
-                                และคอนโดให้กับกลุ่มพี่น้องและเพื่อนฝูงคนรู้จักจนได้รับการบอกต่อปากต่อปาก</p>
-                            <div class="card-features">
-                                <div class="feature-item">
-                                    <span class="feature-icon">🎯</span>
-                                    <span class="feature-text">ความแม่นยำสูง</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-icon">⚡</span>
-                                    <span class="feature-text">บริการรวดเร็ว</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-icon">💎</span>
-                                    <span class="feature-text">คุณภาพพรีเมียม</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section class="vision-section" id="vision">
-        <div class="container">
-            <div class="vision-content fade-in">
-                <div class="vision-card">
-                    <div class="card-header">
-                        <div class="header-icon">🎯</div>
-                        <h2 class="card-title">Our Vision and Mission</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="vision-text">บริการตรวจสอบบ้านมือสองของบ้านและคอนโดก่อนโอนกรรมสิทธิ์ดีที่สุด อันดับ 1
-                            ที่ลูกค้าเลือกมากที่สุดในประเทศไทย</p>
-                        <div class="vision-features">
-                            <div class="feature-grid">
-                                <div class="grid-item">
-                                    <div class="item-icon">🏆</div>
-                                    <div class="item-text">ผู้นำตลาด</div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="item-icon">🔍</div>
-                                    <div class="item-text">ตรวจสอบละเอียด</div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="item-icon">⭐</div>
-                                    <div class="item-text">คุณภาพสูง</div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="item-icon">🤝</div>
-                                    <div class="item-text">ความไว้วางใจ</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="values-section" id="values">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-badge">
-                    <span class="badge-icon">💎</span>
-                    <span class="badge-text">หลักการของเรา</span>
-                </div>
-                <h2 class="section-title">Our Core Values</h2>
-                <p class="section-subtitle">สามเสาหลักที่ทำให้เราเป็นผู้นำ</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card scale-in" data-tilt>
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <span class="icon-symbol">🛡️</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">TRUST</h3>
-                        <p class="card-description">การสร้างความเชื่อมั่นด้วยการตรวจสอบที่มีมาตรฐาน</p>
-                        <div class="card-features">
-                            <div class="feature-point">✓ มาตรฐานสากล</div>
-                            <div class="feature-point">✓ ความโปร่งใส</div>
-                            <div class="feature-point">✓ ความน่าเชื่อถือ</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="value-card" data-tilt>
-                    <div class="card-background"></div>
-
-                <div class="value-card scale-in" data-tilt>
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <span class="icon-symbol">🔧</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">TECH</h3>
-                        <p class="card-description">บริการตรวจสอบคุณภาพบ้านโดยใช้เทคโนโลยีใหม่</p>
-                        <div class="card-features">
-                            <div class="feature-point">✓ เทคโนโลยีทันสมัย</div>
-                            <div class="feature-point">✓ อุปกรณ์ล้ำสมัย</div>
-                            <div class="feature-point">✓ ระบบดิจิทัล</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="value-card" data-tilt>
-                    <div class="card-background"></div>
-
-                <div class="value-card scale-in" data-tilt>
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <span class="icon-symbol">👥</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">TEAM</h3>
-                        <p class="card-description">ทีมงานคุณภาพพร้อมให้บริการลูกค้า</p>
-                        <div class="card-features">
-                            <div class="feature-point">✓ ผู้เชี่ยวชาญ</div>
-                            <div class="feature-point">✓ ประสบการณ์สูง</div>
-                            <div class="feature-point">✓ บริการเป็นเลิศ</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founders Section -->
-    <section class="founders-section" id="founders">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-badge">
-                    <span class="badge-icon">👑</span>
-                    <span class="badge-text">ผู้ก่อตั้ง</span>
-                </div>
-                <h2 class="section-title">Our Founders</h2>
-                <p class="section-subtitle">ผู้นำที่มีวิสัยทัศน์และประสบการณ์</p>
-            </div>
-            <div class="founders-grid">
-                <div class="founder-card slide-in-left">
-                    <div class="founder-image">
-                        <img src="/img/staff/CEO.jpg" alt="Sumes Chetthamrongchai">
-                        <div class="image-overlay">
-                            <div class="social-links">
-                                <a href="#" class="social-link">📧</a>
-                                <a href="#" class="social-link">📱</a>
-                                <a href="#" class="social-link">💼</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="founder-info">
-                        <h3 class="founder-name">Sumes Chetthamrongchai</h3>
-                        <p class="founder-title">Founder & Managing Director</p>
-                        <p class="founder-subtitle">NACHI Certified Inspector</p>
-                        <div class="founder-achievements">
-                            <div class="achievement-item">
-                                <span class="achievement-icon">🏆</span>
-                                <span class="achievement-text">8+ ปีประสบการณ์</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="achievement-icon">📜</span>
-                                <span class="achievement-text">ใบรับรองสากล</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="founder-card">
-                    <div class="card-background"></div>
-
-                <div class="founder-card slide-in-right">
-                    <div class="founder-image">
-                        <img src="/img/staff/CO-founder.jpg" alt="Suthep Chetthamrongchai">
-                        <div class="image-overlay">
-                            <div class="social-links">
-                                <a href="#" class="social-link">📧</a>
-                                <a href="#" class="social-link">📱</a>
-                                <a href="#" class="social-link">💼</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="founder-info">
-                        <h3 class="founder-name">Suthep Chetthamrongchai</h3>
-                        <p class="founder-title">Co-Founder & Civil Engineer</p>
-                        <p class="founder-subtitle">Technical Director</p>
-                        <div class="founder-achievements">
-                            <div class="achievement-item">
-                                <span class="achievement-icon">🔧</span>
-                                <span class="achievement-text">วิศวกรโยธา</span>
-                            </div>
-                            <div class="achievement-item">
-                                <span class="achievement-icon">🎯</span>
-                                <span class="achievement-text">ผู้เชี่ยวชาญ</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Commitment Section -->
+        <!-- Commitment Section -->
     <section class="commitment-section" id="commitment">
         <div class="container">
             <div class="section-header fade-in">
@@ -1193,9 +1043,6 @@
 
             <div class="commitment-grid">
                 <div class="commitment-item fade-in">
-                    <div class="item-icon">
-                        <span class="icon-symbol">🎯</span>
-                    </div>
                     <div class="item-content">
                         <h3 class="item-title">ความซื่อสัตย์และโปร่งใส</h3>
                         <p class="item-description">ไม่ใช่คนในบริษัทอสังหาริมทรัพย์ออกมารับงานเองหรือตรวจงานโครงการตัวเอง</p>
@@ -1203,9 +1050,6 @@
                 </div>
 
                 <div class="commitment-item fade-in">
-                    <div class="item-icon">
-                        <span class="icon-symbol">🔍</span>
-                    </div>
                     <div class="item-content">
                         <h3 class="item-title">การตรวจสอบครบถ้วน</h3>
                         <p class="item-description">ตรวจครบทุกฟังก์ชันการใช้งานหลัก ใช้เทคโนโลยีที่ทันสมัยเข้ามาใช้ในการตรวจเพื่อความแม่นยำ</p>
@@ -1213,9 +1057,6 @@
                 </div>
 
                 <div class="commitment-item fade-in">
-                    <div class="item-icon">
-                        <span class="icon-symbol">💼</span>
-                    </div>
                     <div class="item-content">
                         <h3 class="item-title">อาชีพหลัก ไม่ใช่งานเสริม</h3>
                         <p class="item-description">ตรวจบ้านทุกวันเป็น "อาชีพหลัก ไม่ใช่งานเสริม"</p>
@@ -1223,9 +1064,6 @@
                 </div>
 
                 <div class="commitment-item fade-in">
-                    <div class="item-icon">
-                        <span class="icon-symbol">👨‍🔧</span>
-                    </div>
                     <div class="item-content">
                         <h3 class="item-title">ช่างผู้เชี่ยวชาญ</h3>
                         <p class="item-description">ตรวจด้วยช่างผู้เชี่ยวชาญงานจริง ไม่ใช้คำว่าวิศวกรมาหากิน</p>
@@ -1233,9 +1071,6 @@
                 </div>
 
                 <div class="commitment-item fade-in">
-                    <div class="item-icon">
-                        <span class="icon-symbol">📋</span>
-                    </div>
                     <div class="item-content">
                         <h3 class="item-title">คุณภาพ ไม่ใช่ปริมาณ</h3>
                         <p class="item-description">ไม่เน้นล่ารายการดีเฟคเพื่อให้เล่มรายงานดูเยอะ</p>
@@ -1243,9 +1078,6 @@
                 </div>
 
                 <div class="commitment-item fade-in">
-                    <div class="item-icon">
-                        <span class="icon-symbol">🏢</span>
-                    </div>
                     <div class="item-content">
                         <h3 class="item-title">บริการโดยตรง</h3>
                         <p class="item-description">บริษัทรับงานเองและไม่มีการส่งงานต่อให้ซับกินค่าหัวคิว</p>
@@ -1267,6 +1099,78 @@
             </div>
         </div>
     </section>
+    
+
+
+ <section class="values-section" id="values">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-badge">
+        <span class="badge-icon">💎</span>
+        <span class="badge-text">หลักการของเรา</span>
+      </div>
+      <h2 class="section-title">Our Core Values</h2>
+      <p class="section-subtitle">สามเสาหลักที่ทำให้เราเป็นผู้นำ</p>
+    </div>
+
+    <div class="values-grid">
+      <!-- กล่องที่ 1 -->
+      <div class="value-card scale-in" data-tilt>
+        <div class="card-header">
+          <div class="card-icon">
+            <span class="icon-symbol">🛡️</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">TRUST</h3>
+          <p class="card-description">การสร้างความเชื่อมั่นด้วยการตรวจสอบที่มีมาตรฐาน</p>
+          <div class="card-features">
+            <div class="feature-point">✓ มาตรฐานสากล</div>
+            <div class="feature-point">✓ ความโปร่งใส</div>
+            <div class="feature-point">✓ ความน่าเชื่อถือ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- กล่องที่ 2 -->
+      <div class="value-card scale-in" data-tilt>
+        <div class="card-header">
+          <div class="card-icon">
+            <span class="icon-symbol">🔧</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">TECH</h3>
+          <p class="card-description">บริการตรวจสอบคุณภาพบ้านโดยใช้เทคโนโลยีใหม่</p>
+          <div class="card-features">
+            <div class="feature-point">✓ เทคโนโลยีทันสมัย</div>
+            <div class="feature-point">✓ อุปกรณ์ล้ำสมัย</div>
+            <div class="feature-point">✓ ระบบดิจิทัล</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- กล่องที่ 3 -->
+      <div class="value-card scale-in" data-tilt>
+        <div class="card-header">
+          <div class="card-icon">
+            <span class="icon-symbol">👥</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">TEAM</h3>
+          <p class="card-description">ทีมงานคุณภาพพร้อมให้บริการลูกค้า</p>
+          <div class="card-features">
+            <div class="feature-point">✓ ผู้เชี่ยวชาญ</div>
+            <div class="feature-point">✓ ประสบการณ์สูง</div>
+            <div class="feature-point">✓ บริการเป็นเลิศ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">
