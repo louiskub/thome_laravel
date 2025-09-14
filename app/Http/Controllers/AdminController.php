@@ -21,6 +21,10 @@ use Google\Analytics\Data\V1beta\OrderBy\DimensionOrderBy;
 use Google\Analytics\Data\V1beta\Filter;
 use Google\Analytics\Data\V1beta\Filter\InListFilter;
 use Google\Analytics\Data\V1beta\FilterExpression;
+use Google\Analytics\Data\V1beta\FilterExpressionList;
+use Google\Analytics\Data\V1beta\Filter\StringFilter;
+use Google\Analytics\Data\V1beta\Filter\StringFilter\MatchType;
+
 
 use App\Models\User;
 use Google\Analytics\Data\V1beta\OrderBy\MetricOrderBy;
@@ -128,8 +132,10 @@ class AdminController extends Controller
     public function showDashboard()
     {
         // ใช้ Cache เพื่อไม่ให้ยิง API บ่อยเกินไป ลดการโหลดและป้องกัน API Quota เต็ม
-        $analyticsData = Cache::remember('analytics_data', now()->addHours(1), function () {
-            return [
+        $analyticsData =
+            Cache::remember('analytics_data', now()->addHours(1), function () {
+                return 
+            [
                 'keyMetrics' => $this->fetchKeyMetrics(),
                 'dailyUsers' => $this->fetchDailyUsers(),
                 'topPages' => $this->fetchTopPages(),
@@ -195,7 +201,7 @@ class AdminController extends Controller
         $response = $this->client->runReport([
             'property' => 'properties/' . $this->propertyId,
             'dateRanges' => [new DateRange(['start_date' => '30daysAgo', 'end_date' => 'today'])],
-            'dimensions' => [new Dimension(['name' => 'pagePath'])],
+            'dimensions' => [new Dimension(['name' => 'pagePathPlusQueryString'])],
             'metrics' => [new Metric(['name' => 'screenPageViews'])],
             'orderBys' => [
                 new OrderBy([
@@ -205,14 +211,41 @@ class AdminController extends Controller
                     'desc' => true
                 ])
             ],
-            // 'dimensionFilter' => new FilterExpression([
-            //     'filter' => new Filter([
-            //         'field_name' => 'pagePath',
-            //         'in_list_filter' => new InListFilter([
-            //             'values' => ['/article', '/privilege', '/review']
-            //         ])
-            //     ])
-            // ]),
+            'dimensionFilter' => new FilterExpression([
+                'or_group' => new FilterExpressionList([
+                    'expressions' => [
+                        // เงื่อนไขที่ 1: ขึ้นต้นด้วย /article
+                        new FilterExpression([
+                            'filter' => new Filter([
+                                'field_name' => 'pagePathPlusQueryString',
+                                'string_filter' => new StringFilter([
+                                    'match_type' => StringFilter\MatchType::BEGINS_WITH,
+                                    'value' => '/article/detail'
+                                ])
+                            ])
+                        ]),
+                        // เงื่อนไขที่ 2: ขึ้นต้นด้วย /privilege
+                        new FilterExpression([
+                            'filter' => new Filter([
+                                'field_name' => 'pagePathPlusQueryString',
+                                'string_filter' => new StringFilter([
+                                    'match_type' => StringFilter\MatchType::BEGINS_WITH,
+                                    'value' => '/privilege/detail'
+                                ])
+                            ])
+                        ]),
+                        new FilterExpression([
+                            'filter' => new Filter([
+                                'field_name' => 'pagePathPlusQueryString',
+                                'string_filter' => new StringFilter([
+                                    'match_type' => StringFilter\MatchType::BEGINS_WITH,
+                                    'value' => '/review/detail'
+                                ])
+                            ])
+                        ]),
+                    ]
+                ])
+            ]),
             'limit' => 10
         ]);
 
