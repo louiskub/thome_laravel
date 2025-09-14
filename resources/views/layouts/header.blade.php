@@ -290,7 +290,7 @@ function trackFacebookClick(event) {
 function trackInstagramClick(event) {
   event.preventDefault();
   const destinationUrl = event.currentTarget.href;
-  gtag('event', 'instagram_click', {
+  gtag('event', 'ig_click', {
     'event_category': 'social_media',
     'event_label': 'Header Instagram Icon',
     'event_callback': function() {
@@ -315,7 +315,7 @@ function trackCallClick(event) {
   event.preventDefault();
   const destinationUrl = event.currentTarget.href;
   gtag('event', 'call_click', {
-    'event_category': 'contact',
+    'event_category': 'social_media',
     'event_label': 'Header Phone Icon',
     'event_callback': function() {
       window.location.href = destinationUrl;

@@ -39,7 +39,7 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2>{{ Auth::user()->name }}</h2>
+            <h2>Welcome {{ Auth::user()->name }} !</h2>
             <button class="close-sidebar" id="closeSidebar">×</button>
         </div>
         {{-- <div class="user-info">
@@ -54,7 +54,7 @@
         <nav class="sidebar-nav flex-column">
             <ul>
                 <li class="">
-                    <a href="#dashboard">
+                    <a href="/admin/dashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="icon">

@@ -1269,7 +1269,8 @@ img {
 
 .hero {
   position: relative;
-  height: calc(100vh - 188.8px);;
+  height: calc(100vh - 188.8px);
+  ;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1278,9 +1279,9 @@ img {
 }
 
 @media screen and (max-width: 1024px) {
-    .hero {
-        height: calc(100vh - 100px);
-    }
+  .hero {
+    height: calc(100vh - 100px);
+  }
 }
 
 .hero .bg {
@@ -1291,19 +1292,50 @@ img {
   height: 100%;
   background-size: cover;
   background-position: center;
-  animation: fade 10s infinite;
+  animation: fade 50s infinite;
   z-index: 0;
   opacity: 0;
 }
 
 .hero .bg1 {
-  background-image: url('/img/banner.png');
+  background-image: url('/img/hero-bg/inspector/1.jpg');
   animation-delay: 0s;
 }
-
 .hero .bg2 {
-  background-image: url('/img/banner2.jpg');
+  background-image: url('/img/hero-bg/inspector/2.jpg');
   animation-delay: 5s;
+}
+.hero .bg3 {
+  background-image: url('/img/hero-bg/inspector/3.jpg');
+  animation-delay: 10s;
+}
+.hero .bg4 {
+  background-image: url('/img/hero-bg/inspector/4.jpg');
+  animation-delay: 15s;
+}
+.hero .bg5 {
+  background-image: url('/img/hero-bg/inspector/5.jpg');
+  animation-delay: 20s;
+}
+.hero .bg6 {
+  background-image: url('/img/hero-bg/inspector/6.jpg');
+  animation-delay: 25s;
+}
+.hero .bg7 {
+  background-image: url('/img/hero-bg/inspector/7.jpg');
+  animation-delay: 30s;
+}
+.hero .bg8 {
+  background-image: url('/img/hero-bg/inspector/8.jpg');
+  animation-delay: 35s;
+}
+.hero .bg9 {
+  background-image: url('/img/hero-bg/inspector/9.jpg');
+  animation-delay: 40s;
+}
+.hero .bg10 {
+  background-image: url('/img/hero-bg/inspector/10.png');
+  animation-delay: 45s;
 }
 
 @keyframes fade {
@@ -2969,6 +3001,7 @@ p {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -3120,7 +3153,7 @@ p {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  margin-left : 80px;
+  margin-left: 80px;
 }
 
 .notes-grid {
@@ -3257,11 +3290,13 @@ p {
   }
 
   .notes-title-vertical {
-    writing-mode: initial; /* หรือเอาออกไปเลยก็ได้ */
+    writing-mode: initial;
+    /* หรือเอาออกไปเลยก็ได้ */
     transform: none;
     text-align: center;
     display: block;
-    margin-bottom: 0.5rem; /* ระยะห่างจากเนื้อหาด้านล่าง */
+    margin-bottom: 0.5rem;
+    /* ระยะห่างจากเนื้อหาด้านล่าง */
     font-weight: bold;
     font-size: 1.2rem;
   }
@@ -3694,135 +3729,148 @@ p {
 
 
 .service-features {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px dashed #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed #ddd;
 }
 
-.web-app, .thermal, .drone {
-    text-align: center;
-    padding: 15px;
+.web-app,
+.thermal,
+.drone {
+  text-align: center;
+  padding: 15px;
 }
 
-.web-app h3, .thermal h3, .drone h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #0099cc;
+.web-app h3,
+.thermal h3,
+.drone h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #0099cc;
 }
 
 #house-content .web-app h3,
 #house-content .thermal h3,
 #house-content .drone h3 {
-    color: #e91e63;
+  color: #e91e63;
 }
 
-.web-app p, .thermal p, .drone p {
-    font-size: 14px;
-    color: #666;
+.web-app p,
+.thermal p,
+.drone p {
+  font-size: 14px;
+  color: #666;
 }
 
 .plus {
-    font-size: 24px;
-    margin: 0 15px;
-    color: #999;
+  font-size: 24px;
+  margin: 0 15px;
+  color: #999;
 }
 
 .equipment-note {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    color: #0099cc;
-    font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: #0099cc;
+  font-weight: 500;
 }
 
 #house-content .equipment-note {
-    color: #e91e63;
+  color: #e91e63;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        border-radius: 10px;
-    }
+  .container {
+    padding: 15px;
+    border-radius: 10px;
+  }
 
-    .tab-btn {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 
-    .price-header h2 {
-        font-size: 22px;
-    }
+  .price-header h2 {
+    font-size: 22px;
+  }
 
-    .table-header, .table-subheader, .table-row {
-        font-size: 14px;
-    }
+  .table-header,
+  .table-subheader,
+  .table-row {
+    font-size: 14px;
+  }
 
-    .col-size {
-        flex: 0.3;
-    }
+  .col-size {
+    flex: 0.3;
+  }
 
-    .col-sqm {
-        flex: 1;
-    }
+  .col-sqm {
+    flex: 1;
+  }
 
-    .info-text {
-        font-size: 14px;
-    }
+  .info-text {
+    font-size: 14px;
+  }
 
-    .service-features {
-        flex-direction: column;
-    }
+  .service-features {
+    flex-direction: column;
+  }
 
-    .plus {
-        margin: 10px 0;
-    }
+  .plus {
+    margin: 10px 0;
+  }
 }
 
 @media (max-width: 576px) {
-    .container {
-        padding: 10px;
-    }
+  .container {
+    padding: 10px;
+  }
 
-    .tab-btn {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
+  .tab-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 
-    .price-header h2 {
-        font-size: 18px;
-    }
+  .price-header h2 {
+    font-size: 18px;
+  }
 
-    .table-header, .table-subheader, .table-row {
-        font-size: 12px;
-    }
+  .table-header,
+  .table-subheader,
+  .table-row {
+    font-size: 12px;
+  }
 
-    .table-header > div, .table-subheader > div, .table-row > div {
-        padding: 8px 5px;
-    }
+  .table-header>div,
+  .table-subheader>div,
+  .table-row>div {
+    padding: 8px 5px;
+  }
 
-    .info-number {
-        width: 25px;
-        height: 25px;
-        font-size: 12px;
-    }
+  .info-number {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
 
-    .info-text {
-        font-size: 12px;
-    }
+  .info-text {
+    font-size: 12px;
+  }
 }

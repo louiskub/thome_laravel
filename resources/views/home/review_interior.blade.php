@@ -11,7 +11,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="/CSS/review_home.css">
+    <link rel="stylesheet" href="/css/review_home.css">
     <title>Header Design</title>
 </head>
 
@@ -189,8 +189,7 @@
                                         <li><a href="/Homepage/app-inspector.php"
                                                 data-translate="nav.app-inspector">ตรวจบ้านเอง</a>
                                         </li>
-                                        <li><a href="cal-electric.php"
-                                                data-translate="nav.cal-electric">คำนวณไฟฟ้า</a>
+                                        <li><a href="cal-electric.php" data-translate="nav.cal-electric">คำนวณไฟฟ้า</a>
                                         </li>
                                         <li><a href="checklist.php" data-translate="nav.checklist">เทียบสเปกบ้าน</a>
                                         </li>
@@ -249,7 +248,7 @@
             </div>
 
             <script>
-                document.addEventListener("DOMContentLoaded", function() {
+                document.addEventListener("DOMContentLoaded", function () {
                     fetch('/backend/panel/get_line_section.php')
                         .then(response => response.json())
                         .then(data => {
@@ -290,7 +289,7 @@
                     <!-- cards will be inserted dynamically -->
                 </div>
                 <script>
-                    document.addEventListener("DOMContentLoaded", function() {
+                    document.addEventListener("DOMContentLoaded", function () {
                         const container = document.querySelector(".review-cards");
 
                         fetch('/backend/panel/api_interior.php')
@@ -399,7 +398,7 @@
             </div>
 
             <script>
-                document.addEventListener("DOMContentLoaded", function() {
+                document.addEventListener("DOMContentLoaded", function () {
                     fetch("/backend/panel/api_interior_videos.php")
                         .then(res => res.json())
                         .then(videos => {
@@ -418,7 +417,7 @@
                             const videoItems = slider.querySelectorAll(".video-item");
                             const totalVideos = videoItems.length;
 
-                            window.moveSlide = function(direction) {
+                            window.moveSlide = function (direction) {
                                 currentIndex += direction;
 
                                 if (currentIndex < 0) {
@@ -461,17 +460,17 @@
             </div> -->
 
             <?php
-            try {
-                $pdo = new PDO('mysql:host=localhost;dbname=homespector', 'root', '');
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=homespector', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                // Fetch company details
-                $stmt = $pdo->prepare('SELECT * FROM contact_info LIMIT 1');
-                $stmt->execute();
-                $contact = $stmt->fetch(PDO::FETCH_ASSOC);
-            } catch (PDOException $e) {
-                die('Database error: ' . $e->getMessage());
-            }
+    // Fetch company details
+    $stmt = $pdo->prepare('SELECT * FROM contact_info LIMIT 1');
+    $stmt->execute();
+    $contact = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die('Database error: ' . $e->getMessage());
+}
             ?>
             <div class="contact-container" data-aos="fade-up-right">
                 <div class="contact-info">
@@ -611,14 +610,14 @@
     </div>
 
 
-    <script src="/JS/Toggle_Navbar.js"></script>
-    <script src="/JS/filter.js"></script>
-    <script src="/JS/dropdown.js"></script>
-    <script src="/JS/footer.js"></script>
+    <script src="/js/Toggle_Navbar.js"></script>
+    <script src="/js/filter.js"></script>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="/JS/search_ham.js"></script>
+        </script>
+    <script src="/js/search_ham.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();

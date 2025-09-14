@@ -128,14 +128,17 @@ class AdminController extends Controller
     public function showDashboard()
     {
         // ใช้ Cache เพื่อไม่ให้ยิง API บ่อยเกินไป ลดการโหลดและป้องกัน API Quota เต็ม
-        $analyticsData = [
+        $analyticsData = Cache::remember('analytics_data', now()->addHours(1), function () {
+            return [
                 'keyMetrics' => $this->fetchKeyMetrics(),
                 'dailyUsers' => $this->fetchDailyUsers(),
                 'topPages' => $this->fetchTopPages(),
                 'trafficSources' => $this->fetchTrafficSources(),
-                // 'conversions' => $this->fetchConversions(),
+                'conversions' => $this->fetchConversions(),
                 'buttonClicks' => $this->fetchButtonClicks(),
+                'totalViewsToday' => $this->fetchTotalViewsToday(),
             ];
+        });
 
         return view('admin.dashboard', $analyticsData);
     }
@@ -192,7 +195,7 @@ class AdminController extends Controller
         $response = $this->client->runReport([
             'property' => 'properties/' . $this->propertyId,
             'dateRanges' => [new DateRange(['start_date' => '30daysAgo', 'end_date' => 'today'])],
-            'dimensions' => [new Dimension(['name' => 'pageTitle'])],
+            'dimensions' => [new Dimension(['name' => 'pagePath'])],
             'metrics' => [new Metric(['name' => 'screenPageViews'])],
             'orderBys' => [
                 new OrderBy([
@@ -202,7 +205,15 @@ class AdminController extends Controller
                     'desc' => true
                 ])
             ],
-            'limit' => 5
+            // 'dimensionFilter' => new FilterExpression([
+            //     'filter' => new Filter([
+            //         'field_name' => 'pagePath',
+            //         'in_list_filter' => new InListFilter([
+            //             'values' => ['/article', '/privilege', '/review']
+            //         ])
+            //     ])
+            // ]),
+            'limit' => 10
         ]);
 
         $pages = [];
@@ -214,6 +225,26 @@ class AdminController extends Controller
         }
         return $pages;
     }
+
+    private function fetchTotalViewsToday()
+    {
+        $response = $this->client->runReport([
+            'property' => 'properties/' . $this->propertyId,
+            'dateRanges' => [new DateRange(['start_date' => 'today', 'end_date' => 'today'])],
+            'metrics' => [new Metric(['name' => 'screenPageViews'])],
+        ]);
+
+        $totalViews = 0;
+        // เมื่อไม่ระบุ Dimension ผลลัพธ์ที่ได้จะมีแค่แถวเดียว คือยอดรวมทั้งหมด
+        if ($response->getRowCount() > 0) {
+            $row = $response->getRows()[0];
+            $totalViews = (int) $row->getMetricValues()[0]->getValue();
+        }
+
+        return $totalViews;
+    }
+
+
 
     private function fetchTrafficSources()
     {
@@ -238,28 +269,35 @@ class AdminController extends Controller
         return $sourceData;
     }
 
-    // private function fetchConversions()
-    // {
-    //     $response = $this->client->runReport([
-    //         'property' => 'properties/' . $this->propertyId,
-    //         'dateRanges' => [new DateRange(['start_date' => '30daysAgo', 'end_date' => 'today'])],
-    //         'dimensions' => [new Dimension(['name' => 'eventName'])],
-    //         'metrics' => [new Metric(['name' => 'conversions'])],
-    //         'orderBys' => [new OrderBy(['metric' => new MetricOrderBy(['metric_name' => 'conversions']), 'desc' => true])],
-    //         'limit' => 5
-    //     ]);
+    private function fetchConversions()
+    {
+        $response = $this->client->runReport([
+            'property' => 'properties/' . $this->propertyId,
+            'dateRanges' => [new DateRange(['start_date' => '30daysAgo', 'end_date' => 'today'])],
+            'dimensions' => [new Dimension(['name' => 'eventName'])],
+            'metrics' => [new Metric(['name' => 'conversions'])],
+            'orderBys' => [new OrderBy(['metric' => new MetricOrderBy(['metric_name' => 'conversions']), 'desc' => true])],
+            'dimensionFilter' => new FilterExpression([
+                'filter' => new Filter([
+                    'field_name' => 'eventName',
+                    'in_list_filter' => new InListFilter([
+                        'values' => $this->socialEvents,
+                    ])
+                ])
+            ])
+        ]);
 
-    //     $conversions = [];
-    //     foreach ($response->getRows() as $row) {
-    //         if ($row->getMetricValues()[0]->getValue() > 0) {
-    //             $conversions[] = [
-    //                 'name' => $row->getDimensionValues()[0]->getValue(),
-    //                 'count' => (int) $row->getMetricValues()[0]->getValue(),
-    //             ];
-    //         }
-    //     }
-    //     return $conversions;
-    // }
+        $conversions = [];
+        foreach ($response->getRows() as $row) {
+            if ($row->getMetricValues()[0]->getValue() > 0) {
+                $conversions[] = [
+                    'name' => $row->getDimensionValues()[0]->getValue(),
+                    'count' => (int) $row->getMetricValues()[0]->getValue(),
+                ];
+            }
+        }
+        return $conversions;
+    }
 
     private function fetchButtonClicks()
     {

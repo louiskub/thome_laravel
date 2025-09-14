@@ -268,26 +268,26 @@
     </section>
 
     <!-- <div class="hero-stats animate-text delay-3">
-                        <div class="stat">
-                            <span class="counter" data-target="1250">1250</span><span>+</span>
-                            <p>ตรวจบ้านมาแล้วกว่า</p>
-                        </div>
-                        <div class="stat">
-                            <span class="counter" data-target="99.9">99.9</span><span>%</span>
-                            <p>ความพึงพอใจ</p>
-                        </div>
-                        <div class="stat">
-                            <span class="counter" data-target="10">10</span><span>+ปี</span>
-                            <p>ประสบการณ์กว่า</p>
-                        </div> -->
+                            <div class="stat">
+                                <span class="counter" data-target="1250">1250</span><span>+</span>
+                                <p>ตรวจบ้านมาแล้วกว่า</p>
+                            </div>
+                            <div class="stat">
+                                <span class="counter" data-target="99.9">99.9</span><span>%</span>
+                                <p>ความพึงพอใจ</p>
+                            </div>
+                            <div class="stat">
+                                <span class="counter" data-target="10">10</span><span>+ปี</span>
+                                <p>ประสบการณ์กว่า</p>
+                            </div> -->
     <!-- <div class="hero-image animate-fade-in">
-                    <div class="image-container">
-                        <img src="https://www.thomeinspector.com/assets/upload/flora/6b65378f16b42ccd06773094898e35e043d6bc67.png" alt="Modern home inspection">
-                    </div>
-                </div> -->
+                        <div class="image-container">
+                            <img src="https://www.thomeinspector.com/assets/upload/flora/6b65378f16b42ccd06773094898e35e043d6bc67.png" alt="Modern home inspection">
+                        </div>
+                    </div> -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const counters = document.querySelectorAll('.counter');
 
             const updateCounter = (counter) => {
@@ -329,147 +329,146 @@
 
     <!-- Our Services Section -->
     <!-- <section class="services" data-aos="fade-up" data-aos-anchor-placement="top-center">
-                    <div class="service-container">
+                        <div class="service-container">
 
-                        <div class="image-container">
-                            <div class="image-box">
-                                <div class="image-bg"></div>
-                                <img src="/img/homebultter-bg.JPG" alt="Home Inspection">
-                            </div>
-                            <div class="call-box">
-                                <i class="fa-solid fa-phone"></i> 082-045-6165
-                            </div>
-                        </div>
-
-
-                        <div class="text-container">
-                            <h2 class="main-title">ต. ตรวจบ้าน รับตรวจรับบ้านและคอนโดก่อนโอนกรรมสิทธิ์</h2>
-                            <p class="description">
-                                ทำไมต้องเลือกเรา "ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า" ตรวจบ้านและคอนโดโดยใช้อุปกรณ์จริง
-                                (ไม่ได้ตรวจสอบด้วยตาเปล่า) และเทคโนโลยีที่ทันสมัย
-                            </p>
-
-                            <h2 class="contact-title">Requesting Services on the Telephone</h2>
-                            <p><i class="fa-solid fa-user-tie"></i> 082-045-6165, 02-301-0283</p>
-                            <p><i class="fa-solid fa-user"></i> 082-669-9666</p>
-                            <p><i class="fa-solid fa-user"></i> 086-500-0019</p>
-                            <p><i class="fa-solid fa-location-dot"></i> 2043 Soi Kanchanaphisek 008, Bangkae, Bangkae
-                                Bangkok 10160 Thailand</p>
-
-
-                            <div class="social-icons">
-                                <a href="https://www.facebook.com/t.homeinspector/?locale=th_TH">
-                                    <img src="/icon/ICON/Fb.png" alt="Facebook">
-                                </a>
-                                <a href="https://www.instagram.com/t.homeinspector/">
-                                    <img src="/icon/ICON/IG.png" alt="Instagram">
-                                </a>
-                                <a href="https://page.line.me/t.home?openQrModal=true">
-                                    <img src="/icon/ICON/line.png" alt="Line">
-                                </a>
-                                <a href="tel:082-045-6165">
-                                    <img src="/icon/ICON/phone.png" alt="Phone">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section class="carousel2 py-4" data-aos="fade-up" data-aos-duration="3000">
-                    <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <div class="carousel-content mx-auto text-center">
-                                    <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
-                                    <img src="/img/servicecharge1.png" alt="Service Pricing 1"
-                                        class="img-fluid">
+                            <div class="image-container">
+                                <div class="image-box">
+                                    <div class="image-bg"></div>
+                                    <img src="/img/homebultter-bg.JPG" alt="Home Inspection">
+                                </div>
+                                <div class="call-box">
+                                    <i class="fa-solid fa-phone"></i> 082-045-6165
                                 </div>
                             </div>
 
-                            <div class="carousel-item">
-                                <div class="carousel-content mx-auto text-center">
-                                    <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
-                                    <img src="/img/servicecharge2.png" alt="Service Pricing 2"
-                                        class="img-fluid">
-                                </div>
-                            </div>
 
-                            <div class="carousel-item">
-                                <div class="carousel-content mx-auto text-center">
-                                    <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
-                                    <img src="/img/servicecharge3.png" alt="Service Details" class="img-fluid">
-                                </div>
-                            </div>
+                            <div class="text-container">
+                                <h2 class="main-title">ต. ตรวจบ้าน รับตรวจรับบ้านและคอนโดก่อนโอนกรรมสิทธิ์</h2>
+                                <p class="description">
+                                    ทำไมต้องเลือกเรา "ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า" ตรวจบ้านและคอนโดโดยใช้อุปกรณ์จริง
+                                    (ไม่ได้ตรวจสอบด้วยตาเปล่า) และเทคโนโลยีที่ทันสมัย
+                                </p>
 
-                            <div class="carousel-item">
-                                <div class="carousel-content mx-auto text-center">
-                                    <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
-                                    <img src="/img/servicecharge4.png" alt="Service Details" class="img-fluid">
+                                <h2 class="contact-title">Requesting Services on the Telephone</h2>
+                                <p><i class="fa-solid fa-user-tie"></i> 082-045-6165, 02-301-0283</p>
+                                <p><i class="fa-solid fa-user"></i> 082-669-9666</p>
+                                <p><i class="fa-solid fa-user"></i> 086-500-0019</p>
+                                <p><i class="fa-solid fa-location-dot"></i> 2043 Soi Kanchanaphisek 008, Bangkae, Bangkae
+                                    Bangkok 10160 Thailand</p>
+
+
+                                <div class="social-icons">
+                                    <a href="https://www.facebook.com/t.homeinspector/?locale=th_TH">
+                                        <img src="/icon/ICON/Fb.png" alt="Facebook">
+                                    </a>
+                                    <a href="https://www.instagram.com/t.homeinspector/">
+                                        <img src="/icon/ICON/IG.png" alt="Instagram">
+                                    </a>
+                                    <a href="https://page.line.me/t.home?openQrModal=true">
+                                        <img src="/icon/ICON/line.png" alt="Line">
+                                    </a>
+                                    <a href="tel:082-045-6165">
+                                        <img src="/icon/ICON/phone.png" alt="Phone">
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                    </section>
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"
-                                style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
 
-                        <button class="carousel-control-next" type="button" data-bs-target="#customCarousel"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"
-                                style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </section> -->
+                    <section class="carousel2 py-4" data-aos="fade-up" data-aos-duration="3000">
+                        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <div class="carousel-content mx-auto text-center">
+                                        <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
+                                        <img src="/img/servicecharge1.png" alt="Service Pricing 1"
+                                            class="img-fluid">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-content mx-auto text-center">
+                                        <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
+                                        <img src="/img/servicecharge2.png" alt="Service Pricing 2"
+                                            class="img-fluid">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-content mx-auto text-center">
+                                        <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
+                                        <img src="/img/servicecharge3.png" alt="Service Details" class="img-fluid">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-content mx-auto text-center">
+                                        <div class="carousel-heading">ราคาค่าบริการตรวจบ้านทาวน์โฮม</div>
+                                        <img src="/img/servicecharge4.png" alt="Service Details" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"
+                                    style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#customCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"
+                                    style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section> -->
 
     <!-- 🏠 Services Section -->
     {{-- <section class="services">
-            <div class="services container">
-                <div class="service-content">
-                    //<?php echo $row_services['content']; ?>
-                </div>
+        <div class="services container">
+            <div class="service-content">
+                //
+                <?php echo $row_services['content']; ?>
             </div>
-        </section> --}}
+        </div>
+    </section> --}}
 
     <!-- 🎞️ Carousel Section -->
     {{-- <section class="carousel2 py-4">
-            <div class="carousel slide">
-                <div class="carousel-inner">
-                    ?php echo $row_carousel['content']; ?>
-                </div>
-                <!-- Previous Button -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"
-                        style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <!-- Next Button -->
-                <button class="carousel-control-next" type="button" data-bs-target="#customCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"
-                        style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        <div class="carousel slide">
+            <div class="carousel-inner">
+                ?php echo $row_carousel['content']; ?>
             </div>
-        </section> --}}
+            <!-- Previous Button -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                    style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <!-- Next Button -->
+            <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                    style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%; width: 40px; height: 40px;"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section> --}}
 
 
-    <script src="/JS/Toggle_Navbar.js"></script>
-    <script src="/JS/dropdown.js"></script>
-    <script src="/JS/carousel.js"></script>
-    <script src="/JS/carousel2.js"></script>
-    <script src="/JS/carousel5.js"></script>
-    <script src="/JS/search_ham.js"></script>
-    <script src="/JS/footer.js"></script>
+    <script src="/js/Toggle_Navbar.js"></script>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/carousel2.js"></script>
+    <script src="/js/carousel5.js"></script>
+    <script src="/js/search_ham.js"></script>
+    <script src="/js/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();

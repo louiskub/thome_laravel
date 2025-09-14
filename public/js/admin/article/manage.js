@@ -1,4 +1,4 @@
-import ConfirmDialog from "/JS/component/confirm_dialog.js";
+import ConfirmDialog from "/js/component/confirm_dialog.js";
 
 const artList = document.getElementById("articles-list");
 // ข้อมูลตัวอย่าง

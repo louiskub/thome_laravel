@@ -1,4 +1,4 @@
-import ConfirmDialog from "/JS/component/confirm_dialog.js";
+import ConfirmDialog from "/js/component/confirm_dialog.js";
 
 const artList = document.getElementById("articles-list");
 // ข้อมูลตัวอย่าง
@@ -418,7 +418,7 @@ function initTagManage() {
                         await res.text().then((data) => {
                             console.log(data);
                         });
-                        return
+                        return;
                     } else {
                         window.showToast(
                             "เพิ่มprojectเรียบร้อยแล้ว",

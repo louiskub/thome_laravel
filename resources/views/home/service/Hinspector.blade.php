@@ -10,6 +10,14 @@
     <section class="hero">
         <div class="bg bg1"></div>
         <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="bg bg4"></div>
+        <div class="bg bg5"></div>
+        <div class="bg bg6"></div>
+        <div class="bg bg7"></div>
+        <div class="bg bg8"></div>
+        <div class="bg bg9"></div>
+        <div class="bg bg10"></div>
 
         <div class="overlay"></div>
         <div class="hero-content">
@@ -98,7 +106,7 @@
                         <li><i class="fas fa-check-circle"></i> {{ __('hinspector.service_feature_1') }}</li>
                         <li><i class="fas fa-check-circle"></i> {{ __('hinspector.service_feature_2') }}</li>
                         <li><i class="fas fa-check-circle"></i> {{ __('hinspector.service_feature_3') }}</li>
-                        <li><i class="fas fa-check-circle"></i> {{ __('hinspector.service_feature_4') }}</li>
+                        {{-- <li><i class="fas fa-check-circle"></i> {{ __('hinspector.service_feature_4') }}</li> --}}
                     </ul>
                 </div>
                 <div class="video-container">
@@ -757,7 +765,7 @@
                 </div>
             </div>
             <div class="devices">
-                <img src="img/report.png" alt="{{ __('hinspector.reports_on_devices') }}" class="devices-image">
+                <img src="/img/report.png" alt="{{ __('hinspector.reports_on_devices') }}" class="devices-image">
             </div>
         </div>
     </section>

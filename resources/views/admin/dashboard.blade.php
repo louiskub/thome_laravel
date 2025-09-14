@@ -11,7 +11,7 @@
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; }
         .dashboard { max-width: 1200px; margin-top: 2rem; padding: 0 5rem; }
         h1 { margin-bottom: 2rem; }
-        .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
         .card { background: var(--card-bg); padding: var(--padding); border-radius: var(--border-radius); box-shadow: var(--shadow); }
         .card-metric { text-align: center; }
         .card-metric .value { font-size: 2.25rem; font-weight: 700; color: #007bff; }
@@ -46,6 +46,10 @@
                 <div class="value">{{ number_format($keyMetrics['conversions']) }}</div>
                 <div class="label">Total Conversions (30d)</div>
             </div>
+            <div class="card card-metric">
+                <div class="value">{{ number_format($totalViewsToday) }}</div>
+                <div class="label">Total View Today</div>
+            </div>
 
             <div class="card col-span-4">
                 <h2>Daily Active Users</h2>
@@ -60,7 +64,7 @@
             <div class="card col-span-2">
                 <h2>Top Conversion Events</h2>
                 <table>
-                    @foreach($buttonClicks as $event)
+                    @foreach($conversions as $event)
                     <tr>
                         <td>{{ $event['name'] }}</td>
                         <td class="count">{{ number_format($event['count']) }}</td>
@@ -76,7 +80,8 @@
                  <table>
                     @forelse($topPages as $page)
                     <tr>
-                        <td>{{ $page['title'] }}</td>
+                        <td><a href="{{ $page['title'] }}">{{$page['title']}}</a></td>
+                        
                         <td class="count">{{ number_format($page['views']) }}</td>
                     </tr>
                     @empty
