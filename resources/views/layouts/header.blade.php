@@ -2,26 +2,18 @@
     <div class="top-bar">
         <div class="container row">
             <!-- Social Icons -->
-            <div class="social-icons col justify-content-start" target="_blank">
-                <a href="https://www.facebook.com/t.homeinspector/?locale=th_TH">
-                    <button onclick="gtag('event', 'facebook_click', { 'source': 'header_icon' });">
-                        <img src="/icon/ICON/Fb.png" alt="Facebook">
-                    </button>
+            <div class="social-icons col justify-content-start" >
+                <a href="https://www.facebook.com/t.homeinspector/?locale=th_TH" target="_blank" onclick="trackFacebookClick(event)">
+                    <img src="/icon/ICON/Fb.png" alt="Facebook">
                 </a>
-                <a href="https://www.instagram.com/t.homeinspector/" target="_blank">
-                    <button onclick="gtag('event', 'instagram_click', { 'source': 'header_icon' });">
-                        <img src="/icon/ICON/IG.png" alt="Instagram">
-                    </button>
+                <a href="https://www.instagram.com/t.homeinspector/" target="_blank" onclick="trackInstagramClick(event)">
+                    <img src="/icon/ICON/IG.png" alt="Instagram">
                 </a>
-                <a href="https://page.line.me/t.home?openQrModal=true" target="_blank">
-                    <button onclick="gtag('event', 'line_click', { 'source': 'header_icon' });">
-                        <img src="/icon/ICON/line.png" alt="Line">
-                    </button>
+                <a href="https://page.line.me/t.home?openQrModal=true" target="_blank" onclick="trackLineClick(event)">
+                    <img src="/icon/ICON/line.png" alt="Line">
                 </a>
-                <a href="tel:082-045-6165">
-                    <button onclick="gtag('event', 'call_click', { 'source': 'header_icon' });">
-                        <img src="/icon/ICON/phone.png" alt="Phone">
-                    </button>
+                <a href="tel:082-045-6165" onclick="trackCallClick(event)">
+                    <img src="/icon/ICON/phone.png" alt="Phone">
                 </a>
             </div>
             <!-- Logo -->
@@ -282,3 +274,52 @@
         {{-- <span>{{ app()->getLocale() }}</span> --}}
     </a>
 </div>
+
+<script>
+function trackFacebookClick(event) {
+  event.preventDefault();
+  const destinationUrl = event.currentTarget.href;
+  gtag('event', 'facebook_click', {
+    'event_category': 'social_media',
+    'event_label': 'Header Facebook Icon',
+    'event_callback': function() {
+      window.open(destinationUrl, '_blank');
+    }
+  });
+}
+function trackInstagramClick(event) {
+  event.preventDefault();
+  const destinationUrl = event.currentTarget.href;
+  gtag('event', 'instagram_click', {
+    'event_category': 'social_media',
+    'event_label': 'Header Instagram Icon',
+    'event_callback': function() {
+      window.open(destinationUrl, '_blank');
+    }
+  });
+}   
+
+function trackLineClick(event) {
+  event.preventDefault();
+  const destinationUrl = event.currentTarget.href;
+  gtag('event', 'line_click', {
+    'event_category': 'social_media',
+    'event_label': 'Header Line Icon',
+    'event_callback': function() {
+      window.open(destinationUrl, '_blank');
+    }
+  });
+}
+
+function trackCallClick(event) {
+  event.preventDefault();
+  const destinationUrl = event.currentTarget.href;
+  gtag('event', 'call_click', {
+    'event_category': 'contact',
+    'event_label': 'Header Phone Icon',
+    'event_callback': function() {
+      window.location.href = destinationUrl;
+    }
+  });
+}
+</script>
