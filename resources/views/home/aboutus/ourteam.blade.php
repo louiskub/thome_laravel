@@ -69,8 +69,9 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
             }
-
 
             .service-btn:hover {
                 transform: translateY(-2px);
@@ -79,6 +80,7 @@
 
             .service-btn.active {
                 transform: scale(1.05);
+                background: linear-gradient(135deg, #2980b9, #1f4e79);
             }
 
             /* Service Content */
@@ -106,7 +108,7 @@
 
             .filter-header i {
                 font-size: 1.5rem;
-                color: #7f8c8d;
+                color: #3498db;
             }
 
             .filter-tabs {
@@ -118,18 +120,19 @@
 
             .filter-btn {
                 padding: 10px 20px;
-                border: 2px solid transparent;
+                border: 2px solid #3498db;
                 border-radius: 20px;
-                background: #ecf0f1;
-                color: #2c3e50;
+                background: white;
+                color: #3498db;
                 font-weight: 500;
                 cursor: pointer;
                 transition: all 0.3s ease;
             }
 
-            /* Theme-specific filter buttons */
-
+            .filter-btn.active,
             .filter-btn:hover {
+                background: #3498db;
+                color: white;
                 transform: translateY(-1px);
             }
 
@@ -154,13 +157,13 @@
             .department-line {
                 flex: 1;
                 height: 3px;
+                background: linear-gradient(45deg, #3498db, #2980b9);
                 border-radius: 2px;
             }
 
-            /* Theme-specific department lines */
             .department-count {
-                background: #ecf0f1;
-                color: #2c3e50;
+                background: #3498db;
+                color: white;
                 padding: 5px 15px;
                 border-radius: 15px;
                 font-weight: 600;
@@ -180,6 +183,7 @@
                 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
                 transition: all 0.3s ease;
                 cursor: pointer;
+                position: relative;
             }
 
             .team-card:hover {
@@ -226,13 +230,12 @@
             .department-badge {
                 display: inline-block;
                 padding: 5px 12px;
+                background: rgba(52, 152, 219, 0.9);
                 border-radius: 15px;
                 font-size: 0.8rem;
                 font-weight: 600;
                 margin-bottom: 8px;
             }
-
-            /* Theme-specific badges */
 
             .card-image-content h3 {
                 font-size: 1.3rem;
@@ -259,6 +262,7 @@
 
             .contact-info i {
                 width: 16px;
+                color: #3498db;
             }
 
             .skills {
@@ -276,7 +280,30 @@
                 font-weight: 500;
             }
 
-            /* Modal Styles */
+            .view-profile-btn {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: rgba(52, 152, 219, 0.9);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .view-profile-btn:hover {
+                background: #2980b9;
+                transform: scale(1.1);
+            }
+
+            /* Enhanced Modal Styles */
             .modal {
                 display: none;
                 position: fixed;
@@ -287,18 +314,36 @@
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0.5);
                 backdrop-filter: blur(5px);
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
             }
 
             .modal-content {
                 background-color: white;
                 margin: 2% auto;
                 padding: 0;
-                border-radius: 15px;
+                border-radius: 20px;
                 width: 90%;
-                max-width: 800px;
+                max-width: 900px;
                 max-height: 90vh;
                 overflow-y: auto;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                animation: slideIn 0.3s ease;
+            }
+
+            @keyframes slideIn {
+                from { 
+                    opacity: 0;
+                    transform: translateY(-50px) scale(0.9);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
             }
 
             .close-modal {
@@ -311,47 +356,98 @@
                 z-index: 10;
                 color: white;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                transition: all 0.3s ease;
+            }
+
+            .close-modal:hover {
+                transform: scale(1.2);
+                color: #ff6b6b;
             }
 
             .modal-header {
-                background: linear-gradient(135deg, #2c3e50, #3498db);
+                background: linear-gradient(135deg, #3498db, #2980b9);
                 color: white;
-                padding: 30px;
+                padding: 40px;
                 text-align: center;
                 position: relative;
+                overflow: hidden;
+            }
+
+            .modal-header::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                animation: float 6s ease-in-out infinite;
             }
 
             .modal-header h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 margin-bottom: 10px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .modal-header p {
+                font-size: 1.1rem;
+                opacity: 0.9;
+                position: relative;
+                z-index: 1;
             }
 
             .modal-body {
-                padding: 30px;
+                padding: 40px;
             }
 
             .modal-profile {
                 display: grid;
                 grid-template-columns: 1fr 2fr;
-                gap: 30px;
+                gap: 40px;
+            }
+
+            .modal-avatar {
+                text-align: center;
             }
 
             .modal-avatar img {
                 width: 100%;
-                border-radius: 15px;
+                max-width: 300px;
+                border-radius: 20px;
                 margin-bottom: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .modal-contact {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 15px;
+                margin-top: 20px;
             }
 
             .modal-contact-item {
                 display: flex;
                 align-items: center;
-                gap: 10px;
-                margin-bottom: 10px;
-                color: #7f8c8d;
+                gap: 15px;
+                margin-bottom: 15px;
+                color: #2c3e50;
+                font-weight: 500;
+            }
+
+            .modal-contact-item i {
+                width: 20px;
+                color: #3498db;
+                font-size: 1.1rem;
+            }
+
+            .modal-contact-item:last-child {
+                margin-bottom: 0;
             }
 
             .modal-section {
-                margin-bottom: 25px;
+                margin-bottom: 30px;
             }
 
             .modal-section h3 {
@@ -360,34 +456,120 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                font-size: 1.3rem;
+                border-bottom: 2px solid #ecf0f1;
+                padding-bottom: 10px;
+            }
+
+            .modal-section h3 i {
+                color: #3498db;
+            }
+
+            .modal-section p {
+                line-height: 1.6;
+                color: #555;
+            }
+
+            .modal-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .modal-section ul li {
+                padding: 8px 0;
+                border-bottom: 1px solid #ecf0f1;
+                position: relative;
+                padding-left: 25px;
+            }
+
+            .modal-section ul li:before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: #27ae60;
+                font-weight: bold;
             }
 
             .modal-skills {
                 display: flex;
-                gap: 8px;
+                gap: 10px;
                 flex-wrap: wrap;
             }
 
+            .modal-skills .skill-badge {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 500;
+            }
+
             .modal-footer {
-                padding: 20px 30px;
+                padding: 30px 40px;
                 text-align: center;
                 border-top: 1px solid #ecf0f1;
+                background: #f8f9fa;
+            }
+
+            .action-buttons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .action-btn {
+                padding: 12px 25px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .contact-btn {
+                background: #27ae60;
+                color: white;
+            }
+
+            .contact-btn:hover {
+                background: #219a52;
+                transform: translateY(-2px);
             }
 
             .close-btn {
                 background: #e74c3c;
                 color: white;
-                border: none;
-                padding: 12px 30px;
-                border-radius: 25px;
-                cursor: pointer;
-                font-weight: 600;
-                transition: all 0.3s ease;
             }
 
             .close-btn:hover {
                 background: #c0392b;
                 transform: translateY(-2px);
+            }
+
+            .loading-spinner {
+                display: none;
+                text-align: center;
+                padding: 40px;
+            }
+
+            .spinner {
+                border: 3px solid #f3f3f3;
+                border-top: 3px solid #3498db;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                animation: spin 1s linear infinite;
+                margin: 0 auto 15px;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
             }
 
             /* Responsive Design */
@@ -416,12 +598,21 @@
                     max-width: 200px;
                 }
 
-                .team-grid {
-                    /* grid-template-columns: 1fr; */
-                }
-
                 .modal-profile {
                     grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .modal-body {
+                    padding: 20px;
+                }
+
+                .modal-header {
+                    padding: 30px 20px;
+                }
+
+                .modal-header h2 {
+                    font-size: 1.8rem;
                 }
 
                 .department-header {
@@ -434,11 +625,46 @@
                     width: 100px;
                     margin: 0 auto;
                 }
+
+                .action-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .action-btn {
+                    width: 100%;
+                    max-width: 200px;
+                    justify-content: center;
+                }
             }
 
             /* Hidden class for filtering */
             .hidden {
                 display: none !important;
+            }
+
+            /* Additional animations */
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(180deg); }
+            }
+
+            .team-card {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            .team-card:nth-child(1) { animation-delay: 0.1s; }
+            .team-card:nth-child(2) { animation-delay: 0.2s; }
+            .team-card:nth-child(3) { animation-delay: 0.3s; }
+            .team-card:nth-child(4) { animation-delay: 0.4s; }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         </style>
     </head>
@@ -464,7 +690,6 @@
                     @endif
                 @endforeach
             </div>
-
 
             @foreach ($major as $maj)
                 @if($loop->first)
@@ -495,7 +720,10 @@
                             </div>
                             <div class="team-grid">
                                 @foreach ($department->employees as $employee)
-                                    <div class="team-card" data-id="{{ $employee->id }}">
+                                    <div class="team-card" data-id="{{ $employee->id }}" data-employee='@json($employee)'>
+                                        <button class="view-profile-btn" title="ดูโปรไฟล์">
+                                            <i class="fas fa-user"></i>
+                                        </button>
                                         <div class="card-image">
                                             <div class="image-overlay"></div>
                                             <img src="{{ $employee->cover_image }}"
@@ -506,62 +734,96 @@
                                                 <p>{{ $employee->translation->position }}</p>
                                             </div>
                                         </div>
+                                        <div class="card-content">
+                                            <div class="contact-info">
+                                                <i class="fas fa-envelope"></i>
+                                                <span>{{ $employee->email ?? 'contact@company.com' }}</span>
+                                            </div>
+                                            <div class="contact-info">
+                                                <i class="fas fa-phone"></i>
+                                                <span>{{ $employee->phone ?? '+66 89 123 4567' }}</span>
+                                            </div>
+                                            @if($employee->skills)
+                                            <div class="skills">
+                                                @foreach(explode(',', $employee->skills) as $skill)
+                                                    <span class="skill-badge">{{ trim($skill) }}</span>
+                                                @endforeach
+                                            </div>
+                                            @endif
+                                        </div>
                                     </div>
                                 @endforeach
-
                             </div>
                         </section>
                     @endforeach
-
                 </div>
             @endforeach
         </div>
 
-        <!-- Modal -->
+        <!-- Enhanced Modal -->
         <div class="modal" id="profileModal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
-                <div class="modal-header">
-                    <h2 id="modal-name">ชื่อผู้เชี่ยวชาญ</h2>
-                    <p id="modal-position">ตำแหน่ง - บริการ</p>
+                <div class="loading-spinner" id="modalLoading">
+                    <div class="spinner"></div>
+                    <p>กำลังโหลดข้อมูล...</p>
                 </div>
-                <div class="modal-body">
-                    <div class="modal-profile">
-                        <div class="modal-avatar">
-                            <img id="modal-image" src="https://via.placeholder.com/300x400" alt="ผู้เชี่ยวชาญ">
-                            <div class="modal-contact">
-                                <div class="modal-contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <span id="modal-phone">+66 89 123 4567</span>
+                <div id="modalContent" style="display: none;">
+                    <div class="modal-header">
+                        <h2 id="modal-name">ชื่อผู้เชี่ยวชาญ</h2>
+                        <p id="modal-position">ตำแหน่ง - บริการ</p>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-profile">
+                            <div class="modal-avatar">
+                                <img id="modal-image" src="/placeholder.svg" alt="ผู้เชี่ยวชาญ">
+                                <div class="modal-contact">
+                                    <div class="modal-contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span id="modal-email">email@company.com</span>
+                                    </div>
+                                    <div class="modal-contact-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span id="modal-phone">+66 89 123 4567</span>
+                                    </div>
+                                    <div class="modal-contact-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span id="modal-location">กรุงเทพมหานคร</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-info">
-                            <div class="modal-section">
-                                <h3><i class="fas fa-user"></i> ประวัติ</h3>
-                                <p id="modal-bio">ประวัติผู้เชี่ยวชาญ...</p>
-                            </div>
-                            <div class="modal-section">
-                                <h3><i class="fas fa-award"></i> ความสำเร็จ</h3>
-                                <ul id="modal-achievements">
-                                    <li>ความสำเร็จ 1</li>
-                                    <li>ความสำเร็จ 2</li>
-                                    <li>ความสำเร็จ 3</li>
-                                </ul>
-                            </div>
-                            <div class="modal-section">
-                                <h3>ทักษะ</h3>
-                                <div id="modal-skills" class="modal-skills">
-                                    <span class="skill-badge">ทักษะ 1</span>
-                                    <span class="skill-badge">ทักษะ 2</span>
-                                    <span class="skill-badge">ทักษะ 3</span>
+                            <div class="modal-info">
+                                <div class="modal-section">
+                                    <h3><i class="fas fa-user"></i> ประวัติ</h3>
+                                    <p id="modal-bio">ผู้เชี่ยวชาญที่มีประสบการณ์และความเชี่ยวชาญในสาขาของตน พร้อมให้บริการด้วยความใส่ใจและคุณภาพสูงสุด</p>
+                                </div>
+                                <div class="modal-section">
+                                    <h3><i class="fas fa-award"></i> ความสำเร็จ</h3>
+                                    <ul id="modal-achievements">
+                                        <li>มีประสบการณ์ในสาขามากกว่า 10 ปี</li>
+                                        <li>ได้รับการรับรองจากหน่วยงานที่เกี่ยวข้อง</li>
+                                        <li>ให้บริการลูกค้าด้วยความเป็นมิตรและมืออาชีพ</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-section">
+                                    <h3><i class="fas fa-tools"></i> ทักษะ</h3>
+                                    <div id="modal-skills" class="modal-skills">
+                                        <span class="skill-badge">ทักษะพื้นฐาน</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="close-btn">ปิด</button>
+                    <div class="modal-footer">
+                        <div class="action-buttons">
+                            <a href="#" class="action-btn contact-btn" id="contactBtn">
+                                <i class="fas fa-phone"></i> ติดต่อ
+                            </a>
+                            <button class="action-btn close-btn" id="closeBtn">
+                                <i class="fas fa-times"></i> ปิด
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -582,18 +844,24 @@
                     // Add active class to clicked button and corresponding content
                     button.classList.add('active');
                     document.getElementById(targetService).classList.add('active');
+
+                    // Smooth scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
             });
 
             // Filter functionality for each service
             function initializeFilters() {
                 const allServices = Array.from(document.querySelectorAll('.service-selection button'))
-                    .map(btn => btn.textContent.trim())
-
-                // const allServices = ['inspection', 'extension', 'decoration'];
+                    .map(btn => btn.getAttribute('data-service'));
 
                 allServices.forEach(serviceName => {
                     const serviceElement = document.getElementById(serviceName);
+                    if (!serviceElement) return;
+                    
                     const filterButtons = serviceElement.querySelectorAll('.filter-btn');
                     const departmentSections = serviceElement.querySelectorAll('.department-section');
 
@@ -611,8 +879,7 @@
                             departmentSections.forEach(section => {
                                 const sectionCategory = section.getAttribute('data-category');
 
-                                if (targetCategory === 'all' || sectionCategory ===
-                                    targetCategory) {
+                                if (targetCategory === 'all' || sectionCategory === targetCategory) {
                                     section.classList.remove('hidden');
                                 } else {
                                     section.classList.add('hidden');
@@ -623,141 +890,176 @@
                 });
             }
 
-            // Modal functionality
+            // Enhanced Modal functionality with backend data
             const modal = document.getElementById('profileModal');
             const closeModal = document.querySelector('.close-modal');
-            const closeBtn = document.querySelector('.close-btn');
-            const teamCards = document.querySelectorAll('.team-card');
+            const closeBtn = document.getElementById('closeBtn');
+            const modalLoading = document.getElementById('modalLoading');
+            const modalContent = document.getElementById('modalContent');
 
-            // Sample data for modal (you can expand this with real data)
-            const employeeData = {
-                1: {
-                    name: "สมชาย วิศวกรรม",
-                    position: "วิศวกรโครงสร้างอาวุโส - ตรวจบ้าน",
-                    email: "somchai@inspection.com",
-                    phone: "+66 89 123 4567",
-                    bio: "วิศวกรโครงสร้างที่มีประสบการณ์กว่า 15 ปี เชี่ยวชาญในการตรวจสอบและประเมินความแข็งแรงของโครงสร้างอาคาร",
-                    achievements: [
-                        "ได้รับใบรับรองวิศวกรโครงสร้างจากสภาวิศวกร",
-                        "มีประสบการณ์ตรวจสอบอาคารมากกว่า 500 หลัง",
-                        "ผู้เชี่ยวชาญด้านการประเมินความเสี่ยงโครงสร้าง"
-                    ],
-                    skills: ["ตรวจสอบฐานราก", "วิเคราะห์โครงสร้าง", "ประเมินความปลอดภัย"]
-                },
-                // Add more employee data as needed
-            };
+            // Function to load employee profile data
+            async function loadEmployeeProfile(employeeId, employeeData) {
+                try {
+                    // Show loading
+                    modalLoading.style.display = 'block';
+                    modalContent.style.display = 'none';
 
-            teamCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const employeeId = card.getAttribute('data-id');
-                    const data = employeeData[employeeId];
+                    // Simulate API call delay (remove this in production)
+                    await new Promise(resolve => setTimeout(resolve, 500));
 
-                    if (data) {
-                        document.getElementById('modal-name').textContent = data.name;
-                        document.getElementById('modal-position').textContent = data.position;
-                        document.getElementById('modal-email').textContent = data.email;
-                        document.getElementById('modal-phone').textContent = data.phone;
-                        document.getElementById('modal-bio').textContent = data.bio;
+                    // You can make an actual API call here if needed
+                    // const response = await fetch(`/api/employee/${employeeId}`);
+                    // const data = await response.json();
 
-                        // Update achievements
-                        const achievementsList = document.getElementById('modal-achievements');
-                        achievementsList.innerHTML = '';
-                        data.achievements.forEach(achievement => {
-                            const li = document.createElement('li');
-                            li.textContent = achievement;
-                            achievementsList.appendChild(li);
-                        });
+                    // Use the data passed from the card
+                    const data = JSON.parse(employeeData);
+                    
+                    // Update modal content
+                    document.getElementById('modal-name').textContent = data.translation?.name || 'ไม่ระบุชื่อ';
+                    document.getElementById('modal-position').textContent = data.translation?.position || 'ไม่ระบุตำแหน่ง';
+                    document.getElementById('modal-email').textContent = data.email || 'contact@company.com';
+                    document.getElementById('modal-phone').textContent = data.phone || '+66 89 123 4567';
+                    document.getElementById('modal-location').textContent = data.location || 'กรุงเทพมหานคร';
+                    document.getElementById('modal-image').src = data.cover_image || '/placeholder.svg?height=400&width=300';
+                    
+                    // Update bio
+                    const bio = data.translation?.bio || data.bio || 'ผู้เชี่ยวชาญที่มีประสบการณ์และความเชี่ยวชาญในสาขาของตน พร้อมให้บริการด้วยความใส่ใจและคุณภาพสูงสุด';
+                    document.getElementById('modal-bio').textContent = bio;
 
-                        // Update skills
-                        const skillsContainer = document.getElementById('modal-skills');
-                        skillsContainer.innerHTML = '';
-                        data.skills.forEach(skill => {
-                            const span = document.createElement('span');
-                            span.className = 'skill-badge';
-                            span.textContent = skill;
-                            skillsContainer.appendChild(span);
-                        });
+                    // Update achievements
+                    const achievementsList = document.getElementById('modal-achievements');
+                    achievementsList.innerHTML = '';
+                    const achievements = data.achievements || [
+                        'มีประสบการณ์ในสาขามากกว่า 10 ปี',
+                        'ได้รับการรับรองจากหน่วยงานที่เกี่ยวข้อง',
+                        'ให้บริการลูกค้าด้วยความเป็นมิตรและมืออาชีพ'
+                    ];
+                    
+                    achievements.forEach(achievement => {
+                        const li = document.createElement('li');
+                        li.textContent = achievement;
+                        achievementsList.appendChild(li);
+                    });
 
-                        // Update image
-                        const cardImage = card.querySelector('.card-image img');
-                        document.getElementById('modal-image').src = cardImage.src;
-                    } else {
-                        // Default data if no specific data found
-                        const cardContent = card.querySelector('.card-image-content');
-                        const name = cardContent.querySelector('h3').textContent;
-                        const position = cardContent.querySelector('p').textContent;
-                        const email = card.querySelector('.contact-info span').textContent;
+                    // Update skills
+                    const skillsContainer = document.getElementById('modal-skills');
+                    skillsContainer.innerHTML = '';
+                    const skills = data.skills ? data.skills.split(',').map(s => s.trim()) : ['ทักษะพื้นฐาน'];
+                    
+                    skills.forEach(skill => {
+                        const span = document.createElement('span');
+                        span.className = 'skill-badge';
+                        span.textContent = skill;
+                        skillsContainer.appendChild(span);
+                    });
 
-                        document.getElementById('modal-name').textContent = name;
-                        document.getElementById('modal-position').textContent = position;
-                        document.getElementById('modal-email').textContent = email;
-                        document.getElementById('modal-phone').textContent = "+66 89 123 4567";
-                        document.getElementById('modal-bio').textContent =
-                            "ผู้เชี่ยวชาญที่มีประสบการณ์และความเชี่ยวชาญในสาขาของตน พร้อมให้บริการด้วยความใส่ใจและคุณภาพสูงสุด";
+                    // Update contact button
+                    const contactBtn = document.getElementById('contactBtn');
+                    contactBtn.href = `tel:${data.phone || '+66891234567'}`;
 
-                        // Default achievements
-                        const achievementsList = document.getElementById('modal-achievements');
-                        achievementsList.innerHTML = `
-                        <li>มีประสบการณ์ในสาขามากกว่า 10 ปี</li>
-                        <li>ได้รับการรับรองจากหน่วยงานที่เกี่ยวข้อง</li>
-                        <li>ให้บริการลูกค้าด้วยความเป็นมิตรและมืออาชีพ</li>
-                    `;
+                    // Hide loading and show content
+                    modalLoading.style.display = 'none';
+                    modalContent.style.display = 'block';
 
-                        // Get skills from card
-                        const skillsContainer = document.getElementById('modal-skills');
-                        skillsContainer.innerHTML = '';
-                        const cardSkills = card.querySelectorAll('.skill-badge');
-                        cardSkills.forEach(skillElement => {
-                            const span = document.createElement('span');
-                            span.className = 'skill-badge';
-                            span.textContent = skillElement.textContent;
-                            skillsContainer.appendChild(span);
-                        });
+                } catch (error) {
+                    console.error('Error loading employee profile:', error);
+                    modalLoading.style.display = 'none';
+                    modalContent.style.display = 'block';
+                    
+                    // Show error message or default data
+                    document.getElementById('modal-name').textContent = 'เกิดข้อผิดพลาด';
+                    document.getElementById('modal-bio').textContent = 'ไม่สามารถโหลดข้อมูลได้ในขณะนี้';
+                }
+            }
 
-                        // Update image
-                        const cardImage = card.querySelector('.card-image img');
-                        document.getElementById('modal-image').src = cardImage.src;
+            // Add click event listeners to team cards
+            document.addEventListener('click', function(e) {
+                const teamCard = e.target.closest('.team-card');
+                if (teamCard) {
+                    const employeeId = teamCard.getAttribute('data-id');
+                    const employeeData = teamCard.getAttribute('data-employee');
+                    
+                    if (employeeId && employeeData) {
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                        loadEmployeeProfile(employeeId, employeeData);
                     }
-
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
+                }
             });
 
             // Close modal functionality
-            closeModal.addEventListener('click', () => {
+            function closeModalFunction() {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
-            });
+                modalLoading.style.display = 'none';
+                modalContent.style.display = 'none';
+            }
 
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
+            closeModal.addEventListener('click', closeModalFunction);
+            closeBtn.addEventListener('click', closeModalFunction);
 
             window.addEventListener('click', (event) => {
                 if (event.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
+                    closeModalFunction();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    closeModalFunction();
                 }
             });
 
             // Initialize filters when page loads
             document.addEventListener('DOMContentLoaded', () => {
                 initializeFilters();
-            });
-
-            // Smooth scrolling for better UX
-            document.querySelectorAll('.service-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }, 100);
+                
+                // Add stagger animation to team cards
+                const teamCards = document.querySelectorAll('.team-card');
+                teamCards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.1}s`;
                 });
             });
+
+            // Search functionality (optional enhancement)
+            function addSearchFunctionality() {
+                const searchInput = document.createElement('input');
+                searchInput.type = 'text';
+                searchInput.placeholder = 'ค้นหาผู้เชี่ยวชาญ...';
+                searchInput.className = 'search-input';
+                searchInput.style.cssText = `
+                    width: 100%;
+                    max-width: 400px;
+                    padding: 15px;
+                    border: 2px solid #3498db;
+                    border-radius: 25px;
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                    outline: none;
+                `;
+
+                // Insert search input after main header
+                const mainHeader = document.querySelector('.main-header');
+                mainHeader.appendChild(searchInput);
+
+                searchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const teamCards = document.querySelectorAll('.team-card');
+
+                    teamCards.forEach(card => {
+                        const name = card.querySelector('h3').textContent.toLowerCase();
+                        const position = card.querySelector('.card-image-content p').textContent.toLowerCase();
+                        
+                        if (name.includes(searchTerm) || position.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
         </script>
     </body>
 
