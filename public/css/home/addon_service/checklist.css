@@ -36,68 +36,6 @@ body.thai {
 }
 
 /* Language Switcher */
-.language-switcher {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-  display: flex;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.2);
-}
-
-.lang-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: transparent;
-  color: #64748b;
-  border: none;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.lang-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 20px;
-}
-
-.lang-btn.active::before,
-.lang-btn:hover::before {
-  opacity: 1;
-}
-
-.lang-btn.active,
-.lang-btn:hover {
-  color: white;
-  transform: translateY(-1px);
-}
-
-.lang-btn i,
-.lang-btn span {
-  position: relative;
-  z-index: 2;
-}
-
 /* Container Styles */
 .container {
   max-width: 1200px;

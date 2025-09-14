@@ -2,18 +2,26 @@
     <div class="top-bar">
         <div class="container row">
             <!-- Social Icons -->
-            <div class="social-icons col justify-content-start">
+            <div class="social-icons col justify-content-start" target="_blank">
                 <a href="https://www.facebook.com/t.homeinspector/?locale=th_TH">
-                    <img src="/icon/ICON/Fb.png" alt="Facebook">
+                    <button onclick="gtag('event', 'facebook_click', { 'source': 'header_icon' });">
+                        <img src="/icon/ICON/Fb.png" alt="Facebook">
+                    </button>
                 </a>
-                <a href="https://www.instagram.com/t.homeinspector/">
-                    <img src="/icon/ICON/IG.png" alt="Instagram">
+                <a href="https://www.instagram.com/t.homeinspector/" target="_blank">
+                    <button onclick="gtag('event', 'instagram_click', { 'source': 'header_icon' });">
+                        <img src="/icon/ICON/IG.png" alt="Instagram">
+                    </button>
                 </a>
-                <a href="https://page.line.me/t.home?openQrModal=true">
-                    <img src="/icon/ICON/line.png" alt="Line">
+                <a href="https://page.line.me/t.home?openQrModal=true" target="_blank">
+                    <button onclick="gtag('event', 'line_click', { 'source': 'header_icon' });">
+                        <img src="/icon/ICON/line.png" alt="Line">
+                    </button>
                 </a>
                 <a href="tel:082-045-6165">
-                    <img src="/icon/ICON/phone.png" alt="Phone">
+                    <button onclick="gtag('event', 'call_click', { 'source': 'header_icon' });">
+                        <img src="/icon/ICON/phone.png" alt="Phone">
+                    </button>
                 </a>
             </div>
             <!-- Logo -->

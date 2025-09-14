@@ -52,5 +52,15 @@
 <script>
     AOS.init();
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FHXE3YJ0CV"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
+    gtag('config', 'G-FHXE3YJ0CV', {
+        'cookie_domain': 'none',
+        'debug_mode': true
+    });
+</script>
 </html>

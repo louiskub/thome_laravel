@@ -36,21 +36,24 @@
 
 .hero-content {
     filter: blur(0px) brightness(1);
-    position: relative;
+    /* position: relative; */
     z-index: 2;
 
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    width: 100vw;
     height: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* left: 50%;
+
+    position: absolute;
+    left: 50%;
     transform: translateX(-50%);
-    top: 0%; */
+    top: 0%;
 }
 
 .logo-container {
@@ -309,18 +312,21 @@
 
 .about-image {
     display: flex;
-    flex: 1;
+    flex: 2;
     justify-content: flex-end;
     opacity: 0;
     transform: translateX(-20px);
     transition: all 0.8s ease;
-}
 
-.about-image img {
     height: 300px;
+    width: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+
+    background-image: url('/img/hero-bg/construct/section/1.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .about-content {

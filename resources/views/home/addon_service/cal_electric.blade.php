@@ -6,10 +6,10 @@
         <div class="cal">
             <div class="cal-item">
                 <div>
-                    <h2><i class="fas fa-calculator"></i> {{ __('cal_electric.cal_title') }}</h2>
-                    <p><i class="fas fa-info-circle"></i> {{ __('cal_electric.cal_subtitle1') }}</p>
-                    <p><i class="fas fa-check-circle"></i> {{ __('cal_electric.cal_subtitle2') }}</p>
-                    <p><i class="fas fa-phone"></i> {{ __('cal_electric.cal_subtitle3') }}</p>
+                    <h2>🔌 {{ __('cal_electric.cal_title') }}</h2>
+                    <p style="text-align: left;"> {{ __('cal_electric.cal_subtitle1') }}</p>
+                    {{-- <p><i class="fas fa-check-circle"></i> {{ __('cal_electric.cal_subtitle2') }}</p>
+                    <p><i class="fas fa-phone"></i> {{ __('cal_electric.cal_subtitle3') }}</p> --}}
                 </div>
                 <div class="logo-container">
                     <img src="https://img.freepik.com/free-vector/household-public-utilities-design-concept-illustrated-consumption-accounting-energetic-water-resources-isometric-vector-illustration_98292-9053.jpg?t=st=1738919465~exp=1738923065~hmac=e56ee21aff5e511ecc26ae700c498f651b595e534afce2935ef0b8959ced7d59&w=1060"

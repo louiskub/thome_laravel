@@ -6,31 +6,63 @@
     <link rel="stylesheet" href="/css/home/service/Hinterior.css">
 
     <section class="hero-section">
-        <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="30000">
+        <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="8000">
             <div class="carousel-indicators">
                 <button type="buttxon" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                    aria-label="Slide 2"></button>
+            </div>
+            <div class="hero-content">
+                <div class="logo-container">
+                    <img src="/img/s2.png" alt="T. HOME CONSTRUCTION Logo" class="hero-logo">
+                </div>
+                <h1 class="hero-title">{{ __('hinterior.hero-title') }}</h1>
+                <div class="hero-description">{!! __('hinterior.hero-description') !!}</div>
+                <a href="/contactus" class="hero-btn">{{ __('hinterior.contact-btn') }}</a>
             </div>
             <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100">
-                    <img src="/img/ปกPSD.png"
+                    <img src="/img/hero-bg/interior/1.1.jpg"
                         class="hero-bg" alt="...">
-                    <div class="hero-content">
-                        <div class="logo-container">
-                            <img src="/img/s2.png" alt="T. HOME CONSTRUCTION Logo" class="hero-logo">
-                        </div>
-                        <h1 class="hero-title">{{ __('hinterior.hero-title') }}</h1>
-                        <div class="hero-description">{!! __('hinterior.hero-description') !!}</div>
-                        <a href="/contactus" class="hero-btn">{{ __('hinterior.contact-btn') }}</a>
-                    </div>
+                    
                 </div>
                 <div class="carousel-item h-100 p-0">
-                    <img src="/img/after_review/interrior-bg1.jpg"
+                    <img src="/img/hero-bg/interior/1.2.jpg"
+                        class="hero-bg" alt="...">
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <img src="/img/hero-bg/interior/1.jpg"
+                        class="hero-bg" alt="...">
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <img src="/img/hero-bg/interior/2.jpg"
+                        class="hero-bg" alt="...">
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <img src="/img/hero-bg/interior/3.jpg"
+                        class="hero-bg" alt="...">
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <img src="/img/hero-bg/interior/4.jpg"
+                        class="hero-bg" alt="...">
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <img src="/img/hero-bg/interior/5.jpg"
                         class="hero-bg" alt="...">
                 </div>
             </div>
+            
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -17,7 +17,7 @@ use App\Http\Controllers\ReviewHomeController;
 use App\Http\Controllers\PrivilegeController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\ContactController;
-use App\Models\PastWork;
+use App\Models\Pastwork;
 use App\Models\PastWorkTag;
 use App\Models\Faq;
 use App\Models\PageVariable;
@@ -163,6 +163,9 @@ Route::prefix('privilege')->controller(PrivilegeController::class)->group(functi
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'showDashboard'])->name('admin.dashboard');
+    Route::redirect('/', '/admin/dashboard');
+
     Route::prefix('static_page')->controller(StaticPageController::class)->group(function () {
         Route::get('/', 'index')->name('admin.static_page.index');
         Route::get('/home', 'home')->name('admin.static_page.home');
