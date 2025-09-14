@@ -1,12 +1,6 @@
 @extends('layouts.layout_admin')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Inspection Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -15,7 +9,7 @@
             --border-radius: 0.75rem; --padding: 1.5rem;
         }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; }
-        .dashboard { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .dashboard { max-width: 1200px; margin-top: 2rem; padding: 0 5rem; }
         h1 { margin-bottom: 2rem; }
         .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
         .card { background: var(--card-bg); padding: var(--padding); border-radius: var(--border-radius); box-shadow: var(--shadow); }
@@ -32,9 +26,7 @@
         @media (max-width: 1024px) { .col-span-2 { grid-column: span 4; } }
         @media (max-width: 768px) { .dashboard-grid { grid-template-columns: repeat(2, 1fr); } .col-span-4 { grid-column: span 2; } }
     </style>
-</head>
-<body>
-    <div class="dashboard">
+    <div class="dashboard container">
         <h1>Home Inspection Dashboard</h1>
 
         <div class="dashboard-grid">
@@ -126,6 +118,4 @@
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
     });
 </script>
-</body>
-</html>
 @endsection
