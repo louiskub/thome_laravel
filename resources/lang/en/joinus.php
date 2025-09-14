@@ -120,4 +120,54 @@ return [
     'step_4_date' => '(February - April 2025)',
     'step_4_description' => 'Begin real internship with professional teams, gain direct experience from actual projects, and develop skills in your field of interest',
     'step_4_highlight' => '🚀 Start Learning and Self-Development',
+
+
+
+    'internship.hero_title' => 'T.HOME INTERNSHIP',
+    'internship.hero_subtitle' => 'A Unique Internship Opportunity',
+    'internship.hero_description' => 'Join our unique internship program to develop your skills and prepare for your future career.',
+
+    'internship.benefits_title' => 'Benefits',
+    'internship.benefits_subtitle' => 'Benefits you will receive from joining our internship program',
+
+    'internship.benefit_1_title' => 'Internship Allowance Throughout the Program',
+    'internship.benefit_1_description' => 'So you can learn and gain experience without worrying about expenses.',
+
+    'internship.benefit_2_title' => 'Accident Insurance',
+    'internship.benefit_2_description' => 'For your safety and peace of mind during the internship period.',
+
+    'internship.benefit_3_title' => 'Certificate/Internship Completion Letter',
+    'internship.benefit_3_description' => 'Proof of experience and skills gained from our internship program.',
+
+    'internship.benefit_4_title' => 'Job Opportunities After Internship',
+    'internship.benefit_4_description' => 'For outstanding interns who pass the evaluation.',
+
+    'internship.benefit_5_title' => 'Real Experience with the Organization',
+    'internship.benefit_5_description' => 'Learn and develop your skills in a real working environment.',
+
+    'internship.steps_title' => 'Application Process',
+    'internship.step_1_title' => 'Application',
+    'internship.step_1_date' => '(Open all year round, no time restrictions)',
+    'internship.step_1_description' => 'We accept internship applications from various fields all year! Civil Engineering, Electrical Engineering, Computer Engineering, and more.',
+
+    'internship.step_2_title' => 'Submit Resume (HR Selection)',
+    'internship.step_2_date' => '(Open all year round, no time restrictions)',
+    'internship.step_2_description' => 'Send your resume to Info@thomeinspector.com, admin@thomeinspector.com',
+
+    'internship.step_3_title' => 'Interview (Preparation for Internship)',
+    'internship.step_3_date' => '(Open all year round, no time restrictions)',
+    'internship.step_3_description' => 'HR will contact you to schedule an online interview.',
+
+    'internship.step_4_title' => 'Internship (3 - 6 months depending on curriculum)',
+    'internship.step_4_date' => '(Open all year round, no time restrictions)',
+    'internship.step_4_description' => 'If you pass the interview, get ready to become part of our team.',
+
+    'internship.positions_title' => 'Available Positions',
+    'internship.positions_subtitle' => 'Join our team and grow with us. See our latest job openings below.',
+
+    'internship.atmosphere_title' => 'Working Atmosphere',
+    'internship.atmosphere_subtitle' => 'An open and learning-friendly working environment.',
+
+    'internship.video_title' => 'Internship Program Introduction Video',
+
 ];

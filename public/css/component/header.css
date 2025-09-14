@@ -148,6 +148,13 @@ header {
     transform: scale(1.2);
 }
 
+.social-icons button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 .logo img {
     height: 100px;
     left: 50%;

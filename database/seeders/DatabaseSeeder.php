@@ -51,9 +51,9 @@ class DatabaseSeeder extends Seeder
         PageVariable::create([
             'page' => 'home',
             'var' => [
-                'dev' => '277+',
-                'project' => '1216+',
-                'house' => '10000+',
+                'dev' => '277',
+                'project' => '1216',
+                'house' => '10000',
                 'satisfaction' => '99'
             ]
         ]);

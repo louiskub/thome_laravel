@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="/css/home/service/hconstruction.css">
+    <link rel="stylesheet" href="/css/home/service/Hconstruction.css">
 
     <section class="hero-section">
         <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="3000">
@@ -13,24 +13,45 @@
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="hero-content">
+                <div class="logo-container">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/s3-3bLs5HKnwRUrK4px4T8zPO4uMNVUmo.png"
+                        alt="T. HOME CONSTRUCTION Logo" class="hero-logo">
+                </div>
+                <h1 class="hero-title">{{ __('hconstruction.hero-title') }}</h1>
+                <div class="hero-description">{!! __('hconstruction.hero-description') !!}</div>
+                <a href="Homepage/Contactus.php" class="hero-btn">{{ __('hconstruction.contact-btn') }}</a>
             </div>
             <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100">
-                    <img src="https://img.freepik.com/free-photo/people-renovating-house-concept_53876-20664.jpg"
+                    <img src="/img/hero-bg/construct/1.jpg"
                         class="hero-bg" alt="...">
-                    <div class="hero-content">
-                        <div class="logo-container">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/s3-3bLs5HKnwRUrK4px4T8zPO4uMNVUmo.png"
-                                alt="T. HOME CONSTRUCTION Logo" class="hero-logo">
-                        </div>
-                        <h1 class="hero-title">{{ __('hconstruction.hero-title') }}</h1>
-                        <div class="hero-description">{!! __('hconstruction.hero-description') !!}</div>
-                        <a href="Homepage/Contactus.php" class="hero-btn">{{ __('hconstruction.contact-btn') }}</a>
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <div class="hero-detail-container">
+                        <img src="/img/hero-bg/construct/2.jpg" alt="...">
                     </div>
                 </div>
                 <div class="carousel-item h-100 p-0">
                     <div class="hero-detail-container">
-                        <img src="img/Construction-bg.jpg" alt="...">
+                        <img src="/img/hero-bg/construct/3.jpg" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <div class="hero-detail-container">
+                        <img src="/img/hero-bg/construct/4.jpg" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item h-100 p-0">
+                    <div class="hero-detail-container">
+                        <img src="/img/hero-bg/construct/5.jpg" alt="...">
                     </div>
                 </div>
             </div>
@@ -86,10 +107,27 @@
             <h2 class="section-title">{{ __('hconstruction.about-title') }}</h2>
             <div class="about-container gap-sm-4 gap-md-5">
                 <figure class="about-image justify-content-sm-center justify-content-md-end">
-                    <img src="img/Hconstruction-bg.jpg" alt="ทีมงานของเรา">
+                    {{-- <img alt="ทีมงานของเรา"> --}}
                 </figure>
+                <script>
+                        const imgList = [
+                            '/img/hero-bg/construct/section/1.jpg',
+                            '/img/hero-bg/construct/section/2.jpg',
+                            '/img/hero-bg/construct/section/3.jpg',
+                            '/img/hero-bg/construct/section/4.jpg',
+                            '/img/hero-bg/construct/section/5.jpg',
+                            // '/img/hero-bg/construct/section/6.jpg',
+                        ];
+                        let imgIx = 0;
+                        const aboutImage = document.querySelector('.about-image');
+                        setInterval(() => {
+                            imgIx = (imgIx + 1) % imgList.length;
+                            aboutImage.style.backgroundImage = `url(${imgList[imgIx]})`;
+                        }, 3000); // Change image every 3 seconds
+                        // aboutImage.style.transition = 'opacity 0.5s';
+                    </script>
                 <div class="about-content">
-                    <p class="about-description">{{ __('hconstruction.about-description') }}</p>
+                    {{-- <p class="about-description">{{ __('hconstruction.about-description') }}</p> --}}
                     <ul class="about-features">
                         <li class="about-feature">
                             <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
@@ -177,6 +215,6 @@
         </div>
     </div>
 
-    <script src="/js/home/service/hconstruction.js"></script>
+    <script src="/js/home/service/Hconstruction.js"></script>
 
 @endsection

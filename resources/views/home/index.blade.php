@@ -22,8 +22,15 @@
         //     }
         // ];
         let bgImages = [
-            '/img/hero-bg1.jpg',
-            '/img/hero-bg3.jpg'
+            '/img/hero-bg/index/hero/1.jpg',
+            '/img/hero-bg/index/hero/2.jpg',
+            '/img/hero-bg/index/hero/3.jpg',
+            '/img/hero-bg/index/hero/4.jpg',
+            '/img/hero-bg/index/hero/5.jpg',
+            '/img/hero-bg/index/hero/6.jpg',
+            '/img/hero-bg/index/hero/7.jpg',
+            '/img/hero-bg/index/hero/8.jpg',
+            '/img/hero-bg/index/hero/9.jpg',
         ];
         let bgIndex = 0;
 
@@ -180,10 +187,16 @@
             const servicesSection = document.querySelector(".services");
 
             const bgImages = [
-                "/img/hero-bg3.jpg",
-                "/img/inspector-bg.jpg",
-                "/img/interior-bg.jpg",
-                "/img/construction-bg.jpg",
+                '/img/hero-bg/index/service/1.jpg',
+                '/img/hero-bg/index/service/2.jpg',
+                '/img/hero-bg/index/service/3.jpg',
+                '/img/hero-bg/index/service/4.jpg',
+                '/img/hero-bg/index/service/5.jpg',
+                '/img/hero-bg/index/service/6.jpg',
+                '/img/hero-bg/index/service/7.jpg',
+                '/img/hero-bg/index/service/8.jpg',
+                '/img/hero-bg/index/service/9.jpg',
+                '/img/hero-bg/index/service/10.jpg',
             ];
 
             let index = 0;
@@ -536,7 +549,12 @@
                         const timer = setInterval(() => {
                             current += Math.ceil(target / (duration / stepTime));
                             if (current >= target) {
-                                counter.textContent = target;
+                                if (counter != counters[3]) {
+                                    counter.textContent = target + "+";
+                                } else {
+                                    counter.textContent = target;
+                                }
+
                                 clearInterval(timer);
                             } else {
                                 counter.textContent = current;
