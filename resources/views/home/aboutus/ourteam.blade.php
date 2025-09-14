@@ -92,13 +92,87 @@
                 display: block;
             }
 
-            /* Filter Styles */
-            .filter-container {
+            /* Role Filter Styles */
+            .role-filter-container {
                 background: white;
+                border-radius: 15px;
+                padding: 25px;
+                margin-bottom: 30px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .role-filter-header {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .role-filter-header h3 {
+                color: #2c3e50;
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .role-filter-header i {
+                font-size: 1.5rem;
+                color: #3498db;
+            }
+
+            .role-filter-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+
+            .role-filter-btn {
+                padding: 12px 25px;
+                border: 2px solid #3498db;
+                border-radius: 25px;
+                background: white;
+                color: #3498db;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .role-filter-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                transition: left 0.3s ease;
+                z-index: 0;
+            }
+
+            .role-filter-btn span {
+                position: relative;
+                z-index: 1;
+            }
+
+            .role-filter-btn.active::before,
+            .role-filter-btn:hover::before {
+                left: 0;
+            }
+
+            .role-filter-btn.active,
+            .role-filter-btn:hover {
+                color: white;
+                transform: translateY(-2px);
+            }
+
+            /* Department Filter */
+            .filter-container {
+                background: #f8f9fa;
                 border-radius: 15px;
                 padding: 20px;
                 margin-bottom: 30px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
             }
 
             .filter-header {
@@ -107,8 +181,8 @@
             }
 
             .filter-header i {
-                font-size: 1.5rem;
-                color: #3498db;
+                font-size: 1.2rem;
+                color: #6c757d;
             }
 
             .filter-tabs {
@@ -119,25 +193,66 @@
             }
 
             .filter-btn {
-                padding: 10px 20px;
-                border: 2px solid #3498db;
+                padding: 8px 18px;
+                border: 1px solid #dee2e6;
                 border-radius: 20px;
                 background: white;
-                color: #3498db;
+                color: #6c757d;
                 font-weight: 500;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                font-size: 0.9rem;
             }
 
             .filter-btn.active,
             .filter-btn:hover {
-                background: #3498db;
-                color: white;
+                background: #e9ecef;
+                color: #495057;
                 transform: translateY(-1px);
             }
 
-            /* Department Section */
-            .department-section {
+            /* Management Section Styles */
+            .management-section {
+                margin-bottom: 50px;
+            }
+
+            .management-header {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 30px;
+                padding: 20px;
+                background: linear-gradient(135deg, #8e44ad, #9b59b6);
+                border-radius: 15px;
+                color: white;
+            }
+
+            .management-header i {
+                font-size: 2rem;
+            }
+
+            .management-title {
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 0;
+            }
+
+            .management-subtitle {
+                font-size: 1rem;
+                opacity: 0.9;
+                margin: 5px 0 0 0;
+            }
+
+            .management-count {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                margin-left: auto;
+            }
+
+            /* Staff Section Styles */
+            .staff-section {
                 margin-bottom: 40px;
             }
 
@@ -146,17 +261,21 @@
                 align-items: center;
                 gap: 15px;
                 margin-bottom: 25px;
+                padding: 15px;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             }
 
             .department-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 font-weight: 600;
                 color: #2c3e50;
             }
 
             .department-line {
                 flex: 1;
-                height: 3px;
+                height: 2px;
                 background: linear-gradient(45deg, #3498db, #2980b9);
                 border-radius: 2px;
             }
@@ -167,15 +286,74 @@
                 padding: 5px 15px;
                 border-radius: 15px;
                 font-weight: 600;
+                font-size: 0.9rem;
             }
 
             /* Team Grid */
             .team-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 25px;
+                margin-bottom: 30px;
             }
 
+            /* Management Grid - Larger cards */
+            .management-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+
+            /* Staff Grid - Regular cards */
+            .staff-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            /* Management Card Styles */
+            .management-card {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+                border: 2px solid transparent;
+            }
+
+            .management-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+                border-color: #8e44ad;
+            }
+
+            .management-card .card-image {
+                height: 300px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .management-card .image-overlay {
+                background: linear-gradient(to bottom, transparent 0%, rgba(142, 68, 173, 0.8) 100%);
+            }
+
+            .management-card .department-badge {
+                background: rgba(142, 68, 173, 0.9);
+                color: white;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+
+            .management-card .card-content {
+                padding: 25px;
+            }
+
+            .management-card .view-profile-btn {
+                background: rgba(142, 68, 173, 0.9);
+                width: 45px;
+                height: 45px;
+            }
+
+            /* Regular Team Card Styles */
             .team-card {
                 background: white;
                 border-radius: 15px;
@@ -204,7 +382,8 @@
                 transition: transform 0.3s ease;
             }
 
-            .team-card:hover .card-image img {
+            .team-card:hover .card-image img,
+            .management-card:hover .card-image img {
                 transform: scale(1.05);
             }
 
@@ -241,6 +420,10 @@
                 font-size: 1.3rem;
                 font-weight: 600;
                 margin-bottom: 5px;
+            }
+
+            .management-card .card-image-content h3 {
+                font-size: 1.5rem;
             }
 
             .card-image-content p {
@@ -371,6 +554,10 @@
                 text-align: center;
                 position: relative;
                 overflow: hidden;
+            }
+
+            .modal-header.management {
+                background: linear-gradient(135deg, #8e44ad, #9b59b6);
             }
 
             .modal-header::before {
@@ -572,6 +759,11 @@
                 100% { transform: rotate(360deg); }
             }
 
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(180deg); }
+            }
+
             /* Responsive Design */
             @media (max-width: 768px) {
                 .title {
@@ -588,14 +780,21 @@
                     max-width: 300px;
                 }
 
+                .role-filter-tabs,
                 .filter-tabs {
                     flex-direction: column;
                     align-items: center;
                 }
 
+                .role-filter-btn,
                 .filter-btn {
                     width: 100%;
                     max-width: 200px;
+                }
+
+                .management-grid,
+                .staff-grid {
+                    grid-template-columns: 1fr;
                 }
 
                 .modal-profile {
@@ -613,6 +812,16 @@
 
                 .modal-header h2 {
                     font-size: 1.8rem;
+                }
+
+                .management-header {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 15px;
+                }
+
+                .management-count {
+                    margin-left: 0;
                 }
 
                 .department-header {
@@ -643,22 +852,22 @@
                 display: none !important;
             }
 
-            /* Additional animations */
-            @keyframes float {
-                0%, 100% { transform: translateY(0px) rotate(0deg); }
-                50% { transform: translateY(-20px) rotate(180deg); }
-            }
-
-            .team-card {
+            /* Animation classes */
+            .team-card,
+            .management-card {
                 animation: fadeInUp 0.6s ease forwards;
                 opacity: 0;
                 transform: translateY(30px);
             }
 
-            .team-card:nth-child(1) { animation-delay: 0.1s; }
-            .team-card:nth-child(2) { animation-delay: 0.2s; }
-            .team-card:nth-child(3) { animation-delay: 0.3s; }
-            .team-card:nth-child(4) { animation-delay: 0.4s; }
+            .team-card:nth-child(1),
+            .management-card:nth-child(1) { animation-delay: 0.1s; }
+            .team-card:nth-child(2),
+            .management-card:nth-child(2) { animation-delay: 0.2s; }
+            .team-card:nth-child(3),
+            .management-card:nth-child(3) { animation-delay: 0.3s; }
+            .team-card:nth-child(4),
+            .management-card:nth-child(4) { animation-delay: 0.4s; }
 
             @keyframes fadeInUp {
                 to {
@@ -697,30 +906,158 @@
                 @else
                 <div class="service-content {{ $maj->theme }}" id="{{ $maj->translation }}">
                 @endif
-                    <div class="filter-container">
-                        <div class="filter-header">
-                            <i class="fas fa-filter"></i>
+                    
+                    <!-- Role Filter -->
+                    <div class="role-filter-container">
+                        <div class="role-filter-header">
+                            <h3>เลือกดูตามตำแหน่ง</h3>
+                            <i class="fas fa-users-cog"></i>
                         </div>
-                        <div class="filter-tabs">
-                            <button class="filter-btn active" data-category="all">ทั้งหมด</button>
-                            @foreach ($maj->departments as $department)
-                                <button class="filter-btn"
-                                    data-category="{{ $department->translation->name }}">{{ $department->translation->name }}</button>
-                            @endforeach
+                        <div class="role-filter-tabs">
+                            <button class="role-filter-btn active" data-role="all">
+                                <span>ทั้งหมด</span>
+                            </button>
+                            <button class="role-filter-btn" data-role="management">
+                                <span><i class="fas fa-crown"></i> ผู้บริหาร</span>
+                            </button>
+                            <button class="role-filter-btn" data-role="staff">
+                                <span><i class="fas fa-users"></i> พนักงาน</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Department Filter -->
+                        <div class="filter-container">
+                            <div class="filter-header">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <div class="filter-tabs">
+                                <button class="filter-btn active" data-category="all">ทั้งหมด</button>
+                                @foreach ($maj->departments as $department)
+                                    <button class="filter-btn"
+                                        data-category="{{ $department->translation->name }}">{{ $department->translation->name }}</button>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
 
+                    @php
+                        // แยกพนักงานตามระดับตำแหน่ง
+                        $managementPositions = ['ผู้อำนวยการ', 'รองผู้อำนวยการ', 'ผู้จัดการ', 'รองผู้จัดการ', 'หัวหน้าแผนก', 'Director', 'Manager', 'Head', 'Chief'];
+                        $managementEmployees = [];
+                        $staffEmployees = [];
+                        
+                        foreach ($maj->departments as $department) {
+                            foreach ($department->employees as $employee) {
+                                $position = $employee->translation->position ?? '';
+                                $isManagement = false;
+                                
+                                foreach ($managementPositions as $mgmtPos) {
+                                    if (stripos($position, $mgmtPos) !== false) {
+                                        $isManagement = true;
+                                        break;
+                                    }
+                                }
+                                
+                                if ($isManagement) {
+                                    $managementEmployees[] = [
+                                        'employee' => $employee,
+                                        'department' => $department
+                                    ];
+                                } else {
+                                    $staffEmployees[] = [
+                                        'employee' => $employee,
+                                        'department' => $department
+                                    ];
+                                }
+                            }
+                        }
+                    @endphp
+
+                    <!-- Management Section -->
+                    @if(count($managementEmployees) > 0)
+                    <section class="management-section" data-role="management">
+                        <div class="management-header">
+                            <i class="fas fa-crown"></i>
+                            <div>
+                                <h2 class="management-title">ผู้บริหาร</h2>
+                                <p class="management-subtitle">ทีมผู้นำองค์กร</p>
+                            </div>
+                            <span class="management-count">{{ count($managementEmployees) }} คน</span>
+                        </div>
+                        <div class="team-grid management-grid">
+                            @foreach ($managementEmployees as $item)
+                                @php
+                                    $employee = $item['employee'];
+                                    $department = $item['department'];
+                                @endphp
+                                <div class="management-card team-card" 
+                                     data-id="{{ $employee->id }}" 
+                                     data-employee='@json($employee)'
+                                     data-category="{{ $department->translation->name }}"
+                                     data-role="management">
+                                    <button class="view-profile-btn" title="ดูโปรไฟล์">
+                                        <i class="fas fa-user"></i>
+                                    </button>
+                                    <div class="card-image">
+                                        <div class="image-overlay"></div>
+                                        <img src="{{ $employee->cover_image }}"
+                                            alt="{{ $employee->translation->name }}">
+                                        <div class="card-image-content">
+                                            <span class="department-badge">{{ $department->translation->name }}</span>
+                                            <h3>{{ $employee->translation->name }}</h3>
+                                            <p>{{ $employee->translation->position }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="contact-info">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>{{ $employee->email ?? 'contact@company.com' }}</span>
+                                        </div>
+                                        <div class="contact-info">
+                                            <i class="fas fa-phone"></i>
+                                            <span>{{ $employee->phone ?? '+66 89 123 4567' }}</span>
+                                        </div>
+                                        @if($employee->skills)
+                                        <div class="skills">
+                                            @foreach(explode(',', $employee->skills) as $skill)
+                                                <span class="skill-badge">{{ trim($skill) }}</span>
+                                            @endforeach
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </section>
+                    @endif
+
+                    <!-- Staff Sections by Department -->
                     @foreach ($maj->departments as $department)
-                        <section class="department-section" data-category="{{ $department->translation->name }}">
+                        @php
+                            $deptStaffEmployees = array_filter($staffEmployees, function($item) use ($department) {
+                                return $item['department']->id === $department->id;
+                            });
+                        @endphp
+                        
+                        @if(count($deptStaffEmployees) > 0)
+                        <section class="staff-section" 
+                                 data-category="{{ $department->translation->name }}"
+                                 data-role="staff">
                             <div class="department-header">
                                 <h2 class="department-title">{{ $department->translation->name }}</h2>
                                 <div class="department-line"></div>
-                                <span class="department-count"> {{ count($department->employees) }} {{ __('header.ourteam_professor') }}
-                                </span>
+                                <span class="department-count">{{ count($deptStaffEmployees) }} {{ __('header.ourteam_professor') }}</span>
                             </div>
-                            <div class="team-grid">
-                                @foreach ($department->employees as $employee)
-                                    <div class="team-card" data-id="{{ $employee->id }}" data-employee='@json($employee)'>
+                            <div class="team-grid staff-grid">
+                                @foreach ($deptStaffEmployees as $item)
+                                    @php
+                                        $employee = $item['employee'];
+                                    @endphp
+                                    <div class="team-card" 
+                                         data-id="{{ $employee->id }}" 
+                                         data-employee='@json($employee)'
+                                         data-category="{{ $department->translation->name }}"
+                                         data-role="staff">
                                         <button class="view-profile-btn" title="ดูโปรไฟล์">
                                             <i class="fas fa-user"></i>
                                         </button>
@@ -755,6 +1092,7 @@
                                 @endforeach
                             </div>
                         </section>
+                        @endif
                     @endforeach
                 </div>
             @endforeach
@@ -769,7 +1107,7 @@
                     <p>กำลังโหลดข้อมูล...</p>
                 </div>
                 <div id="modalContent" style="display: none;">
-                    <div class="modal-header">
+                    <div class="modal-header" id="modalHeader">
                         <h2 id="modal-name">ชื่อผู้เชี่ยวชาญ</h2>
                         <p id="modal-position">ตำแหน่ง - บริการ</p>
                     </div>
@@ -837,15 +1175,12 @@
                 button.addEventListener('click', () => {
                     const targetService = button.getAttribute('data-service');
 
-                    // Remove active class from all buttons and contents
                     serviceButtons.forEach(btn => btn.classList.remove('active'));
                     serviceContents.forEach(content => content.classList.remove('active'));
 
-                    // Add active class to clicked button and corresponding content
                     button.classList.add('active');
                     document.getElementById(targetService).classList.add('active');
 
-                    // Smooth scroll to top
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -853,7 +1188,7 @@
                 });
             });
 
-            // Filter functionality for each service
+            // Role and Department filtering functionality
             function initializeFilters() {
                 const allServices = Array.from(document.querySelectorAll('.service-selection button'))
                     .map(btn => btn.getAttribute('data-service'));
@@ -862,59 +1197,110 @@
                     const serviceElement = document.getElementById(serviceName);
                     if (!serviceElement) return;
                     
-                    const filterButtons = serviceElement.querySelectorAll('.filter-btn');
-                    const departmentSections = serviceElement.querySelectorAll('.department-section');
+                    const roleFilterButtons = serviceElement.querySelectorAll('.role-filter-btn');
+                    const departmentFilterButtons = serviceElement.querySelectorAll('.filter-btn');
+                    const managementSections = serviceElement.querySelectorAll('[data-role="management"]');
+                    const staffSections = serviceElement.querySelectorAll('[data-role="staff"]');
+                    const allCards = serviceElement.querySelectorAll('.team-card');
 
-                    filterButtons.forEach(button => {
+                    let currentRoleFilter = 'all';
+                    let currentDepartmentFilter = 'all';
+
+                    // Role filter functionality
+                    roleFilterButtons.forEach(button => {
                         button.addEventListener('click', () => {
-                            const targetCategory = button.getAttribute('data-category');
+                            currentRoleFilter = button.getAttribute('data-role');
 
-                            // Remove active class from all filter buttons in this service
-                            filterButtons.forEach(btn => btn.classList.remove('active'));
-
-                            // Add active class to clicked button
+                            roleFilterButtons.forEach(btn => btn.classList.remove('active'));
                             button.classList.add('active');
 
-                            // Show/hide department sections based on filter
-                            departmentSections.forEach(section => {
-                                const sectionCategory = section.getAttribute('data-category');
+                            applyFilters();
+                        });
+                    });
 
-                                if (targetCategory === 'all' || sectionCategory === targetCategory) {
-                                    section.classList.remove('hidden');
+                    // Department filter functionality
+                    departmentFilterButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            currentDepartmentFilter = button.getAttribute('data-category');
+
+                            departmentFilterButtons.forEach(btn => btn.classList.remove('active'));
+                            button.classList.add('active');
+
+                            applyFilters();
+                        });
+                    });
+
+                    function applyFilters() {
+                        // Show/hide based on role filter
+                        if (currentRoleFilter === 'all') {
+                            managementSections.forEach(section => section.classList.remove('hidden'));
+                            staffSections.forEach(section => section.classList.remove('hidden'));
+                        } else if (currentRoleFilter === 'management') {
+                            managementSections.forEach(section => section.classList.remove('hidden'));
+                            staffSections.forEach(section => section.classList.add('hidden'));
+                        } else if (currentRoleFilter === 'staff') {
+                            managementSections.forEach(section => section.classList.add('hidden'));
+                            staffSections.forEach(section => section.classList.remove('hidden'));
+                        }
+
+                        // Show/hide based on department filter
+                        if (currentDepartmentFilter !== 'all') {
+                            allCards.forEach(card => {
+                                const cardCategory = card.getAttribute('data-category');
+                                const cardRole = card.getAttribute('data-role');
+                                const parentSection = card.closest('[data-role]');
+
+                                if (cardCategory === currentDepartmentFilter && 
+                                    (currentRoleFilter === 'all' || cardRole === currentRoleFilter)) {
+                                    card.style.display = 'block';
+                                    if (parentSection) parentSection.classList.remove('hidden');
                                 } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+
+                            // Hide empty sections
+                            const sections = serviceElement.querySelectorAll('.management-section, .staff-section');
+                            sections.forEach(section => {
+                                const visibleCards = section.querySelectorAll('.team-card[style*="block"], .team-card:not([style*="none"])');
+                                if (visibleCards.length === 0) {
                                     section.classList.add('hidden');
                                 }
                             });
-                        });
-                    });
+                        } else {
+                            // Show all cards in visible sections
+                            allCards.forEach(card => {
+                                card.style.display = 'block';
+                            });
+                        }
+                    }
                 });
             }
 
-            // Enhanced Modal functionality with backend data
+            // Enhanced Modal functionality
             const modal = document.getElementById('profileModal');
             const closeModal = document.querySelector('.close-modal');
             const closeBtn = document.getElementById('closeBtn');
             const modalLoading = document.getElementById('modalLoading');
             const modalContent = document.getElementById('modalContent');
+            const modalHeader = document.getElementById('modalHeader');
 
-            // Function to load employee profile data
-            async function loadEmployeeProfile(employeeId, employeeData) {
+            async function loadEmployeeProfile(employeeId, employeeData, isManagement = false) {
                 try {
-                    // Show loading
                     modalLoading.style.display = 'block';
                     modalContent.style.display = 'none';
 
-                    // Simulate API call delay (remove this in production)
                     await new Promise(resolve => setTimeout(resolve, 500));
 
-                    // You can make an actual API call here if needed
-                    // const response = await fetch(`/api/employee/${employeeId}`);
-                    // const data = await response.json();
-
-                    // Use the data passed from the card
                     const data = JSON.parse(employeeData);
                     
-                    // Update modal content
+                    // Set modal header style based on role
+                    if (isManagement) {
+                        modalHeader.classList.add('management');
+                    } else {
+                        modalHeader.classList.remove('management');
+                    }
+                    
                     document.getElementById('modal-name').textContent = data.translation?.name || 'ไม่ระบุชื่อ';
                     document.getElementById('modal-position').textContent = data.translation?.position || 'ไม่ระบุตำแหน่ง';
                     document.getElementById('modal-email').textContent = data.email || 'contact@company.com';
@@ -922,11 +1308,9 @@
                     document.getElementById('modal-location').textContent = data.location || 'กรุงเทพมหานคร';
                     document.getElementById('modal-image').src = data.cover_image || '/placeholder.svg?height=400&width=300';
                     
-                    // Update bio
                     const bio = data.translation?.bio || data.bio || 'ผู้เชี่ยวชาญที่มีประสบการณ์และความเชี่ยวชาญในสาขาของตน พร้อมให้บริการด้วยความใส่ใจและคุณภาพสูงสุด';
                     document.getElementById('modal-bio').textContent = bio;
 
-                    // Update achievements
                     const achievementsList = document.getElementById('modal-achievements');
                     achievementsList.innerHTML = '';
                     const achievements = data.achievements || [
@@ -941,7 +1325,6 @@
                         achievementsList.appendChild(li);
                     });
 
-                    // Update skills
                     const skillsContainer = document.getElementById('modal-skills');
                     skillsContainer.innerHTML = '';
                     const skills = data.skills ? data.skills.split(',').map(s => s.trim()) : ['ทักษะพื้นฐาน'];
@@ -953,11 +1336,9 @@
                         skillsContainer.appendChild(span);
                     });
 
-                    // Update contact button
                     const contactBtn = document.getElementById('contactBtn');
                     contactBtn.href = `tel:${data.phone || '+66891234567'}`;
 
-                    // Hide loading and show content
                     modalLoading.style.display = 'none';
                     modalContent.style.display = 'block';
 
@@ -966,33 +1347,32 @@
                     modalLoading.style.display = 'none';
                     modalContent.style.display = 'block';
                     
-                    // Show error message or default data
                     document.getElementById('modal-name').textContent = 'เกิดข้อผิดพลาด';
                     document.getElementById('modal-bio').textContent = 'ไม่สามารถโหลดข้อมูลได้ในขณะนี้';
                 }
             }
 
-            // Add click event listeners to team cards
             document.addEventListener('click', function(e) {
                 const teamCard = e.target.closest('.team-card');
                 if (teamCard) {
                     const employeeId = teamCard.getAttribute('data-id');
                     const employeeData = teamCard.getAttribute('data-employee');
+                    const isManagement = teamCard.classList.contains('management-card');
                     
                     if (employeeId && employeeData) {
                         modal.style.display = 'block';
                         document.body.style.overflow = 'hidden';
-                        loadEmployeeProfile(employeeId, employeeData);
+                        loadEmployeeProfile(employeeId, employeeData, isManagement);
                     }
                 }
             });
 
-            // Close modal functionality
             function closeModalFunction() {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 modalLoading.style.display = 'none';
                 modalContent.style.display = 'none';
+                modalHeader.classList.remove('management');
             }
 
             closeModal.addEventListener('click', closeModalFunction);
@@ -1004,62 +1384,20 @@
                 }
             });
 
-            // Keyboard navigation
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape' && modal.style.display === 'block') {
                     closeModalFunction();
                 }
             });
 
-            // Initialize filters when page loads
             document.addEventListener('DOMContentLoaded', () => {
                 initializeFilters();
                 
-                // Add stagger animation to team cards
                 const teamCards = document.querySelectorAll('.team-card');
                 teamCards.forEach((card, index) => {
                     card.style.animationDelay = `${index * 0.1}s`;
                 });
             });
-
-            // Search functionality (optional enhancement)
-            function addSearchFunctionality() {
-                const searchInput = document.createElement('input');
-                searchInput.type = 'text';
-                searchInput.placeholder = 'ค้นหาผู้เชี่ยวชาญ...';
-                searchInput.className = 'search-input';
-                searchInput.style.cssText = `
-                    width: 100%;
-                    max-width: 400px;
-                    padding: 15px;
-                    border: 2px solid #3498db;
-                    border-radius: 25px;
-                    font-size: 1rem;
-                    margin-bottom: 20px;
-                    outline: none;
-                `;
-
-                // Insert search input after main header
-                const mainHeader = document.querySelector('.main-header');
-                mainHeader.appendChild(searchInput);
-
-                searchInput.addEventListener('input', (e) => {
-                    const searchTerm = e.target.value.toLowerCase();
-                    const teamCards = document.querySelectorAll('.team-card');
-
-                    teamCards.forEach(card => {
-                        const name = card.querySelector('h3').textContent.toLowerCase();
-                        const position = card.querySelector('.card-image-content p').textContent.toLowerCase();
-                        
-                        if (name.includes(searchTerm) || position.includes(searchTerm)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            }
-
         </script>
     </body>
 
