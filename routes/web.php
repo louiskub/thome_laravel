@@ -300,7 +300,7 @@ Route::get('/compare-houses', function () {
     return view('admin.compare.compare_frontend');
 });
 
-Route::get('/admin/compare-house', [HouseController::class, 'adminView'])->name('admin.compare.compare_house');
+// Route::get('/admin/compare-house', [HouseController::class, 'adminView'])->name('admin.compare.compare_house');
 
 Route::get('/admin/compare/compare_frontend', [HouseController::class, 'compareFrontend'])->name('admin.compare.compare_frontend');
 
