@@ -927,7 +927,7 @@
 
             @php
                 $allManagementEmployees = [];
-                $managementPositions = ['ผู้อำนวยการ', 'รองผู้อำนวยการ', 'ผู้จัดการ', 'รองผู้จัดการ', 'หัวหน้าแผนก', 'Director', 'Manager', 'Head', 'Chief'];
+                $managementPositions = ['ผู้อำนวยการ', 'รองผู้อำนวยการ', 'ผู้จัดการ', 'รองผู้จัดการ', 'หัวหน้าแผนก', 'Director', 'Head', 'Chief'];
                 
                 foreach ($major as $maj) {
                     foreach ($maj->departments as $department) {
