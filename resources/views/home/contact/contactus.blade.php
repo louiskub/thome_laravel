@@ -223,7 +223,6 @@
 <section class="cta-section">
     <div class="cta-container">
         <h2>{{ __('contact.cta_title') }}</h2>
-        <p>{{ __('contact.cta_subtitle') }}</p>
         <div class="cta-buttons">
             <a href="tel:+66025557890" class="btn btn-secondary"><i class="fas fa-phone-alt"></i>
                 {{ __('contact.call_us') }}</a>

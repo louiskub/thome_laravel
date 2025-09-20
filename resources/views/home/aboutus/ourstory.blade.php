@@ -88,7 +88,7 @@
             justify-content: center;
             text-align: center;
             color: #fff;
-            background: url('/img/Bulter.jpg') no-repeat center center/cover;
+            background: var(--blue-50);
 
         }
 
@@ -946,6 +946,13 @@
         }
         .hero-subtitle1{
             margin-top: 20px;
+            color : black;
+            font-size : 25px;
+        }
+        .hero-subtitle2{
+            margin-top: 20px;
+            color : black;
+            font-size : 25px;
         }
         /* ข้อความรอง */
         .hero-subtitle {
@@ -987,7 +994,7 @@
             <div class="hero-content">
             <h1 class="hero-title">Our Story</h1>
             <div class="hero-divider"></div>
-            <p class="hero-subtitle">ต.ตรวจบ้านริเริ่มขึ้นในปี 2015 โดยเริ่มต้นจาก คุณสุเมธ และ คุณเทพ ที่ได้นำความรู้ความเชี่ยวชาญทางด้านวิศวกรรมไปช่วยตรวจบ้านและคอนโดให้กับกลุ่มเพื่อนและคนรู้จัก โดยตรวจกับน้องชาย…2 คน จากการทำงานด้วยความใส่ใจในทุกรายละเอียดและความจริงใจ ทำให้ได้รับการยอมรับอย่างรวดเร็วผ่านการแนะนำแบบปากต่อปาก ซึ่งเป็นเครื่องยืนยันถึงความไว้วางใจที่ลูกค้ามีให้กับเราตั้งแต่วันแรก นั่นคือจุดกำเนิดของ ต.ตรวจบ้าน ที่เติบโตมาจากความเชื่อมั่นของลูกค้าอย่างแท้จริง</p>
+            <p class="hero-subtitle">ต.ตรวจบ้านริเริ่มขึ้นในปี 2015 โดยเริ่มต้นจาก คุณสุเมธ และ คุณเทพ ที่ได้นำความรู้ความเชี่ยวชาญทางด้านวิศวกรรมไปช่วยตรวจบ้านและคอนโดให้กับกลุ่มเพื่อนและคนรู้จัก จากการทำงานด้วยความใส่ใจในทุกรายละเอียดและความจริงใจ ทำให้ได้รับการยอมรับอย่างรวดเร็วผ่านการแนะนำแบบปากต่อปาก ซึ่งเป็นเครื่องยืนยันถึงความไว้วางใจที่ลูกค้ามีให้กับเราตั้งแต่วันแรก นั่นคือจุดกำเนิดของ ต.ตรวจบ้าน ที่เติบโตมาจากความเชื่อมั่นของลูกค้าอย่างแท้จริง</p>
             </div>
         </div>
         </section>
@@ -1087,7 +1094,6 @@
 
             <div class="motto-section">
                 <div class="motto-card scale-in">
-                    <div class="motto-icon">💫</div>
                     <h3 class="motto-title">คติของเรา</h3>
                     <p class="motto-text">"ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า"</p>
                     <div class="motto-decoration">
@@ -1106,7 +1112,6 @@
   <div class="container">
     <div class="section-header fade-in">
       <div class="section-badge">
-        <span class="badge-icon">💎</span>
         <span class="badge-text">หลักการของเรา</span>
       </div>
       <h2 class="section-title">Our Core Values</h2>
@@ -1122,12 +1127,12 @@
           </div>
         </div>
         <div class="card-content">
-          <h3 class="card-title">TRUST</h3>
+          <h3 class="card-title">TRUSTED</h3>
           <p class="card-description">การสร้างความเชื่อมั่นด้วยการตรวจสอบที่มีมาตรฐาน</p>
           <div class="card-features">
-            <div class="feature-point">✓ มาตรฐานสากล</div>
             <div class="feature-point">✓ ความโปร่งใส</div>
             <div class="feature-point">✓ ความน่าเชื่อถือ</div>
+            <div class="feature-point">✓ มีมาตรฐาน </div>
           </div>
         </div>
       </div>
@@ -1143,9 +1148,9 @@
           <h3 class="card-title">TECH</h3>
           <p class="card-description">บริการตรวจสอบคุณภาพบ้านโดยใช้เทคโนโลยีใหม่</p>
           <div class="card-features">
-            <div class="feature-point">✓ เทคโนโลยีทันสมัย</div>
-            <div class="feature-point">✓ อุปกรณ์ล้ำสมัย</div>
-            <div class="feature-point">✓ ระบบดิจิทัล</div>
+            <div class="feature-point">✓ อุปกรณ์การตรวจทันสมัย</div>
+            <div class="feature-point">✓ เทคโนโลยีใหม่ โดรน+อินฟาเรด</div>
+            <div class="feature-point">✓ ระบบซอฟแวร์สำหรับตรวจตรวจบ้าน</div>
           </div>
         </div>
       </div>
@@ -1161,9 +1166,9 @@
           <h3 class="card-title">TEAM</h3>
           <p class="card-description">ทีมงานคุณภาพพร้อมให้บริการลูกค้า</p>
           <div class="card-features">
-            <div class="feature-point">✓ ผู้เชี่ยวชาญ</div>
-            <div class="feature-point">✓ ประสบการณ์สูง</div>
-            <div class="feature-point">✓ บริการเป็นเลิศ</div>
+            <div class="feature-point">✓ ทำงานเป็นทีมเวิร์ค</div>
+            <div class="feature-point">✓ มีความเชี่ยวชาญและประสบการณ์</div>
+            <div class="feature-point">✓ เป็นพนักงานของบริษัททุกคน</div>
           </div>
         </div>
       </div>

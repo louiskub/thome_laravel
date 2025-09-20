@@ -74,7 +74,6 @@ return [
 
     // CTA Section
     "cta_title" => "Ready to upgrade your lifestyle?",
-    "cta_subtitle" => "Contact us today to consult about comprehensive home services",
 
     // Success/Error Messages
     "success_title" => "Message sent successfully!",

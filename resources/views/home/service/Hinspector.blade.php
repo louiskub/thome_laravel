@@ -161,7 +161,7 @@
                         <h3 class="inspection-card-title">{{ __('hinspector.sanitary_title') }}</h3>
                         <div class="inspection-content">
                             <p>{{ __('hinspector.sanitary_description') }}</p>
-                            <a href="https://scopeofwork.thomeinspector.com/sanitary" class="link-top">{{ __('hinspector.see_more_details') }}</a>
+                            <a href="https://scopeofwork.thomeinspector.com/plumbing" class="link-top">{{ __('hinspector.see_more_details') }}</a>
                         </div>
                     </div>
 
