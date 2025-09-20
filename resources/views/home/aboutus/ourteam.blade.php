@@ -925,6 +925,95 @@
                 @endforeach
             </div>
 
+            @php
+                $allManagementEmployees = [];
+                $managementPositions = ['ผู้อำนวยการ', 'รองผู้อำนวยการ', 'ผู้จัดการ', 'รองผู้จัดการ', 'หัวหน้าแผนก', 'Director', 'Manager', 'Head', 'Chief'];
+                
+                foreach ($major as $maj) {
+                    foreach ($maj->departments as $department) {
+                        foreach ($department->employees as $employee) {
+                            $position = $employee->translation->position ?? '';
+                            $isManagement = false;
+                            
+                            foreach ($managementPositions as $mgmtPos) {
+                                if (stripos($position, $mgmtPos) !== false) {
+                                    $isManagement = true;
+                                    break;
+                                }
+                            }
+                            
+                            if ($isManagement) {
+                                $allManagementEmployees[] = [
+                                    'employee' => $employee,
+                                    'department' => $department,
+                                    'major' => $maj
+                                ];
+                            }
+                        }
+                    }
+                }
+            @endphp
+
+            <!-- Single Management Section for all majors -->
+            @if(count($allManagementEmployees) > 0)
+            <div class="management-wrapper">
+                <section class="management-section" data-role="management">
+                    <div class="management-header">
+                        <i class="fas fa-crown"></i>
+                        <div>
+                            <h2 class="management-title">ผู้บริหาร</h2>
+                            <p class="management-subtitle">ทีมผู้นำองค์กร</p>
+                        </div>
+                        <span class="management-count">{{ count($allManagementEmployees) }} คน</span>
+                    </div>
+                    <div class="team-grid management-grid">
+                        @foreach ($allManagementEmployees as $item)
+                            @php
+                                $employee = $item['employee'];
+                                $department = $item['department'];
+                            @endphp
+                            <div class="management-card team-card" 
+                                 data-id="{{ $employee->id }}" 
+                                 data-employee='@json($employee)'
+                                 data-category="{{ $department->translation->name }}"
+                                 data-role="management">
+                                <button class="view-profile-btn" title="ดูโปรไฟล์">
+                                    <i class="fas fa-user"></i>
+                                </button>
+                                <div class="card-image">
+                                    <div class="image-overlay"></div>
+                                    <img src="{{ $employee->cover_image }}"
+                                        alt="{{ $employee->translation->name }}">
+                                    <div class="card-image-content">
+                                        <span class="department-badge">{{ $department->translation->name }}</span>
+                                        <h3>{{ $employee->translation->name }}</h3>
+                                        <p>{{ $employee->translation->position }}</p>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="contact-info">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>{{ $employee->email ?? 'contact@company.com' }}</span>
+                                    </div>
+                                    <div class="contact-info">
+                                        <i class="fas fa-phone"></i>
+                                        <span>{{ $employee->phone ?? '+66 89 123 4567' }}</span>
+                                    </div>
+                                    @if($employee->skills)
+                                    <div class="skills">
+                                        @foreach(explode(',', $employee->skills) as $skill)
+                                            <span class="skill-badge">{{ trim($skill) }}</span>
+                                        @endforeach
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </section>
+            </div>
+            @endif
+
             @foreach ($major as $maj)
                 @if($loop->first)
                 <div class="service-content {{ $maj->theme }} active" id="{{ $maj->translation }}">
@@ -966,9 +1055,6 @@
                     </div>
 
                     @php
-                        // แยกพนักงานตามระดับตำแหน่ง
-                        $managementPositions = ['ผู้อำนวยการ', 'รองผู้อำนวยการ', 'ผู้จัดการ', 'รองผู้จัดการ', 'หัวหน้าแผนก', 'Director', 'Manager', 'Head', 'Chief'];
-                        $managementEmployees = [];
                         $staffEmployees = [];
                         
                         foreach ($maj->departments as $department) {
@@ -983,12 +1069,7 @@
                                     }
                                 }
                                 
-                                if ($isManagement) {
-                                    $managementEmployees[] = [
-                                        'employee' => $employee,
-                                        'department' => $department
-                                    ];
-                                } else {
+                                if (!$isManagement) {
                                     $staffEmployees[] = [
                                         'employee' => $employee,
                                         'department' => $department
@@ -997,64 +1078,6 @@
                             }
                         }
                     @endphp
-
-                    <!-- Management Section -->
-                    @if(count($managementEmployees) > 0)
-                    <section class="management-section" data-role="management">
-                        <div class="management-header">
-                            <i class="fas fa-crown"></i>
-                            <div>
-                                <h2 class="management-title">ผู้บริหาร</h2>
-                                <p class="management-subtitle">ทีมผู้นำองค์กร</p>
-                            </div>
-                            <span class="management-count">{{ count($managementEmployees) }} คน</span>
-                        </div>
-                        <div class="team-grid management-grid">
-                            @foreach ($managementEmployees as $item)
-                                @php
-                                    $employee = $item['employee'];
-                                    $department = $item['department'];
-                                @endphp
-                                <div class="management-card team-card" 
-                                     data-id="{{ $employee->id }}" 
-                                     data-employee='@json($employee)'
-                                     data-category="{{ $department->translation->name }}"
-                                     data-role="management">
-                                    <button class="view-profile-btn" title="ดูโปรไฟล์">
-                                        <i class="fas fa-user"></i>
-                                    </button>
-                                    <div class="card-image">
-                                        <div class="image-overlay"></div>
-                                        <img src="{{ $employee->cover_image }}"
-                                            alt="{{ $employee->translation->name }}">
-                                        <div class="card-image-content">
-                                            <span class="department-badge">{{ $department->translation->name }}</span>
-                                            <h3>{{ $employee->translation->name }}</h3>
-                                            <p>{{ $employee->translation->position }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="contact-info">
-                                            <i class="fas fa-envelope"></i>
-                                            <span>{{ $employee->email ?? 'contact@company.com' }}</span>
-                                        </div>
-                                        <div class="contact-info">
-                                            <i class="fas fa-phone"></i>
-                                            <span>{{ $employee->phone ?? '+66 89 123 4567' }}</span>
-                                        </div>
-                                        @if($employee->skills)
-                                        <div class="skills">
-                                            @foreach(explode(',', $employee->skills) as $skill)
-                                                <span class="skill-badge">{{ trim($skill) }}</span>
-                                            @endforeach
-                                        </div>
-                                        @endif
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </section>
-                    @endif
 
                     <!-- Staff Sections by Department -->
                     @foreach ($maj->departments as $department)
