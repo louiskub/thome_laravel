@@ -305,7 +305,7 @@
                 margin: 0 auto;
             }
 
-            /* Staff Grid - Keep responsive as before */
+            /* Staff Grid - Regular cards */
             .staff-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
@@ -768,27 +768,6 @@
                 50% { transform: translateY(-20px) rotate(180deg); }
             }
 
-            /* Add styles for empty management slots */
-            .empty-slot {
-                opacity: 0.6;
-                border: 2px dashed #e2e8f0;
-            }
-
-            .empty-placeholder {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 200px;
-                color: #64748b;
-            }
-
-            .empty-placeholder i {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-                color: #cbd5e1;
-            }
-
             /* Responsive Design */
             @media (max-width: 768px) {
                 .title {
@@ -817,9 +796,15 @@
                     max-width: 200px;
                 }
 
-                .management-grid,
+                /* Remove this line for management, keep only for staff */
+                /* .management-grid, */
+                /* .staff-grid { */
+                /*     grid-template-columns: 1fr; */
+                /* } */
+                
+                /* Only staff grid becomes single column on mobile */
                 .staff-grid {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr; 
                 }
 
                 .modal-profile {
@@ -869,6 +854,21 @@
                     width: 100%;
                     max-width: 200px;
                     justify-content: center;
+                }
+
+                /* Ensure management grid stays horizontal on all screen sizes */
+                .management-grid {
+                    grid-template-columns: 1fr 1fr 1fr; /* Keep 3 columns even on mobile */
+                    gap: 1rem; /* Reduce gap on mobile */
+                    max-width: 100%;
+                }
+                
+                .management-card {
+                    font-size: 0.9rem; /* Slightly smaller text on mobile */
+                }
+                
+                .management-card .card-image-content h3 {
+                    font-size: 1rem; /* Smaller name text on mobile */
                 }
             }
 
@@ -999,7 +999,7 @@
                     @endphp
 
                     <!-- Management Section -->
-                    @if(true) {{-- Always show management section --}}
+                    @if(count($managementEmployees) > 0)
                     <section class="management-section" data-role="management">
                         <div class="management-header">
                             <i class="fas fa-crown"></i>
@@ -1007,79 +1007,48 @@
                                 <h2 class="management-title">ผู้บริหาร</h2>
                                 <p class="management-subtitle">ทีมผู้นำองค์กร</p>
                             </div>
-                            <span class="management-count">3 ตำแหน่ง</span>
+                            <span class="management-count">{{ count($managementEmployees) }} คน</span>
                         </div>
                         <div class="team-grid management-grid">
-                            {{-- Static management data instead of dynamic from backend --}}
-                            @php
-                                $staticManagement = [
-                                    [
-                                        'id' => 1,
-                                        'name' => 'นายสมชาย ใจดี',
-                                        'position' => 'ประธานกรรมการบริหาร',
-                                        'department' => 'บริหาร',
-                                        'email' => 'somchai@company.com',
-                                        'phone' => '+66 89 123 4567',
-                                        'image' => '/images/management/ceo.jpg',
-                                        'skills' => 'ภาวะผู้นำ, การจัดการ, วิสัยทัศน์'
-                                    ],
-                                    [
-                                        'id' => 2,
-                                        'name' => 'นางสาวสุดา เก่งมาก',
-                                        'position' => 'กรรมการผู้จัดการ',
-                                        'department' => 'บริหาร',
-                                        'email' => 'suda@company.com',
-                                        'phone' => '+66 89 234 5678',
-                                        'image' => '/images/management/coo.jpg',
-                                        'skills' => 'การดำเนินงาน, การวางแผน, การบริหาร'
-                                    ],
-                                    [
-                                        'id' => 3,
-                                        'name' => 'นายวิชัย ชาญฉลาด',
-                                        'position' => 'รองกรรมการผู้จัดการ',
-                                        'department' => 'บริหาร',
-                                        'email' => 'wichai@company.com',
-                                        'phone' => '+66 89 345 6789',
-                                        'image' => '/images/management/deputy.jpg',
-                                        'skills' => 'การเงิน, การตลาด, การพัฒนา'
-                                    ]
-                                ];
-                            @endphp
-                            
-                            @foreach ($staticManagement as $manager)
+                            @foreach ($managementEmployees as $item)
+                                @php
+                                    $employee = $item['employee'];
+                                    $department = $item['department'];
+                                @endphp
                                 <div class="management-card team-card" 
-                                     data-id="{{ $manager['id'] }}" 
-                                     data-employee='@json($manager)'
-                                     data-category="{{ $manager['department'] }}"
+                                     data-id="{{ $employee->id }}" 
+                                     data-employee='@json($employee)'
+                                     data-category="{{ $department->translation->name }}"
                                      data-role="management">
                                     <button class="view-profile-btn" title="ดูโปรไฟล์">
                                         <i class="fas fa-user"></i>
                                     </button>
                                     <div class="card-image">
                                         <div class="image-overlay"></div>
-                                        <img src="{{ $manager['image'] }}"
-                                            alt="{{ $manager['name'] }}"
-                                            onerror="this.src='/placeholder.svg?height=300&width=300'">
+                                        <img src="{{ $employee->cover_image }}"
+                                            alt="{{ $employee->translation->name }}">
                                         <div class="card-image-content">
-                                            <span class="department-badge">{{ $manager['department'] }}</span>
-                                            <h3>{{ $manager['name'] }}</h3>
-                                            <p>{{ $manager['position'] }}</p>
+                                            <span class="department-badge">{{ $department->translation->name }}</span>
+                                            <h3>{{ $employee->translation->name }}</h3>
+                                            <p>{{ $employee->translation->position }}</p>
                                         </div>
                                     </div>
                                     <div class="card-content">
                                         <div class="contact-info">
                                             <i class="fas fa-envelope"></i>
-                                            <span>{{ $manager['email'] }}</span>
+                                            <span>{{ $employee->email ?? 'contact@company.com' }}</span>
                                         </div>
                                         <div class="contact-info">
                                             <i class="fas fa-phone"></i>
-                                            <span>{{ $manager['phone'] }}</span>
+                                            <span>{{ $employee->phone ?? '+66 89 123 4567' }}</span>
                                         </div>
+                                        @if($employee->skills)
                                         <div class="skills">
-                                            @foreach(explode(',', $manager['skills']) as $skill)
+                                            @foreach(explode(',', $employee->skills) as $skill)
                                                 <span class="skill-badge">{{ trim($skill) }}</span>
                                             @endforeach
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
@@ -1090,24 +1059,9 @@
                     <!-- Staff Sections by Department -->
                     @foreach ($maj->departments as $department)
                         @php
-                            $managementPositions = ['ผู้อำนวยการ', 'รองผู้อำนวยการ', 'ผู้จัดการ', 'รองผู้จัดการ', 'หัวหน้าแผนก', 'Director', 'Manager', 'Head', 'Chief'];
-                            $deptStaffEmployees = [];
-                            
-                            foreach ($department->employees as $employee) {
-                                $position = $employee->translation->position ?? '';
-                                $isManagement = false;
-                                
-                                foreach ($managementPositions as $mgmtPos) {
-                                    if (stripos($position, $mgmtPos) !== false) {
-                                        $isManagement = true;
-                                        break;
-                                    }
-                                }
-                                
-                                if (!$isManagement) {
-                                    $deptStaffEmployees[] = $employee;
-                                }
-                            }
+                            $deptStaffEmployees = array_filter($staffEmployees, function($item) use ($department) {
+                                return $item['department']->id === $department->id;
+                            });
                         @endphp
                         
                         @if(count($deptStaffEmployees) > 0)
@@ -1120,7 +1074,10 @@
                                 <span class="department-count">{{ count($deptStaffEmployees) }} {{ __('header.ourteam_professor') }}</span>
                             </div>
                             <div class="team-grid staff-grid">
-                                @foreach ($deptStaffEmployees as $employee)
+                                @foreach ($deptStaffEmployees as $item)
+                                    @php
+                                        $employee = $item['employee'];
+                                    @endphp
                                     <div class="team-card" 
                                          data-id="{{ $employee->id }}" 
                                          data-employee='@json($employee)'
@@ -1267,8 +1224,8 @@
                     
                     const roleFilterButtons = serviceElement.querySelectorAll('.role-filter-btn');
                     const departmentFilterButtons = serviceElement.querySelectorAll('.filter-btn');
-                    const managementSections = serviceElement.querySelectorAll('[data-role="management"]');
-                    const staffSections = serviceElement.querySelectorAll('[data-role="staff"]');
+                    const managementSections = serviceElement.querySelectorAll('.management-section'); // Changed from [data-role="management"] to .management-section
+                    const staffSections = serviceElement.querySelectorAll('.staff-section'); // Changed from [data-role="staff"] to .staff-section
                     const allCards = serviceElement.querySelectorAll('.team-card');
 
                     let currentRoleFilter = 'all';
@@ -1316,7 +1273,7 @@
                             allCards.forEach(card => {
                                 const cardCategory = card.getAttribute('data-category');
                                 const cardRole = card.getAttribute('data-role');
-                                const parentSection = card.closest('[data-role]');
+                                const parentSection = card.closest('.management-section, .staff-section'); // Updated closest selector
 
                                 if (cardCategory === currentDepartmentFilter && 
                                     (currentRoleFilter === 'all' || cardRole === currentRoleFilter)) {
@@ -1333,12 +1290,19 @@
                                 const visibleCards = section.querySelectorAll('.team-card[style*="block"], .team-card:not([style*="none"])');
                                 if (visibleCards.length === 0) {
                                     section.classList.add('hidden');
+                                } else {
+                                    section.classList.remove('hidden');
                                 }
                             });
                         } else {
                             // Show all cards in visible sections
                             allCards.forEach(card => {
                                 card.style.display = 'block';
+                            });
+                            // Ensure all sections are visible if department is 'all'
+                            const sections = serviceElement.querySelectorAll('.management-section, .staff-section');
+                            sections.forEach(section => {
+                                section.classList.remove('hidden');
                             });
                         }
                     }
@@ -1369,12 +1333,12 @@
                         modalHeader.classList.remove('management');
                     }
                     
-                    document.getElementById('modal-name').textContent = data.translation?.name || data.name || 'ไม่ระบุชื่อ';
-                    document.getElementById('modal-position').textContent = data.translation?.position || data.position || 'ไม่ระบุตำแหน่ง';
+                    document.getElementById('modal-name').textContent = data.translation?.name || 'ไม่ระบุชื่อ';
+                    document.getElementById('modal-position').textContent = data.translation?.position || 'ไม่ระบุตำแหน่ง';
                     document.getElementById('modal-email').textContent = data.email || 'contact@company.com';
                     document.getElementById('modal-phone').textContent = data.phone || '+66 89 123 4567';
                     document.getElementById('modal-location').textContent = data.location || 'กรุงเทพมหานคร';
-                    document.getElementById('modal-image').src = data.cover_image || data.image || '/placeholder.svg?height=400&width=300';
+                    document.getElementById('modal-image').src = data.cover_image || '/placeholder.svg?height=400&width=300';
                     
                     const bio = data.translation?.bio || data.bio || 'ผู้เชี่ยวชาญที่มีประสบการณ์และความเชี่ยวชาญในสาขาของตน พร้อมให้บริการด้วยความใส่ใจและคุณภาพสูงสุด';
                     document.getElementById('modal-bio').textContent = bio;
