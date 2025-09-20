@@ -75,8 +75,8 @@
                             data-translate="nav.app-inspector">{{ __('header.app_inspector') }}</a></li>
                     <li><a href="/addon_service/cal_electric"
                             data-translate="nav.cal-electric">{{ __('header.cal_electric') }}</a></li>
-                    <li><a href="/addon_service/checklist"
-                            data-translate="nav.checklist">{{ __('header.checklist') }}</a></li>
+                    {{-- <li><a href="/addon_service/checklist"
+                            data-translate="nav.checklist">{{ __('header.checklist') }}</a></li> --}}
                 </ul>
             </li>
             <!-- Dropdown Menu -->
@@ -130,7 +130,7 @@
                 <ul class="dropdown">
                     <li><a href="/addon_service/app_inspector">{{ __('header.app_inspector') }}</a></li>
                     <li><a href="/addon_service/cal_electric">{{ __('header.cal_electric') }}</a></li>
-                    <li><a href="/addon_service/checklist">{{ __('header.checklist') }}</a></li>
+                    {{-- <li><a href="/addon_service/checklist">{{ __('header.checklist') }}</a></li> --}}
                 </ul>
             </li>
 

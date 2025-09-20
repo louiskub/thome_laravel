@@ -139,9 +139,9 @@ Route::prefix('addon_service')->group(function () {
     Route::get('/cal_electric', function () {
         return view('home.addon_service.cal_electric');
     });
-    Route::get('/checklist', function () {
-        return view('home.addon_service.checklist');
-    });
+    // Route::get('/checklist', function () {
+    //     return view('home.addon_service.checklist');
+    // });
 });
 // Route::get('review_home/{id}', function ($id) {
 //     return view('home.article.review_home', ['id' => $id]);
