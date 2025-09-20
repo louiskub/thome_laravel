@@ -513,13 +513,13 @@
 
     <section class="stats-section" id="stats-section">
         <div class="content-wrapper">
-            <div class="text-content">
+            {{-- <div class="text-content">
                 <p class="section-subtitle" id="review-subtitle">Please wait...</p>
-            </div>
-            <div class ="trustindex">
+            </div> --}}
+            {{-- <div class ="trustindex">
                 <script defer async src='https://cdn.trustindex.io/loader.js?5ed29ff45a93626df0964d775e4'></script>
             </div>
-            <div class="trustindex data-widget-id=5ed29ff45a93626df0964d775e4" data-elfsight-app-lazy></div>
+            <div class="trustindex data-widget-id=5ed29ff45a93626df0964d775e4" data-elfsight-app-lazy></div> --}}
 
             <div class="insight-metrics animate-text delay-3" style="position: relative;">
                 <div class="metric-box">
