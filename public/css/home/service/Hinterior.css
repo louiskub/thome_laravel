@@ -139,7 +139,7 @@
     background-color: black;
 }
 
-.carousel-control-next, .carousel-indicators {
+.carousel-control-next, .carousel-control-prev, .carousel-indicators {
     z-index: 1000;
 }
 
