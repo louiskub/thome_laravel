@@ -274,13 +274,8 @@
         <div class="cal">
             <div class="cal-item">
                 <div>
-                    <h2><i class="fas fa-calculator"></i> {{__('index.calculator-title')}}</h2>
-                    <p><i class="fas fa-info-circle"></i> {{__('index.calculator-description')}}
-                        </p>
-                    <p><i class="fas fa-check-circle"></i> {{ __('index.calculator-description2') }}
-                        </p>
-                    <p><i class="fas fa-phone"></i>{{ __('index.calculator-description3') }}
-                        </p>
+                    <h2>🔌 {{ __('cal_electric.cal_title') }}</h2>
+                    <p style="text-align: left;"> {{ __('cal_electric.cal_subtitle1') }}</p>
                 </div>
                 <div class="logo-container">
                     <img src="https://img.freepik.com/free-vector/household-HOMESPECTOR-utilities-design-concept-illustrated-consumption-accounting-energetic-water-resources-isometric-vector-illustration_98292-9053.jpg?t=st=1738919465~exp=1738923065~hmac=e56ee21aff5e511ecc26ae700c498f651b595e534afce2935ef0b8959ced7d59&w=1060"
@@ -291,9 +286,21 @@
             <iframe class="cal-iframe" src="https://requestform.thomeinspector.com/calc/"></iframe>
         </div>
 
-        <div class="cta-section" data-aos="fade-up">
-            <h2>เริ่มต้นวางแผนระบบไฟฟ้าภายในบ้านของคุณ!</h2>
-            <a href="cal-electric" class="btn">{{__('index.calculator-button')}}</a>
+        <div class="cta-section" data-aos="fade-up" style="    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #003f87, #007bff);
+    color: white;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+">
+            {{-- <h2>{{ __('cal_electric.why_cal_title') }}</h1> --}}
+            {{-- <p>{{ __('cal_electric.why_cal_desc') }}</p>
+            <a href="cal-electric" class="btn">{{__('index.calculator-button')}}</a> --}}
+
+            <h1>{{ __('cal_electric.why_cal_title') }}</h1>
+            <p>{{ __('cal_electric.why_cal_desc') }}</p>
+            <a href="https://requestform.thomeinspector.com/calc/" class="btn">{{ __('cal_electric.why_cal_btn') }}</a>
         </div>
     </div>
 

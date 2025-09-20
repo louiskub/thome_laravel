@@ -1417,15 +1417,12 @@ header {
 }
 
 .cta-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
     background: linear-gradient(to right, #003f87, #007bff);
     color: white;
-    padding: 20px;
     border-radius: 10px;
-    width: 100%;
-    margin-bottom: 50px;
+    margin: 30px auto;
+    max-width: 900px;
 }
 
 .cta-section h2 {
