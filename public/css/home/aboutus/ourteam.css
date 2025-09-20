@@ -138,3 +138,7 @@
 .decoration .department-badge {
     background: #95a5a6;
 } */
+
+.card-image img {
+  object-position: center 35%;
+}
