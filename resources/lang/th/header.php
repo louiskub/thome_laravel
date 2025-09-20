@@ -8,7 +8,7 @@ return [
     "services" => "บริการ",
     "hinspector" => "ตรวจบ้าน",
     "hinterior" => "ตกแต่งภายใน",
-    "hconstruction" => "รีโนเวท",
+    "hconstruction" => "ต่อเติม",
     "hbutler" => "homebutler",
 
     "addon_services" => "บริการเสริม",
