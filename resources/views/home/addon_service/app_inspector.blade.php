@@ -85,12 +85,20 @@
                     <h3 class="feature-title">{{ __('app_inspector.feature4_title') }}</h3>
                     <p class="feature-description">{{ __('app_inspector.feature4_description') }}</p>
                 </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">{{ __('app_inspector.feature5_title') }}</h3>
+                    <p class="feature-description">{{ __('app_inspector.feature5_description') }}</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="categories-section">
+    {{-- <section class="categories-section">
         <div class="container">
             <h2 class="section-title">{{ __('app_inspector.categories_title') }}</h2>
             <div class="categories-grid">
@@ -116,7 +124,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Call to Action -->
     <section class="cta-section">

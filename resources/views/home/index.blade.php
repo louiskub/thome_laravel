@@ -246,16 +246,27 @@
                     loading="lazy"></div>
         </div>
         <div class="certifications aos-init" data-aos="fade-up-right">
-            <div class=" certification"><img src="/img/certified1.png" alt="T. Home Inspector" class="fr-fic fr-dii">
-                <p data-translate="certification1">{{__('index.certification1')}}</p>
+            <div style="max-width: 300px;" class="small-cert">
+                <p style="font-weight: bold; font-size: 1.1rem;">{{__('index.cert1_title')}}</p>
+                {{-- <div class=" certification"> --}}
+                    <img src="/img/certified4.png" alt="T. Home Inspector" class="fr-fic fr-dii" style="max-width: none; width: 150px;">
+                {{-- </div> --}}
+                <p class="small-font">{{__('index.cert_description')}}</p>
             </div>
-            <div class="certification aos-init" data-aos="fade-up-right"><img src="/img/certified2.png"
-                    alt="Certified Professional Inspector" class="fr-fic fr-dii" style="width: 378px;">
-                <p data-translate="certification2">{{__('index.certification2')}}</p>
-            </div>
-            <div class="certification aos-init" data-aos="fade-up-right"><img src="/img/certified3.png"
-                    alt="Certified Professional Inspector" class="fr-fic fr-dii" style="width: 343px;">
-                <p data-translate="certification3">{{__('index.certification3')}}</p>
+            <div style="max-width: 300px;" class="small-cert">
+                <p style="font-weight: bold; font-size: 1.1rem;">{{__('index.cert2_title')}}</p>
+                <div style="display:flex; gap: 1rem;">
+                    <div class="certification aos-init" data-aos="fade-up-right"><img src="/img/certified2.png"
+                        alt="Certified Professional Inspector" class="fr-fic fr-dii" style="width: 378px;">
+                        {{-- <p data-translate="certification2">{{__('index.certification2')}}</p> --}}
+                    </div>
+                    <div class="certification aos-init" data-aos="fade-up-right"><img src="/img/certified3.png"
+                            alt="Certified Professional Inspector" class="fr-fic fr-dii" style="width: 343px;">
+                        {{-- <p data-translate="certification3">{{__('index.certification3')}}</p> --}}
+                    </div>
+                </div>
+
+                <p class="small-font">{{__('index.cert2_description')}}</p>
             </div>
         </div>
     </section>

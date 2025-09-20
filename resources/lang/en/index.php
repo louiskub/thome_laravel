@@ -22,6 +22,12 @@ return [
     "certification1" => "ISO/IEC 29110-4-3: 2018 certified",
     "certification2" => "Certified by Inter NACHI",
     "certification3" => "Certified by Inter NACHI",
+
+    "cert1_title" => "มีใบอนุญาตสภาวิศวกร",
+    "cert_description" => "ตรวจบ้าน ได้รับใบอนุญาตประกอบวิชาชีพจากสภาวิศวกรอย่างถูกต้องตามกฎหมาย พร้อมยึดมั่นในหลักจรรยาบรรณวิศวกรรม มั่นใจได้ว่าทุกการตรวจสอบมีมาตรฐาน โปร่งใส และเชื่อถือได้",
+    "cert2_title" => "มาตรฐานการตรวจบ้านระดับสากล",
+    "cert2_description" => "วิศวกรได้รับการรับรอง Certified Professional Inspector (CPI) จาก InterNACHIองค์กรผู้ตรวจบ้านระดับนานาชาติที่ได้รับการยอมรับทั่วโลก",
+
     "faq-title" => "Frequently Asked Questions",
     "faq-category-all" => "All",
     "latest-articles-title" => "Latest Articles",

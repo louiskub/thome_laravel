@@ -1106,7 +1106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     width: 100%;
                 ">
                     <video width="100%" height="450" controls style="display: block;">
-                        <source src="/img/joinus/Intern.mp4" type="video/mp4">
+                        <source src="/img/video/interview.mp4" type="video/mp4">
                         {{ __('joinus.internship.video_not_supported') }}
                     </video>
                 </div>

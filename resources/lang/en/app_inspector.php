@@ -7,9 +7,9 @@ return [
     'page_keywords' => 'app inspection, app analysis, app security, app performance',
 
     // New App Section
-    'newapp_title' => 'New App Inspector',
-    'newapp_subtitle' => 'Advanced Mobile Application Analysis',
-    'newapp_description' => 'Discover comprehensive insights about mobile applications with our cutting-edge inspection tools',
+    'newapp_title' => 'Self Home Inspection',
+    'newapp_subtitle' => 'Take photos of issues, add defects, and generate automatic reports',
+    'newapp_description' => 'Make home inspection easy with the self-inspection app from T. Home Inspector',
     'newapp_button' => 'Launch App Inspector',
 
     // Hero Section
@@ -19,14 +19,16 @@ return [
 
     // Features Section
     'features_title' => 'Powerful Features',
-    'feature1_title' => 'Real-time Analysis',
-    'feature1_description' => 'Get instant insights and real-time analysis of mobile applications with advanced scanning capabilities',
-    'feature2_title' => 'Security Audit',
-    'feature2_description' => 'Comprehensive security analysis to identify vulnerabilities and ensure application safety',
-    'feature3_title' => 'Performance Metrics',
-    'feature3_description' => 'Detailed performance analysis including load times, resource usage, and optimization recommendations',
-    'feature4_title' => 'User Experience',
-    'feature4_description' => 'Analyze user interface design, accessibility features, and overall user experience quality',
+    'feature1_title' => 'Instantly Record Home Issues',
+    'feature1_description' => 'Add defects found during home inspection, capture every detail with just a few clicks.',
+    'feature2_title' => 'Clear Overview of All Issues',
+    'feature2_description' => 'All defects in one place, view details and status for easy tracking.',
+    'feature3_title' => 'Comprehensive Report in One File',
+    'feature3_description' => 'Download inspection reports with photos and issue status, ready to send to the project for fixes.',
+    'feature4_title' => 'Categorize Home Issues in Every Aspect',
+    'feature4_description' => 'Choose between general or severe issues, with clear categories such as leaks, electrical, plumbing, roofing, or architecture for systematic and easy-to-understand inspections.',
+    'feature5_title' => 'Inspection Guide Included',
+    'feature5_description' => 'No worries if you’ve never inspected a home before, the app provides detailed video guides for easy self-inspection.',
 
     // Categories Section
     'categories_title' => 'Inspection Categories',
@@ -37,9 +39,9 @@ return [
     'category5' => 'Compliance & Standards',
 
     // Call to Action Section
-    'cta_title' => 'Ready to Inspect Your App?',
-    'cta_subtitle' => 'Join thousands of developers who trust our platform for comprehensive mobile application analysis',
-    'cta_button' => 'Start Your Analysis',
+    'cta_title' => 'Ready for Self Home Inspection?',
+    'cta_subtitle' => 'Record issues and summarize reports instantly',
+    'cta_button' => 'Easy Inspection with Mobile',
 
     // Additional Elements
     'app_preview_alt1' => 'App Preview 1',

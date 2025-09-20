@@ -3136,3 +3136,18 @@ button.next-btn:hover {
         transform: scale(1.1);
     }
 }
+
+.small-font {
+    font-size: 12px;
+    color: #333;
+    margin: 8px 0 0 0;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.small-cert {
+     display: flex; 
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
