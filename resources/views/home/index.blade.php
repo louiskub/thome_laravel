@@ -286,7 +286,7 @@
             <iframe class="cal-iframe" src="https://requestform.thomeinspector.com/calc/"></iframe>
         </div>
 
-        <div class="cta-section" data-aos="fade-up" style="    text-align: center;
+        {{-- <div class="cta-section" data-aos="fade-up" style="    text-align: center;
     padding: 60px 20px;
     background: linear-gradient(to right, #003f87, #007bff);
     color: white;
@@ -294,14 +294,10 @@
     margin: 30px auto;
     max-width: 900px;
 ">
-            {{-- <h2>{{ __('cal_electric.why_cal_title') }}</h1> --}}
-            {{-- <p>{{ __('cal_electric.why_cal_desc') }}</p>
-            <a href="cal-electric" class="btn">{{__('index.calculator-button')}}</a> --}}
-
             <h1>{{ __('cal_electric.why_cal_title') }}</h1>
             <p>{{ __('cal_electric.why_cal_desc') }}</p>
             <a href="https://requestform.thomeinspector.com/calc/" class="btn">{{ __('cal_electric.why_cal_btn') }}</a>
-        </div>
+        </div> --}}
     </div>
 
 
@@ -318,7 +314,7 @@
     <div class="carousel-container3 aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <div class="carousel-header3">
             <h2 class="carousel-title3">Content</h2>
-            <a href="/Homepage/content.php" class="btn btn-all">{{__('index.see-all-articles')}}</a>
+            <a href="https://www.youtube.com/@THOMEINSPECTOR" class="btn btn-all">{{__('index.see-all-articles')}}</a>
         </div>
 
         <div class="carousel3">

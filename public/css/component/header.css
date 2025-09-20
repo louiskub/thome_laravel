@@ -94,6 +94,7 @@ h1 {
 }
 
 .navbar-container.hidden {
+    display: block !important;
     transform: translateY(-120px);
 }
 

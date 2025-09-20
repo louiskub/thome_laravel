@@ -185,7 +185,7 @@
 
         .title-line {
             display: block;
-            color: var(--blue-100);
+            /* color: var(--blue-100); */
         }
 
         .title-highlight {
@@ -980,11 +980,18 @@
         /* Responsive */
         @media (max-width: 768px) {
         .hero-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
         .hero-subtitle {
             font-size: 1rem;
         }
+        .hero-subtitle1, .hero-subtitle2 {
+            font-size: 20px;
+        }
+        .title-highlight {
+            text-shadow: none !important;
+        }
+
         }
 
     </style>

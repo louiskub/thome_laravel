@@ -998,6 +998,13 @@ header {
         margin: 10px auto;
         padding: 15px;
     }
+
+    .services-header h2 {
+        font-size: 2.5rem;
+    }
+    .service-card h3 {
+        font-size: 1.25rem;
+    }
 }
 
 /* Wrapper Section */
