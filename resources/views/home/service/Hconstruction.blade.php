@@ -215,6 +215,93 @@
         </div>
     </div>
 
+@section('title', __('portfolio.page_title'))
+@section('meta_description', __('portfolio.page_description'))
+
+@section('content')
+<link rel="stylesheet" href="/css/home/addon_service/port.css">
+
+    <!-- Social Media Section -->
+    <section class="social-media-section">
+        <div class="container">
+            <div class="social-header">
+                <h2 class="section-title">{{ __('portfolio.social_title') }}</h2>
+                <div class="social-stats">
+                    <div class="social-stat">
+                        <i class="fab fa-facebook"></i>
+                        <span>1000+ {{ __('portfolio.followers') }}</span>
+                    </div>
+                    <div class="social-stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 {{ __('portfolio.rating') }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facebook-container">
+                <div class="facebook-wrapper">
+                    <div class="facebook-header">
+                        <div class="facebook-logo">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="facebook-info">
+                            <h3>ต.ต่อเติม</h3>
+                        </div>
+                        <a href="https://www.facebook.com/t.homeconstruction/" target="_blank" class="facebook-follow">
+                            <i class="fas fa-external-link-alt"></i>
+                            {{ __('portfolio.visit_page') }}
+                        </a>
+                    </div>
+                    
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous"
+                            src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v23.0"></script>
+                    
+                    <div class="facebook-embed">
+                        <div class="fb-page"
+                             data-href="https://www.facebook.com/t.homeconstruction/"
+                             data-tabs="timeline"
+                             data-width="500"
+                             data-height="800"
+                             data-small-header="false"
+                             data-adapt-container-width="true"
+                             data-hide-cover="false"
+                             data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/t.homeconstruction/" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/t.homeconstruction/">ต.ตรวจบ้าน</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script>
+// Simple AOS-like animation
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('aos-animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-aos]').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+
+
     <script src="/js/home/service/Hconstruction.js"></script>
 
 @endsection
