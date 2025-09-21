@@ -32,7 +32,7 @@ class Privilege extends Model
         });
 
         static::deleting(function ($priv) {
-            Storage::deleteDirectory('public/privilege/' . $priv->folder_id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
+            Storage::disk('public')->deleteDirectory('privilege/' . $priv->folder_id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
         });
     }
 

@@ -50,8 +50,8 @@ class EmployeeController extends Controller
 
             $fileName = basename($request['cover_image']);
 
-            if (Storage::exists('public/temp_uploads/' . $fileName)) {
-                Storage::move('public/temp_uploads/' . $fileName, 'public/' . $department->id . "/" . $fileName);
+            if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
+                Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $department->id . "/" . $fileName);
             }
 
             $employee = $department->employees()->create([

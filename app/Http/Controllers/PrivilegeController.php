@@ -140,9 +140,9 @@ class PrivilegeController extends Controller
             $tempFileName = basename($request->coverPageImg);
             $updateCoverPage = "";
 
-            if (Storage::exists('public/temp_uploads/' . $tempFileName)) {
+            if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
                 $updateCoverPage = "/storage" . "/" . $folderName . $tempFileName;
-                Storage::move('public/temp_uploads/' . $tempFileName, 'public/' . $folderName . $tempFileName);
+                Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $folderName . $tempFileName);
             }
 
             $content = $request->input('content');
@@ -159,8 +159,8 @@ class PrivilegeController extends Controller
                 if (Str::startsWith($currentSrc, '/storage/temp_uploads/' == false)) {
                     continue;
                 }
-                if (Storage::exists('public/temp_uploads/' . $tempFileName)) {
-                    Storage::move('public/temp_uploads/' . $tempFileName, 'public/' . $newPath);
+                if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
+                    Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $newPath);
                     $img->setAttribute('src', '/storage' . '/' . $newPath);
                 }
             }
@@ -202,13 +202,13 @@ class PrivilegeController extends Controller
             $oldCoverPage = $privilege->translation($request->lang)->coverPageImg;
             $updateCoverPage = $oldCoverPage;
 
-            if (Storage::exists('public/temp_uploads/' . $newCoverName)) {
+            if (Storage::disk('public')->exists('temp_uploads/' . $newCoverName)) {
                 if ($newCoverName != basename($oldCoverPage)) {
                     $updateCoverPage = "/storage/$folderName/$newCoverName";
-                    Storage::move("public/temp_uploads/$newCoverName", "public/$folderName/$newCoverName");
-                    Storage::delete(Str::replaceFirst('/storage', 'public', $oldCoverPage));
+                    Storage::disk('public')->move("temp_uploads/$newCoverName", "public/$folderName/$newCoverName");
+                    Storage::disk('public')->delete(Str::replaceFirst('/storage', '', $oldCoverPage));
                 } else {
-                    Storage::delete("public/temp_uploads/$newCoverName");
+                    Storage::disk('public')->delete("temp_uploads/$newCoverName");
                 }
             }
 
@@ -223,8 +223,8 @@ class PrivilegeController extends Controller
                 $newFileName = basename($currentSrc);
                 $newPath = $folderName . $newFileName;
 
-                if (Str::startsWith($currentSrc, '/storage/temp_uploads/') && (Storage::exists('public/temp_uploads/' . $newFileName))) {
-                    Storage::move('public/temp_uploads/' . $newFileName, 'public/' . $newPath);
+                if (Str::startsWith($currentSrc, '/storage/temp_uploads/') && (Storage::disk('public')->exists('temp_uploads/' . $newFileName))) {
+                    Storage::disk('public')->move('temp_uploads/' . $newFileName, 'public/' . $newPath);
                     $img->setAttribute('src', '/storage' . '/' . $newPath);
                 }
                 $newImgUse[] = basename($img->getAttribute('src'));
@@ -242,8 +242,8 @@ class PrivilegeController extends Controller
                 $oldName = basename($oldSrc);
 
                 if (!in_array($oldName, $newImgUse)) {
-                    if (Storage::exists("public/$folderName$oldName")) {
-                        Storage::delete("public/$folderName$oldName");
+                    if (Storage::disk('public')->exists("$folderName$oldName")) {
+                        Storage::disk('public')->delete("$folderName$oldName");
                     }
                 }
             }
@@ -283,9 +283,9 @@ class PrivilegeController extends Controller
             $tempFileName = basename($request->coverPageImg);
             $updateCoverPage = "";
 
-            if (Storage::exists('public/temp_uploads/' . $tempFileName)) {
+            if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
                 $updateCoverPage = "/storage" . "/" . $folderName . $tempFileName;
-                Storage::move('public/temp_uploads/' . $tempFileName, 'public/' . $folderName . $tempFileName);
+                Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $folderName . $tempFileName);
             }
 
             $content = $request->input('content');
@@ -302,8 +302,8 @@ class PrivilegeController extends Controller
                 if (Str::startsWith($currentSrc, '/storage/temp_uploads/' == false)) {
                     continue;
                 }
-                if (Storage::exists('public/temp_uploads/' . $tempFileName)) {
-                    Storage::move('public/temp_uploads/' . $tempFileName, 'public/' . $newPath);
+                if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
+                    Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $newPath);
                     $img->setAttribute('src', '/storage' . '/' . $newPath);
                 }
             }

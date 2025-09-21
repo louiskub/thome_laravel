@@ -25,7 +25,7 @@ class Pastwork extends Model
 
         static::deleting(function ($project) {
 
-            Storage::deleteDirectory('public/project/' . $project->page . '/' . $project->id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
+            Storage::disk('public')->deleteDirectory('project/' . $project->page . '/' . $project->id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
         });
     }
 

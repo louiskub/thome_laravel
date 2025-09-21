@@ -29,7 +29,7 @@ class Article extends Model
         });
 
         static::deleting(function ($article) {
-            Storage::deleteDirectory('public/article/' . $article->folder_id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
+            Storage::disk('public')->deleteDirectory('article/' . $article->folder_id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
         });
     }
 

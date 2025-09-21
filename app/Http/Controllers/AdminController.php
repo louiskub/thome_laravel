@@ -57,7 +57,7 @@ class AdminController extends Controller
             $imageFile = $request->file('image');
             $fileName = md5_file($imageFile->getRealPath());
             $fileExtension = $imageFile->getClientOriginalExtension() ?? 'jpg';
-            Storage::putFileAs('public/temp_uploads/', $imageFile, $fileName . '.' . $fileExtension);
+            Storage::disk('public')->putFileAs('temp_uploads/', $imageFile, $fileName . '.' . $fileExtension);
             return response("/storage/temp_uploads/$fileName" . '.' . $fileExtension, 200)
                 ->header('Content-Type', 'text/plain');
             // $fullPath = storage_path('app/public/temp_uploads/' . $fileName . '.' . $imageFile->getClientOriginalExtension());

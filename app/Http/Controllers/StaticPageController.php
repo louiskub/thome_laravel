@@ -191,15 +191,15 @@ class StaticPageController extends Controller
 
             $coverPageImg = $request->input('coverPageImg');
             $fileName = basename($coverPageImg);
-            if (Storage::exists('public/temp_uploads/' . $fileName)) {
-                Storage::move('public/temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
+            if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
+                Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
                 $coverPageImg = "/storage" . "/" . $folderName . $fileName;
             }
 
             for ($index = 0; $index < count($images); $index++) {
                 $fileName = basename($images[$index]);
-                if (Storage::exists('public/temp_uploads/' . $fileName)) {
-                    Storage::move('public/temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
+                if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
+                    Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
                     $images[$index] = "/storage" . "/" . $folderName . $fileName;
                 }
                 else if($coverPageImg == "/storage" . "/" . $folderName . $fileName) {
@@ -235,13 +235,13 @@ class StaticPageController extends Controller
             $newCoverName = basename($request->input('coverPageImg'));
             $updateCoverPage = $oldCoverPage;
 
-            if (Storage::exists('public/temp_uploads/' . $newCoverName)) {
+            if (Storage::disk('public')->exists('temp_uploads/' . $newCoverName)) {
                 if ($newCoverName != basename($oldCoverPage)) {
                     $updateCoverPage = "/storage/$folderName/$newCoverName";
-                    Storage::move("public/temp_uploads/$newCoverName", "public/$folderName/$newCoverName");
-                    Storage::delete(Str::replaceFirst('/storage', 'public', $oldCoverPage));
+                    Storage::disk('public')->move("temp_uploads/$newCoverName", "public/$folderName/$newCoverName");
+                    Storage::disk('public')->delete(Str::replaceFirst('/storage', '', $oldCoverPage));
                 } else {
-                    Storage::delete("public/temp_uploads/$newCoverName");
+                    Storage::disk('public')->delete("temp_uploads/$newCoverName");
                 }
             }
 
@@ -249,8 +249,8 @@ class StaticPageController extends Controller
             $images = $request->input('images');
             for ($index = 0; $index < count($images); $index++) {
                 $fileName = basename($images[$index]);
-                if (Storage::exists('public/temp_uploads/' . $fileName)) {
-                    Storage::move('public/temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
+                if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
+                    Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
                     $images[$index] = "/storage" . "/" . $folderName . $fileName;
                 }
             }
@@ -259,8 +259,8 @@ class StaticPageController extends Controller
             foreach ($oldImages as $old) {
                 if (!in_array($old, $images)) {
                     $fileName = basename($old);
-                    if (Storage::exists("public/$folderName$fileName")) {
-                        Storage::delete("public/$folderName$fileName");
+                    if (Storage::disk('public')->exists("$folderName$fileName")) {
+                        Storage::disk('public')->delete("$folderName$fileName");
                     }
                 }
             }

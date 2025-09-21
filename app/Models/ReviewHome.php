@@ -26,7 +26,7 @@ class ReviewHome extends Model
         });
 
         static::deleting(function ($house) {
-            Storage::deleteDirectory('public/review_home/' . $house->folder_id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
+            Storage::disk('public')->deleteDirectory('review_home/' . $house->folder_id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
         });
     }
 

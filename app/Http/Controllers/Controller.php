@@ -24,7 +24,7 @@ class Controller extends BaseController
             $src = $img->getAttribute('src');
             $name = basename($src);
 
-            if (Storage::exists("public/$folderName/$name")) {
+            if (Storage::disk('public')->exists("$folderName/$name")) {
                 $paths[] = $name;
             }
         }

@@ -27,7 +27,7 @@ class Department extends Model
         parent::boot();
 
         static::deleting(function ($department) {
-            Storage::deleteDirectory('public/department/' . $department->id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
+            Storage::disk('public')->deleteDirectory('department/' . $department->id); // ลบไดเรกทอรีที่เก็บภาพของบทความ
         });
     }
 
