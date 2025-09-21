@@ -184,7 +184,7 @@ class ArticleController extends Controller
 
             if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
                 $updateCoverPage = "/storage" . "/" . $folderName . $tempFileName;
-                Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $folderName . $tempFileName);
+                Storage::disk('public')->move('temp_uploads/' . $tempFileName, $folderName . $tempFileName);
             }
 
             $content = $request->input('content');
@@ -202,7 +202,7 @@ class ArticleController extends Controller
                     continue;
                 }
                 if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
-                    Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $newPath);
+                    Storage::disk('public')->move('temp_uploads/' . $tempFileName, $newPath);
                     $img->setAttribute('src', '/storage' . '/' . $newPath);
                 }
             }
@@ -259,7 +259,7 @@ class ArticleController extends Controller
             if (Storage::disk('public')->exists('temp_uploads/' . $newCoverName)) {
                 if ($newCoverName != basename($oldCoverPage)) {
                     $updateCoverPage = "/storage/$folderName/$newCoverName";
-                    Storage::disk('public')->move("temp_uploads/$newCoverName", "public/$folderName/$newCoverName");
+                    Storage::disk('public')->move("temp_uploads/$newCoverName", "$folderName/$newCoverName");
                     Storage::disk('public')->delete(Str::replaceFirst('/storage', '', $oldCoverPage));
                 } else {
                     Storage::disk('public')->delete("temp_uploads/$newCoverName");
@@ -278,7 +278,7 @@ class ArticleController extends Controller
                 $newPath = $folderName . $newFileName;
 
                 if (Str::startsWith($currentSrc, '/storage/temp_uploads/') && (Storage::disk('public')->exists('temp_uploads/' . $newFileName))) {
-                    Storage::disk('public')->move('temp_uploads/' . $newFileName, 'public/' . $newPath);
+                    Storage::disk('public')->move('temp_uploads/' . $newFileName, $newPath);
                     $img->setAttribute('src', '/storage' . '/' . $newPath);
                 }
                 $newImgUse[] = basename($img->getAttribute('src'));
@@ -346,7 +346,7 @@ class ArticleController extends Controller
 
             if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
                 $updateCoverPage = "/storage" . "/" . $folderName . $tempFileName;
-                Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $folderName . $tempFileName);
+                Storage::disk('public')->move('temp_uploads/' . $tempFileName, $folderName . $tempFileName);
             }
 
             $content = $request->input('content');
@@ -364,7 +364,7 @@ class ArticleController extends Controller
                     continue;
                 }
                 if (Storage::disk('public')->exists('temp_uploads/' . $tempFileName)) {
-                    Storage::disk('public')->move('temp_uploads/' . $tempFileName, 'public/' . $newPath);
+                    Storage::disk('public')->move('temp_uploads/' . $tempFileName, $newPath);
                     $img->setAttribute('src', '/storage' . '/' . $newPath);
                 }
             }

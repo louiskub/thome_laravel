@@ -192,14 +192,14 @@ class StaticPageController extends Controller
             $coverPageImg = $request->input('coverPageImg');
             $fileName = basename($coverPageImg);
             if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
-                Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
+                Storage::disk('public')->move('temp_uploads/' . $fileName, $folderName . $fileName);
                 $coverPageImg = "/storage" . "/" . $folderName . $fileName;
             }
 
             for ($index = 0; $index < count($images); $index++) {
                 $fileName = basename($images[$index]);
                 if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
-                    Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
+                    Storage::disk('public')->move('temp_uploads/' . $fileName, $folderName . $fileName);
                     $images[$index] = "/storage" . "/" . $folderName . $fileName;
                 }
                 else if($coverPageImg == "/storage" . "/" . $folderName . $fileName) {
@@ -238,7 +238,7 @@ class StaticPageController extends Controller
             if (Storage::disk('public')->exists('temp_uploads/' . $newCoverName)) {
                 if ($newCoverName != basename($oldCoverPage)) {
                     $updateCoverPage = "/storage/$folderName/$newCoverName";
-                    Storage::disk('public')->move("temp_uploads/$newCoverName", "public/$folderName/$newCoverName");
+                    Storage::disk('public')->move("temp_uploads/$newCoverName", "$folderName/$newCoverName");
                     Storage::disk('public')->delete(Str::replaceFirst('/storage', '', $oldCoverPage));
                 } else {
                     Storage::disk('public')->delete("temp_uploads/$newCoverName");
@@ -250,7 +250,7 @@ class StaticPageController extends Controller
             for ($index = 0; $index < count($images); $index++) {
                 $fileName = basename($images[$index]);
                 if (Storage::disk('public')->exists('temp_uploads/' . $fileName)) {
-                    Storage::disk('public')->move('temp_uploads/' . $fileName, 'public/' . $folderName . $fileName);
+                    Storage::disk('public')->move('temp_uploads/' . $fileName, $folderName . $fileName);
                     $images[$index] = "/storage" . "/" . $folderName . $fileName;
                 }
             }
