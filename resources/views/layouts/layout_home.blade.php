@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <meta name="description" content="บริษัทตรวจบ้านอันดับ1 ที่มีลูกค้าบอกต่อมากที่สุด &quot;ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า&quot;">
+	<meta name="description" content="บริษัทตรวจบ้านอันดับ1 ที่มีลูกค้าบอกต่อมากที่สุด &quot;ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า&quot;">
     <meta name="keywords" content="ตรวจบ้าน,ตรวจคอนโด,ตรวจก่อนโอน,อันดับ1ตรวจบ้าน,ตรวจบ้านดารา">
     <meta property="og:title" content="&quot;ต.ตรวจบ้าน&quot; บริการตรวจบ้าน | ตรวจคอนโด ก่อนโอนกรรมสิทธิ์">
 	<meta property="og:description" content="บริษัทตรวจบ้านอันดับ1 ที่มีลูกค้าบอกต่อมากที่สุด &quot;ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า&quot;">
 	<meta property="og:title" content="&quot;ต.ตรวจบ้าน&quot; บริการตรวจบ้าน | ตรวจคอนโด ก่อนโอนกรรมสิทธิ์">	
 	<meta property="og:description" content="บริษัทตรวจบ้านอันดับ1 ที่มีลูกค้าบอกต่อมากที่สุด &quot;ตรวจจริง เห็นกับตา ไปพร้อมลูกค้า&quot; /&gt;	
 	&lt;meta property=" og:image"="">
-	
+									
     <title>{{__('header.document_title')}}</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon1.png">
 
@@ -66,9 +66,6 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'G-FHXE3YJ0CV', {
-        'cookie_domain': 'none',
-        'debug_mode': true
-    });
+    gtag('config', 'G-FHXE3YJ0CV');
 </script>
 </html>

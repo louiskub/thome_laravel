@@ -91,6 +91,7 @@ header {
 }
 
 
+
 /* Language Switcher Styling */
 .language-switcher {
     display: flex;
@@ -676,10 +677,22 @@ body {
     }
 }
 
+a.btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media (min-width: 1000px) {
+  a.btn {
+    margin-right: 100px;
+  }
+}
+
 /* Cal Strat*/
 .cal-container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -894,8 +907,11 @@ body {
 }
 
 .cta h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
+  margin: 0 auto 20px auto;
+  font-size: 24px;
+  display: block;
+  width: fit-content;
+  text-align: center; 
 }
 
 /* cal-details-end */

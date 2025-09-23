@@ -23,10 +23,11 @@ return [
     "certification2" => "Certified by Inter NACHI",
     "certification3" => "Certified by Inter NACHI",
 
-    "cert1_title" => "มีใบอนุญาตสภาวิศวกร",
-    "cert_description" => "ตรวจบ้าน ได้รับใบอนุญาตประกอบวิชาชีพจากสภาวิศวกรอย่างถูกต้องตามกฎหมาย พร้อมยึดมั่นในหลักจรรยาบรรณวิศวกรรม มั่นใจได้ว่าทุกการตรวจสอบมีมาตรฐาน โปร่งใส และเชื่อถือได้",
-    "cert2_title" => "มาตรฐานการตรวจบ้านระดับสากล",
-    "cert2_description" => "วิศวกรได้รับการรับรอง Certified Professional Inspector (CPI) จาก InterNACHIองค์กรผู้ตรวจบ้านระดับนานาชาติที่ได้รับการยอมรับทั่วโลก",
+	"cert1_title" => "Licensed by the Council of Engineers",
+	"cert_description" => "Every inspection is carried out by licensed engineers accredited by the Council of Engineers. With strict adherence to professional ethics, we guarantee inspections that are reliable, transparent, and held to the highest standards.",
+	"cert2_title" => "International Home Inspection Standards",
+	"cert2_description" => "Our engineers are Certified Professional Inspectors (CPI) by InterNACHI — the world’s leading association of home inspectors. This ensures your home is inspected with globally recognized expertise and professionalism.",
+
 
     "faq-title" => "Frequently Asked Questions",
     "faq-category-all" => "All",

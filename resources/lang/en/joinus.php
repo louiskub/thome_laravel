@@ -169,5 +169,8 @@ return [
     'internship.atmosphere_subtitle' => 'An open and learning-friendly working environment.',
 
     'internship.video_title' => 'Internship Program Introduction Video',
+	'employment_type' => 'Employment type',
+	'location' => 'Location',
+	'requirements' => 'Requirements'
 
 ];

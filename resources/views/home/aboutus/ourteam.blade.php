@@ -959,7 +959,6 @@
             <div class="management-wrapper">
                 <section class="management-section" data-role="management">
                     <div class="management-header">
-                        <i class="fas fa-crown"></i>
                         <div>
                             <h2 class="management-title">ผู้บริหาร</h2>
                             <p class="management-subtitle">ทีมผู้นำองค์กร</p>
@@ -1026,17 +1025,6 @@
                         <div class="role-filter-header">
                             <h3>เลือกดูตามตำแหน่ง</h3>
                             <i class="fas fa-users-cog"></i>
-                        </div>
-                        <div class="role-filter-tabs">
-                            <button class="role-filter-btn active" data-role="all">
-                                <span>ทั้งหมด</span>
-                            </button>
-                            <button class="role-filter-btn" data-role="management">
-                                <span><i class="fas fa-crown"></i> ผู้บริหาร</span>
-                            </button>
-                            <button class="role-filter-btn" data-role="staff">
-                                <span><i class="fas fa-users"></i> พนักงาน</span>
-                            </button>
                         </div>
                         
                         <!-- Department Filter -->

@@ -1006,25 +1006,11 @@
         </div>
         </section>
 
-    <!-- Floating Elements -->
-    <div class="floating-elements">
-        <div class="floating-element" data-speed="0.5">🏠</div>
-        <div class="floating-element" data-speed="0.3">🔍</div>
-        <div class="floating-element" data-speed="0.7">⭐</div>
-        <div class="floating-element" data-speed="0.4">🛡️</div>
-        <div class="floating-element" data-speed="0.6">🔧</div>
-    </div>
-
     
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background2">
-            <div class="hero-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
         </div>
         <div class="container">
             <div class="hero-content fade-in">
@@ -1129,9 +1115,6 @@
       <!-- กล่องที่ 1 -->
       <div class="value-card scale-in" data-tilt>
         <div class="card-header">
-          <div class="card-icon">
-            <span class="icon-symbol">🛡️</span>
-          </div>
         </div>
         <div class="card-content">
           <h3 class="card-title">TRUSTED</h3>
@@ -1147,9 +1130,6 @@
       <!-- กล่องที่ 2 -->
       <div class="value-card scale-in" data-tilt>
         <div class="card-header">
-          <div class="card-icon">
-            <span class="icon-symbol">🔧</span>
-          </div>
         </div>
         <div class="card-content">
           <h3 class="card-title">TECH</h3>
@@ -1165,9 +1145,6 @@
       <!-- กล่องที่ 3 -->
       <div class="value-card scale-in" data-tilt>
         <div class="card-header">
-          <div class="card-icon">
-            <span class="icon-symbol">👥</span>
-          </div>
         </div>
         <div class="card-content">
           <h3 class="card-title">TEAM</h3>
@@ -1333,7 +1310,7 @@
         })
 
         document.addEventListener("DOMContentLoaded", () => {
-            console.log("🏠 ต.ตรวจบ้าน website loaded successfully!")
+            console.log("ต.ตรวจบ้าน website loaded successfully!")
 
             setTimeout(() => {
                 document.body.classList.add("loaded")

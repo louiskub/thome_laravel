@@ -222,7 +222,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 2rem 120px;
+    padding: 2rem 0px;
 }
 
 
@@ -2627,7 +2627,8 @@ button.next-btn:hover {
     height: 32px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+	line-height: 1.4;
     flex-shrink: 0;
     margin-left: 12px;
 }
@@ -3151,3 +3152,10 @@ button.next-btn:hover {
      align-items: center;
      flex-direction: column;
 }
+
+.metric-text{
+	display: flex;
+    width: 100%;
+	justify-content: end;
+}
+

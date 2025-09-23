@@ -10,3 +10,6 @@ yarn-error.log
 /.idea
 /.vscode
 google-key.json
+public/.well-known
+vendor/*
+vendor/composer/*

@@ -1,6 +1,5 @@
 {{-- filepath: c:\xampp\htdocs\example-app\resources\views\home\service\hconstruction.blade.php --}}
 @extends('layouts.layout_home')
-@section('title', 'T. Home Construction')
 
 @section('content')
 
@@ -215,10 +214,6 @@
         </div>
     </div>
 
-@section('title', __('portfolio.page_title'))
-@section('meta_description', __('portfolio.page_description'))
-
-@section('content')
 <link rel="stylesheet" href="/css/home/addon_service/port.css">
 
     <!-- Social Media Section -->

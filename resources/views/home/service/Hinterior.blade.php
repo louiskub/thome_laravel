@@ -189,10 +189,6 @@
         <button class="next" onclick="moveSlide(1)">❯</button>
     </div>
 
-    @section('title', __('portfolio.page_title'))
-@section('meta_description', __('portfolio.page_description'))
-
-@section('content')
 <link rel="stylesheet" href="/css/home/addon_service/port.css">
 
     <section class="social-media-section">

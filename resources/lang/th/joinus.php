@@ -167,5 +167,8 @@ return [
     'internship.atmosphere_subtitle' => 'บรรยากาศการทำงานที่เปิดกว้างและส่งเสริมการเรียนรู้',
 
     'internship.video_title' => 'วิดีโอแนะนำโครงการฝึกงาน',
+	'employment_type' => 'ประเภทการจ้างงาน',
+	'location' => 'สถานที่ทำงาน',
+	'requirements' => 'เกณฑ์การรับสมัคร'
 
 ];

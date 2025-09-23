@@ -247,14 +247,14 @@
         </div>
         <div class="certifications aos-init" data-aos="fade-up-right">
             <div style="max-width: 300px;" class="small-cert">
-                <p style="font-weight: bold; font-size: 1.1rem;">{{__('index.cert1_title')}}</p>
+                <p style="font-weight: bold; font-size: 1.1rem; text-align:center;">{{__('index.cert1_title')}}</p>
                 {{-- <div class=" certification"> --}}
                     <img src="/img/certified4.png" alt="T. Home Inspector" class="fr-fic fr-dii" style="max-width: none; width: 150px;">
                 {{-- </div> --}}
                 <p class="small-font">{{__('index.cert_description')}}</p>
             </div>
             <div style="max-width: 300px;" class="small-cert">
-                <p style="font-weight: bold; font-size: 1.1rem;">{{__('index.cert2_title')}}</p>
+                <p style="font-weight: bold; font-size: 1.1rem; text-align:center;">{{__('index.cert2_title')}}</p>
                 <div style="display:flex; gap: 1rem;">
                     <div class="certification aos-init" data-aos="fade-up-right"><img src="/img/certified2.png"
                         alt="Certified Professional Inspector" class="fr-fic fr-dii" style="width: 378px;">
@@ -528,7 +528,7 @@
             </div>
             <div class="trustindex data-widget-id=5ed29ff45a93626df0964d775e4" data-elfsight-app-lazy></div> --}}
 
-            <div class="insight-metrics animate-text delay-3" style="position: relative;">
+            <div class="insight-metrics animate-text delay-3" style="position: relative; width: 100%;">
                 <div class="metric-box">
                     <span class="metric-number" data-target="{{ $var['dev'] }}"></span><span class="metric-unit">developer</span>
                     <p class="metric-label">ตรวจบ้านมาแล้วกว่า</p>
@@ -545,7 +545,7 @@
                     <span class="metric-number" data-target="{{ $var['satisfaction'] }}"></span><span class="metric-unit">%</span>
                     <p class="metric-label">ความพึงพอใจ</p>
                 </div>
-                <div style="position:absolute; right: 0; bottom: 0; color: rgb(50, 50, 50);">
+                <div class="metric-text">
                     …and still counting
                 </div>
                 {{-- <div class="metrics-extra" id="stats-container"></div> --}}
@@ -691,14 +691,4 @@
             });
         </script>
     </section>
-
-
-    <section class="elfsight" data-aos="fade-up">
-        <h1>Facebook</h1>
-
-        <div class="trustindex-widget" data-widget-id="d4242bb455c262618f46fda8250"></div>
-    </section>
-
-    <script defer async src='https://cdn.trustindex.io/loader-feed.js?d4242bb455c262618f46fda8250'></script>
-    <script></script>
 @endsection

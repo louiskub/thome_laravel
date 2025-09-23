@@ -8,7 +8,7 @@
         <div class="join-us-content">
             <h1>{{ __('joinus.hero_title') }}</h1>
             <p>{{ __('joinus.hero_subtitle') }}</p>
-            <a href="mailto:ananthaxb@gmail.com" class="btn">{{ __('joinus.hero_button') }}</a>
+            <a href="mailto:admin@thomeinspector.com" class="btn">{{ __('joinus.hero_button') }}</a>
         </div>
         <div class="join-us-image">
             <img src="/img/joinwithus2.png" alt="Join Us Illustration">
@@ -49,7 +49,7 @@
         <!-- Content -->
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2;">
             <div class="internship-logo" style="margin-bottom: 30px;">
-                <img src="/img/logo.png" alt="{{ __('joinus.internship.logo_alt') }}" style="height: 80px; margin-bottom: 20px;">
+                <img src="/img/logo.png" alt="{{ __('joinus.internship.logo_alt') }}" style="height: 80px; margin-bottom: 20px;" class="logo-img">
                 <h1 style="font-size: 3.5rem; font-weight: bold; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ __('joinus.internship.hero_title') }}</h1>
                 <h2 style="font-size: 2rem; margin: 10px 0; color: #f0f8ff;">{{ __('joinus.internship.hero_subtitle') }}</h2>
                 <p style="font-size: 1.3rem; margin: 20px 0; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
@@ -94,23 +94,6 @@
                     pointer-events: none;
                 "></div>
                 
-                <div class="benefit-icon" style="
-                    width: 90px; 
-                    height: 90px; 
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                    border-radius: 50%; 
-                    margin: 0 auto 25px; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center;
-                    box-shadow: 0 10px 25px rgba(102,126,234,0.3);
-                    position: relative;
-                    z-index: 2;
-                ">
-                    <svg width="45" height="45" fill="white" viewBox="0 0 24 24">
-                        <path d="M12 2L13.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                    </svg>
-                </div>
                 <h3 style="
                     font-size: 1.6rem; 
                     color: #2d3748; 
@@ -153,23 +136,6 @@
                     pointer-events: none;
                 "></div>
                 
-                <div class="benefit-icon" style="
-                    width: 90px; 
-                    height: 90px; 
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                    border-radius: 50%; 
-                    margin: 0 auto 25px; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center;
-                    box-shadow: 0 10px 25px rgba(102,126,234,0.3);
-                    position: relative;
-                    z-index: 2;
-                ">
-                    <svg width="45" height="45" fill="white" viewBox="0 0 24 24">
-                        <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 12H15V10H17V12ZM13 12H11V10H13V12ZM9 12H7V10H9V12Z"/>
-                    </svg>
-                </div>
                 <h3 style="
                     font-size: 1.6rem; 
                     color: #2d3748; 
@@ -212,23 +178,6 @@
                     pointer-events: none;
                 "></div>
                 
-                <div class="benefit-icon" style="
-                    width: 90px; 
-                    height: 90px; 
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                    border-radius: 50%; 
-                    margin: 0 auto 25px; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center;
-                    box-shadow: 0 10px 25px rgba(102,126,234,0.3);
-                    position: relative;
-                    z-index: 2;
-                ">
-                    <svg width="45" height="45" fill="white" viewBox="0 0 24 24">
-                        <path d="M16 4C18.2 4 20 5.8 20 8C20 10.2 18.2 12 16 12C13.8 12 12 10.2 12 8C12 5.8 13.8 4 16 4ZM16 14C20.4 14 24 15.8 24 18V20H8V18C8 15.8 11.6 14 16 14ZM8 4C10.2 4 12 5.8 12 8C12 10.2 10.2 12 8 12C5.8 12 4 10.2 4 8C4 5.8 5.8 4 8 4ZM8 14C12.4 14 16 15.8 16 18V20H0V18C0 15.8 3.6 14 8 14Z"/>
-                    </svg>
-                </div>
                 <h3 style="
                     font-size: 1.6rem; 
                     color: #2d3748; 
@@ -271,23 +220,6 @@
                     pointer-events: none;
                 "></div>
                 
-                <div class="benefit-icon" style="
-                    width: 90px; 
-                    height: 90px; 
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                    border-radius: 50%; 
-                    margin: 0 auto 25px; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center;
-                    box-shadow: 0 10px 25px rgba(102,126,234,0.3);
-                    position: relative;
-                    z-index: 2;
-                ">
-                    <svg width="45" height="45" fill="white" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 11.8 12.8 14 10 14S5 11.8 5 9V7L3 7V9C3 12.9 6.1 16 10 16V19H8V21H16V19H14V16C17.9 16 21 12.9 21 9Z"/>
-                    </svg>
-                </div>
                 <h3 style="
                     font-size: 1.6rem; 
                     color: #2d3748; 
@@ -330,23 +262,7 @@
                     pointer-events: none;
                 "></div>
                 
-                <div class="benefit-icon" style="
-                    width: 90px; 
-                    height: 90px; 
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                    border-radius: 50%; 
-                    margin: 0 auto 25px; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center;
-                    box-shadow: 0 10px 25px rgba(102,126,234,0.3);
-                    position: relative;
-                    z-index: 2;
-                ">
-                    <svg width="45" height="45" fill="white" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 11.8 12.8 14 10 14S5 11.8 5 9V7L3 7V9C3 12.9 6.1 16 10 16V19H8V21H16V19H14V16C17.9 16 21 12.9 21 9Z"/>
-                    </svg>
-                </div>
+
                 <h3 style="
                     font-size: 1.6rem; 
                     color: #2d3748; 
@@ -422,7 +338,7 @@
                     <div class="step-number-badge" style="
                         min-width: 80px;
                         height: 80px;
-                        background: linear-gradient(135deg, #667eea, #764ba2);
+                        background: blue;
                         border-radius: 50%;
                         display: flex;
                         align-items: center;
@@ -434,26 +350,13 @@
                         position: relative;
                     ">
                         1
-                        <div style="
-                            position: absolute;
-                            top: -5px;
-                            right: -5px;
-                            width: 25px;
-                            height: 25px;
-                            background: #10b981;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 12px;
-                        ">✓</div>
                     </div>
                     
                     <div class="step-text-content" style="flex: 1;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
                             <h3 style="font-size: 1.8rem; color: #2d3748; margin: 0; font-weight: 700;">{{ __('joinus.internship.step_1_title') }}</h3>
                             <div class="step-date-badge" style="
-                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                background: blue;
                                 color: white;
                                 padding: 8px 16px;
                                 border-radius: 20px;
@@ -496,7 +399,7 @@
                     <div class="step-number-badge" style="
                         min-width: 80px;
                         height: 80px;
-                        background: linear-gradient(135deg, #667eea, #764ba2);
+                        background: blue;
                         border-radius: 50%;
                         display: flex;
                         align-items: center;
@@ -508,26 +411,13 @@
                         position: relative;
                     ">
                         2
-                        <div style="
-                            position: absolute;
-                            top: -5px;
-                            right: -5px;
-                            width: 25px;
-                            height: 25px;
-                            background: #f59e0b;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 12px;
-                        ">⏳</div>
                     </div>
                     
                     <div class="step-text-content" style="flex: 1;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
                             <h3 style="font-size: 1.8rem; color: #2d3748; margin: 0; font-weight: 700;">{{ __('joinus.internship.step_2_title') }}</h3>
                             <div class="step-date-badge" style="
-                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                background: blue;
                                 color: white;
                                 padding: 8px 16px;
                                 border-radius: 20px;
@@ -570,7 +460,7 @@
                     <div class="step-number-badge" style="
                         min-width: 80px;
                         height: 80px;
-                        background: linear-gradient(135deg, #667eea, #764ba2);
+                        background: blue;
                         border-radius: 50%;
                         display: flex;
                         align-items: center;
@@ -582,26 +472,13 @@
                         position: relative;
                     ">
                         3
-                        <div style="
-                            position: absolute;
-                            top: -5px;
-                            right: -5px;
-                            width: 25px;
-                            height: 25px;
-                            background: #8b5cf6;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 12px;
-                        ">📚</div>
                     </div>
                     
                     <div class="step-text-content" style="flex: 1;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
                             <h3 style="font-size: 1.8rem; color: #2d3748; margin: 0; font-weight: 700;">{{ __('joinus.internship.step_3_title') }}</h3>
                             <div class="step-date-badge" style="
-                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                background: blue;
                                 color: white;
                                 padding: 8px 16px;
                                 border-radius: 20px;
@@ -656,26 +533,13 @@
                         position: relative;
                     ">
                         4
-                        <div style="
-                            position: absolute;
-                            top: -5px;
-                            right: -5px;
-                            width: 25px;
-                            height: 25px;
-                            background: #f59e0b;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 12px;
-                        ">🚀</div>
                     </div>
                     
                     <div class="step-text-content" style="flex: 1;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
                             <h3 style="font-size: 1.8rem; color: #2d3748; margin: 0; font-weight: 700;">{{ __('joinus.internship.step_4_title') }}</h3>
                             <div class="step-date-badge" style="
-                                background: linear-gradient(135deg, #10b981, #059669);
+                                background: green;
                                 color: white;
                                 padding: 8px 16px;
                                 border-radius: 20px;
@@ -690,7 +554,7 @@
                         <div class="step-highlight" style="
                             margin-top: 15px;
                             padding: 12px 20px;
-                            background: rgba(16, 185, 129, 0.1);
+                            background: rgba(102, 126, 234, 0.1);
                             border-radius: 10px;
                             border-left: 4px solid #10b981;
                             font-size: 0.95rem;
@@ -710,7 +574,7 @@
             text-align: center; 
             margin-top: 50px; 
             padding: 40px; 
-            background: linear-gradient(135deg, #667eea, #764ba2); 
+            background: blue; 
             border-radius: 20px; 
             color: white;
         ">
@@ -770,6 +634,7 @@
     
     .step-vertical-box {
         margin-bottom: 25px;
+		max-width: 94vw;
     }
     
     .step-content {
@@ -1746,7 +1611,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showLoading()
 
             const templateParams = {
-                to_email: 'ananthaxb@gmail.com',
+                to_email: 'admin@thomeinspector.com',
                 from_name: data.fullName,
                 from_email: data.email,
                 phone: data.phone,

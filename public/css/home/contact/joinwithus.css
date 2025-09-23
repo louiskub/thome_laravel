@@ -587,6 +587,9 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+	.logo-img {
+		height: 60px !important;
+	}
     .join-us-container {
         flex-direction: column;
         text-align: center;
@@ -637,7 +640,7 @@
     }
 
     .step-content {
-        margin-left: 50px;
+        margin-left: 10px;
     }
 
     .step-title {
@@ -676,7 +679,7 @@
     }
 
     .step-content {
-        margin-left: 45px;
+        margin-left: 5px;
     }
 
     .step-title {
@@ -784,3 +787,4 @@
     color: white;
     cursor: pointer;
 }
+
