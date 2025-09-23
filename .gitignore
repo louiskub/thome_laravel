@@ -13,3 +13,5 @@ google-key.json
 public/.well-known
 vendor/*
 vendor/composer/*
+storage/
+public/storage/
