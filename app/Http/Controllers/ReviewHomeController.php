@@ -39,7 +39,8 @@ class ReviewHomeController extends Controller
 
         if ($request->filled('project')) {
             $query->whereHas('reviewHomeProject', function ($q) use ($request) {
-                $q->where('locale', 'like', '%' . $request->project . '%');
+                $q->where('locale->th', 'like', '%' . $request->project . '%')
+                  ->orWhere('locale->en', 'like', '%' . $request->project . '%');
             });
         }
 

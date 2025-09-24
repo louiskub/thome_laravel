@@ -184,6 +184,7 @@ function initListener() {
                         title: title,
                         content: note1,
                         coverPageImg: coverPath,
+                        hashtags: hashTagSelector.getSelectedTags()
                     };
                     window.showLoading();
                     const res = await fetch(
@@ -229,6 +230,7 @@ function initListener() {
                         title: title,
                         content: note1,
                         coverPageImg: coverPath,
+                        hashtags: hashTagSelector.getSelectedTags()
                     };
                     window.showLoading();
                     const res = await fetch("/admin/privilege/create", {

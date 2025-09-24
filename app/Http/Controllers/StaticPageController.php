@@ -63,8 +63,9 @@ class StaticPageController extends Controller
         }
 
         $query = Pastwork::query();
-        $tags = PastworkTag::where('page', '=', $pageName)->get();
-
+        $query->where('page', '=', $pageName);
+        $tags = PastworkTag::where('page', '=', $pageName)->get();  
+    
         if ($request->filled('search')) {
             $searchTerm = '%' . $request->search . '%';
 
