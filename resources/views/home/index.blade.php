@@ -313,14 +313,14 @@
 
 
 
-    <section class="projects" data-aos="fade-up" data-aos-duration="3000">
+    {{-- <section class="projects" data-aos="fade-up" data-aos-duration="3000">
         <h2 class="projects-title">
             {{__('index.projects-title')}}
         </h2>
         <a href="/projects" class="btn btn-firstall">{{__('index.projects-see-all')}}</a>
         <div class="projects-grid" id="project-cards">
             </div>
-    </section>
+    </section> --}}
 
     <div class="carousel-container3 aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <div class="carousel-header3">

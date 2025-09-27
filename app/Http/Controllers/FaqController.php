@@ -35,9 +35,9 @@ class FaqController extends Controller
             });
         }
 
-        if ($request->has('page') && $request->page > $articles = $query->paginate(9)->lastPage()) {
-            return redirect()->route('admin.faq.manage', array_merge($request->except('page'), ['page' => 1]));
-        }
+        // if ($request->has('page') && $request->page > $articles = $query->paginate(9)->lastPage()) {
+        //     return redirect()->route('admin.faq.manage', array_merge($request->except('page'), ['page' => 1]));
+        // }
 
         $faqs = $query->paginate(8)->appends($request->except('page'));
 

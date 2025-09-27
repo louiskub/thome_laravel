@@ -158,11 +158,6 @@
             @foreach ($tags as $tag)
                 <button class="category-btn" data-category="{{ $tag->translation['title'] }}">{{ $tag->translation['title'] }}</button>
             @endforeach
-            {{-- <button class="category-btn" data-category="Modern">{{ __('hconstruction.category-modern') }}</button>
-            <button class="category-btn"
-                data-category="Modern Luxury">{{ __('hconstruction.category-modern-luxury') }}</button>
-            <button class="category-btn"
-                data-category="Modern Classic">{{ __('hconstruction.category-modern-classic') }}</button> --}}
         </div>
         <div class="review-cards">
             @foreach ($projects as $project)
@@ -172,45 +167,6 @@
                     <p>{{ $project->translation['title'] }}</p>
                 </a>
             @endforeach
-
-            {{-- <a class="card" data-category="Modern" href="https://thomeinspector1.netlify.app/after_review_interior2">
-                <img src="/img/after_review/interrior-bg2.jpg" alt="House Review 2">
-                <p>{{ __('hconstruction.review2-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern" href="https://thomeinspector1.netlify.app/after_review_interior3">
-                <img src="/img/after_review/interrior-bg3.jpg" alt="House Review 3">
-                <p>{{ __('hconstruction.review3-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern Luxury"
-                href="https://thomeinspector1.netlify.app/after_review_interior4">
-                <img src="/img/after_review/interrior-bg4.jpg" alt="House Review 4">
-                <p>{{ __('hconstruction.review4-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern Luxury"
-                href="https://thomeinspector1.netlify.app/after_review_interior5">
-                <img src="/img/after_review/interrior-bg5.jpg" alt="House Review 5">
-                <p>{{ __('hconstruction.review5-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern Luxury"
-                href="https://thomeinspector1.netlify.app/after_review_interior6">
-                <img src="/img/after_review/interrior-bg6.jpg" alt="House Review 6">
-                <p>{{ __('hconstruction.review6-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern Classic"
-                href="https://thomeinspector1.netlify.app/after_review_interior7">
-                <img src="/img/after_review/interrior-bg7.jpg" alt="House Review 7">
-                <p>{{ __('hconstruction.review7-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern Classic"
-                href="https://thomeinspector1.netlify.app/after_review_interior8">
-                <img src="/img/after_review/interrior-bg8.jpg" alt="House Review 8">
-                <p>{{ __('hconstruction.review8-title') }}</p>
-            </a>
-            <a class="card" data-category="Modern Classic"
-                href="https://thomeinspector1.netlify.app/after_review_interior9">
-                <img src="/img/after_review/interrior-bg9.jpg" alt="House Review 9">
-                <p>{{ __('hconstruction.review9-title') }}</p>
-            </a> --}}
         </div>
     </div>
 

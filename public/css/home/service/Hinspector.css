@@ -3875,3 +3875,165 @@ p {
     font-size: 12px;
   }
 }
+
+
+.review-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.review-page h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.review-page p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.category-btn {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.category-btn.active {
+    background-color: #00a8ff;
+    color: #fff;
+}
+
+.category-btn:hover {
+    background-color: #0097e6;
+}
+
+/* hr line */
+hr {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    width: 40%;
+    margin: 20px auto;
+}
+
+/* review card */
+.review-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.review-cards .card {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+}
+
+.review-cards .card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.review-cards .card::before {
+    content: "ดูเพิ่มเติม";
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.review-cards .card:hover::before {
+    opacity: 1;
+}
+
+.review-cards .card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.review-cards .card:hover .overlay {
+    opacity: 1;
+    color: var(--background-color);
+}
+
+.review-cards .card .overlay p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.review-cards .card p {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .review-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-cards .card {
+        width: 90%;
+    }
+}
+

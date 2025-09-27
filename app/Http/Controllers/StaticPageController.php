@@ -81,9 +81,9 @@ class StaticPageController extends Controller
             });
         }
 
-        if ($request->has('page') && $request->page > $articles = $query->paginate(9)->lastPage()) {
-            return redirect()->route('admin.static_page.manage_project', array_merge($request->except('page'), ['page' => 1]));
-        }
+        // if ($request->has('page') && $request->page > $articles = $query->paginate(9)->lastPage()) {
+        //     return redirect()->route('admin.static_page.manage_project', array_merge($request->except('page'), ['page' => 1]));
+        // }
 
         $projects = $query->paginate(8)->appends($request->except('page'));
 
@@ -229,6 +229,11 @@ class StaticPageController extends Controller
                 'images' => 'required|array',
             ]);
 
+            $tag = PastWorkTag::findOrFail($request->input('tag'));
+            if ($tag->page !== $pageName) {
+                return response()->json(['message' => 'Tag does not belong to this page'], 400);
+            }
+
             $project = Pastwork::where('id', $id)->firstOrFail();
 
             $folderName = 'project/' . $pageName . '/' . $project->id . '/';
@@ -268,8 +273,9 @@ class StaticPageController extends Controller
 
             $project->images = $images;
             $project->coverPageImg = $updateCoverPage;
-            $project->tag = $request->input('tag');
+            // $project->tag = $request->input('tag');
             $project->save();
+            $project->pastWorkTag()->associate($tag);
         } catch (Exception $e) {
             return response()->json(['message' => 'Error editing project: ' . $e->getMessage()], 500);
         }

@@ -136,11 +136,13 @@
 
             {{-- <li class="nav-item"><a href="/privileges" class="nav-link">{{ __('header.privileges') }}</a></li> --}}
 
-            <li class="nav-item"><a href="/projects" class="nav-link">{{ __('header.projects') }}</a>
-            </li>
 
             <li class="nav-item"><a href="/article" class="nav-link">{{ __('header.articles') }}</a></li>
             <li class="nav-item"><a href="/review" class="nav-link">{{ __('header.review_home') }}</a></li>
+            <li class="nav-item"><a href="/privilege" class="nav-link">{{ __('header.privilege') }}</a></li>
+            <li class="nav-item"><a href="/projects" class="nav-link">{{ __('header.projects') }}</a>
+            </li>
+            
             <li class="nav-item has-dropdown">
                 <a href="#a" class="nav-link">{{ __('header.about') }}</a>
                 <ul class="dropdown">

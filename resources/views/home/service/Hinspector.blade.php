@@ -807,6 +807,27 @@
             </div>
         </div>
     </div>
+    
+    <div class="review-page aos-init aos-animate" data-aos="fade-up">
+        <h1>{{ __('hconstruction.review-title') }}</h1>
+        <br>
+        <div class="categories aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
+            <button class="category-btn active" data-category="all">{{ __('hconstruction.category-all') }}</button>
+            @foreach ($tags as $tag)
+                <button class="category-btn" data-category="{{ $tag->translation['title'] }}">{{ $tag->translation['title'] }}</button>
+            @endforeach
+        </div>
+        <div class="review-cards">
+            @foreach ($projects as $project)
+                <a class="card" data-category="{{ $project->tag->translation['title'] }}"
+                    href="/hconstruction/project/{{ $project->id }}">
+                    <img src="{{ $project->coverPageImg }}">
+                    <p>{{ $project->translation['title'] }}</p>
+                </a>
+            @endforeach
+        </div>
+    </div>
+
 
     <section class="app-showcase">
         <div class="container-homebutler">
@@ -840,6 +861,8 @@
             </div>
         </div>
     </section>
+
+    <script src="/js/home/service/Hconstruction.js"></script>
 
     <!-- Fixed JavaScript - Single event listener for tab switching -->
     <script>
@@ -892,11 +915,11 @@
         const slides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
 
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
+        // setInterval(() => {
+        //     slides[currentSlide].classList.remove('active');
+        //     currentSlide = (currentSlide + 1) % slides.length;
+        //     slides[currentSlide].classList.add('active');
+        // }, 5000);
 
         // Counter animation
         document.addEventListener("DOMContentLoaded", function() {

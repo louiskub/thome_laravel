@@ -58,12 +58,12 @@ Route::get('/', function () {
     return view('home.index', compact('faqs', 'latestArticles', 'var'));
 });
 
-Route::get('/hinspector', function () {
-    return view('home.service.Hinspector');
-});
+// Route::get('/hinspector', function () {
+//     return view('home.service.Hinspector');
+// });
 
 Route::group([], function () {
-    Route::prefix('{path}')->whereIn('path', ['hinterior', 'hconstruction'])->group(function () {
+    Route::prefix('{path}')->whereIn('path', ['hinspector', 'hinterior', 'hconstruction'])->group(function () {
         Route::get('/', function ($path) {
             $projects = PastWork::where('page', $path)->get();
             $tags = PastWorkTag::where('page', $path)->get();
@@ -77,7 +77,7 @@ Route::group([], function () {
             }
 
             $viewName = match ($path) {
-                // 'hinspector' => 'home.service.Hinspector',
+                'hinspector' => 'home.service.Hinspector',
                 'hinterior' => 'home.service.Hinterior',
                 'hconstruction' => 'home.service.Hconstruction',
                 default => abort(404),
